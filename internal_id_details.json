@@ -1,0 +1,328 @@
+{
+  "subsidiary_branch": {
+    "name": "Examination",
+    "internal_id": 171
+  },
+  "cost_center": {
+    "name": "Committee : HOC026 Examination Committee",
+    "internal_id": 227
+  },
+  "records": {
+    "Final": [
+      {
+        "item": "EFNI001 FINAL Examination fee -India",
+        "item_internal_id": 3019,
+        "description": "Final Examination Fee for Indian Exam Center",
+        "event_seminar_type_internal_id": 11,
+        "event_seminar_type": "Student - Final",
+        "event_seminar_sub_type_internal_id": 33,
+        "event_seminar_sub_type": "Final",
+        "events_seminars_internal_id": 109,
+        "events_seminars": "Final"
+      },
+      {
+        "item": "EFNIL001 FINAL Late fee -India",
+        "item_internal_id": 3803,
+        "description": "Final Examination Late Fee for Indian Exam Center",
+        "event_seminar_type_internal_id": 11,
+        "event_seminar_type": "Student - Final",
+        "event_seminar_sub_type_internal_id": 33,
+        "event_seminar_sub_type": "Final",
+        "events_seminars_internal_id": 109,
+        "events_seminars": "Final"
+      },
+      {
+        "item": "EFNO001 FINAL Examination fee -Overseas",
+        "item_internal_id": 3806,
+        "description": "Final Examination Fee for Overseas Exam Center",
+        "event_seminar_type_internal_id": 11,
+        "event_seminar_type": "Student - Final",
+        "event_seminar_sub_type_internal_id": 33,
+        "event_seminar_sub_type": "Final",
+        "events_seminars_internal_id": 109,
+        "events_seminars": "Final"
+      },
+      {
+        "item": "EFNOL001 FINAL Late fee -Overseas",
+        "item_internal_id": 3807,
+        "description": "Final Examination Late Fee for Overseas Exam Center",
+        "event_seminar_type_internal_id": 11,
+        "event_seminar_type": "Student - Final",
+        "event_seminar_sub_type_internal_id": 33,
+        "event_seminar_sub_type": "Final",
+        "events_seminars_internal_id": 109,
+        "events_seminars": "Final"
+      },
+      {
+        "item": "EFNN001 FINAL Examination fee -Nepal",
+        "item_internal_id": 3804,
+        "description": "Final Examination Fee for Nepal Exam Center",
+        "event_seminar_type_internal_id": 11,
+        "event_seminar_type": "Student - Final",
+        "event_seminar_sub_type_internal_id": 33,
+        "event_seminar_sub_type": "Final",
+        "events_seminars_internal_id": 109,
+        "events_seminars": "Final"
+      },
+      {
+        "item": "EFNNL001 FINAL Late fee -Nepal",
+        "item_internal_id": 3805,
+        "description": "Final Examination Late Fee for Nepal Exam Center",
+        "event_seminar_type_internal_id": 11,
+        "event_seminar_type": "Student - Final",
+        "event_seminar_sub_type_internal_id": 33,
+        "event_seminar_sub_type": "Final",
+        "events_seminars_internal_id": 109,
+        "events_seminars": "Final"
+      }
+    ],
+
+    "Intermediate": [
+      {
+        "item": "EINI001 Intermdaite Examination fee -India",
+        "item_internal_id": 3020,
+        "description": "Intermediate Examination Fee - India",
+        "event_seminar_type_internal_id": 13,
+        "event_seminar_type": "Student - Intermediate",
+        "event_seminar_sub_type_internal_id": 31,
+        "event_seminar_sub_type": "Intermediate",
+        "events_seminars_internal_id": 104,
+        "events_seminars": "Intermediate"
+      },
+      {
+        "item": "EINIL001 Intermediate Late fee -India",
+        "item_internal_id": 3808,
+        "description": "Intermediate Late Fee - India",
+        "event_seminar_type_internal_id": 13,
+        "event_seminar_type": "Student - Intermediate",
+        "event_seminar_sub_type_internal_id": 31,
+        "event_seminar_sub_type": "Intermediate",
+        "events_seminars_internal_id": 104,
+        "events_seminars": "Intermediate"
+      },
+      {
+        "item": "EINO001 Intermdaite Examination fee -Overseas",
+        "item_internal_id": 3811,
+        "description": "Intermediate Examination Fee - Overseas",
+        "event_seminar_type_internal_id": 13,
+        "event_seminar_type": "Student - Intermediate",
+        "event_seminar_sub_type_internal_id": 31,
+        "event_seminar_sub_type": "Intermediate",
+        "events_seminars_internal_id": 104,
+        "events_seminars": "Intermediate"
+      },
+      {
+        "item": "EINOL001 Intermediate Late fee -Overseas",
+        "item_internal_id": 3812,
+        "description": "Intermediate Late Fee - Overseas",
+        "event_seminar_type_internal_id": 13,
+        "event_seminar_type": "Student - Intermediate",
+        "event_seminar_sub_type_internal_id": 31,
+        "event_seminar_sub_type": "Intermediate",
+        "events_seminars_internal_id": 104,
+        "events_seminars": "Intermediate"
+      },
+      {
+        "item": "EINN001 Intermdaite Examination fee -Nepal",
+        "item_internal_id": 3809,
+        "description": "Intermediate Examination Fee - Nepal",
+        "event_seminar_type_internal_id": 13,
+        "event_seminar_type": "Student - Intermediate",
+        "event_seminar_sub_type_internal_id": 31,
+        "event_seminar_sub_type": "Intermediate",
+        "events_seminars_internal_id": 104,
+        "events_seminars": "Intermediate"
+      },
+      {
+        "item": "EINNL001 Intermediate Late fee -Nepal",
+        "item_internal_id": 3810,
+        "description": "Intermediate Late Fee - Nepal",
+        "event_seminar_type_internal_id": 13,
+        "event_seminar_type": "Student - Intermediate",
+        "event_seminar_sub_type_internal_id": 31,
+        "event_seminar_sub_type": "Intermediate",
+        "events_seminars_internal_id": 104,
+        "events_seminars": "Intermediate"
+      }
+    ],
+
+    "Foundation": [
+      {
+        "item": "EFDI001 Foundation Examination fee -India",
+        "item_internal_id": 3639,
+        "description": "Foundation Examination Fee for Indian Exam Center",
+        "event_seminar_type_internal_id": 12,
+        "event_seminar_type": "Student - Foundation",
+        "event_seminar_sub_type_internal_id": 32,
+        "event_seminar_sub_type": "Foundation",
+        "events_seminars_internal_id": 101,
+        "events_seminars": "Foundation"
+      },
+      {
+        "item": "EFDIL001 Foundation Late fee -India",
+        "item_internal_id": 3798,
+        "description": "Foundation Examination Late Fee for Indian Exam Center",
+        "event_seminar_type_internal_id": 12,
+        "event_seminar_type": "Student - Foundation",
+        "event_seminar_sub_type_internal_id": 32,
+        "event_seminar_sub_type": "Foundation",
+        "events_seminars_internal_id": 101,
+        "events_seminars": "Foundation"
+      },
+      {
+        "item": "EFDO001 Foundation Examination fee -Overseas",
+        "item_internal_id": 3801,
+        "description": "Foundation Examination Fee for Overseas Exam Center",
+        "event_seminar_type_internal_id": 12,
+        "event_seminar_type": "Student - Foundation",
+        "event_seminar_sub_type_internal_id": 32,
+        "event_seminar_sub_type": "Foundation",
+        "events_seminars_internal_id": 101,
+        "events_seminars": "Foundation"
+      },
+      {
+        "item": "EFDOL001 Foundation Late fee -Overseas",
+        "item_internal_id": 3802,
+        "description": "Foundation Examination Late Fee for Overseas Exam Center",
+        "event_seminar_type_internal_id": 12,
+        "event_seminar_type": "Student - Foundation",
+        "event_seminar_sub_type_internal_id": 32,
+        "event_seminar_sub_type": "Foundation",
+        "events_seminars_internal_id": 101,
+        "events_seminars": "Foundation"
+      },
+      {
+        "item": "EFDN001 Foundation Examination fee -Nepal",
+        "item_internal_id": 3799,
+        "description": "Foundation Examination Fee for Nepal Exam Center",
+        "event_seminar_type_internal_id": 12,
+        "event_seminar_type": "Student - Foundation",
+        "event_seminar_sub_type_internal_id": 32,
+        "event_seminar_sub_type": "Foundation",
+        "events_seminars_internal_id": 101,
+        "events_seminars": "Foundation"
+      },
+      {
+        "item": "EFDNL001 Foundation Late fee -Nepal",
+        "item_internal_id": 3800,
+        "description": "Foundation Examination Late Fee for Nepal Exam Center",
+        "event_seminar_type_internal_id": 12,
+        "event_seminar_type": "Student - Foundation",
+        "event_seminar_sub_type_internal_id": 32,
+        "event_seminar_sub_type": "Foundation",
+        "events_seminars_internal_id": 101,
+        "events_seminars": "Foundation"
+      }
+    ],
+
+    "Correction Window": {
+      "Final": [
+        {
+          "item": "ECFNI001 FINAL Correction Examination fee -India",
+          "item_internal_id": 3792,
+          "description": "Final Correction Examination Fee for Indian Exam Center",
+          "event_seminar_type_internal_id": 11,
+          "event_seminar_type": "Student - Final",
+          "event_seminar_sub_type_internal_id": 33,
+          "event_seminar_sub_type": "Final",
+          "events_seminars_internal_id": 109,
+          "events_seminars": "Final"
+        },
+        {
+          "item": "ECFNO001 FINAL Correction Examination fee -Overseas",
+          "item_internal_id": 3794,
+          "description": "Final Correction Examination Fee for Overseas Exam Center",
+          "event_seminar_type_internal_id": 11,
+          "event_seminar_type": "Student - Final",
+          "event_seminar_sub_type_internal_id": 33,
+          "event_seminar_sub_type": "Final",
+          "events_seminars_internal_id": 109,
+          "events_seminars": "Final"
+        },
+        {
+          "item": "ECFNN001 FINAL Correction Examination fee -Nepal",
+          "item_internal_id": 3793,
+          "description": "Final Correction Examination Fee for Nepal Exam Center",
+          "event_seminar_type_internal_id": 11,
+          "event_seminar_type": "Student - Final",
+          "event_seminar_sub_type_internal_id": 33,
+          "event_seminar_sub_type": "Final",
+          "events_seminars_internal_id": 109,
+          "events_seminars": "Final"
+        }
+      ],
+
+      "Intermediate": [
+        {
+          "item": "ECINI001 Intermdaite Correction Examination fee -India",
+          "item_internal_id": 3795,
+          "description": "Intermediate Correction Examination Fee for Indian Exam Center",
+          "event_seminar_type_internal_id": 13,
+          "event_seminar_type": "Student - Intermediate",
+          "event_seminar_sub_type_internal_id": 31,
+          "event_seminar_sub_type": "Intermediate",
+          "events_seminars_internal_id": 104,
+          "events_seminars": "Intermediate"
+        },
+        {
+          "item": "ECINO001 Intermdaite Correction Examination fee -Overseas",
+          "item_internal_id": 3797,
+          "description": "Intermediate Correction Examination Fee for Overseas Exam Center",
+          "event_seminar_type_internal_id": 13,
+          "event_seminar_type": "Student - Intermediate",
+          "event_seminar_sub_type_internal_id": 31,
+          "event_seminar_sub_type": "Intermediate",
+          "events_seminars_internal_id": 104,
+          "events_seminars": "Intermediate"
+        },
+        {
+          "item": "ECINN001 Intermdaite Correction Examination fee -Nepal",
+          "item_internal_id": 3796,
+          "description": "Intermediate Correction Examination Fee for Nepal Exam Center",
+          "event_seminar_type_internal_id": 13,
+          "event_seminar_type": "Student - Intermediate",
+          "event_seminar_sub_type_internal_id": 31,
+          "event_seminar_sub_type": "Intermediate",
+          "events_seminars_internal_id": 104,
+          "events_seminars": "Intermediate"
+        }
+      ],
+
+      "Foundation": [
+        {
+          "item": "ECFDN001 Foundation Correction Examination fee -Nepal",
+          "item_internal_id": 3691,
+          "description": "Foundation Correction Examination Fee for Nepal Exam Center",
+          "event_seminar_type_internal_id": 12,
+          "event_seminar_type": "Student - Foundation",
+          "event_seminar_sub_type_internal_id": 32,
+          "event_seminar_sub_type": "Foundation",
+          "events_seminars_internal_id": 101,
+          "events_seminars": "Foundation"
+        },
+        {
+          "item": "ECFDI001 Foundation Correction Examination fee -India",
+          "item_internal_id": 3121,
+          "description": "Foundation Correction Examination Fee for Nepal Exam Center",
+          "event_seminar_type_internal_id": 12,
+          "event_seminar_type": "Student - Foundation",
+          "event_seminar_sub_type_internal_id": 32,
+          "event_seminar_sub_type": "Foundation",
+          "events_seminars_internal_id": 101,
+          "events_seminars": "Foundation"
+        },
+        {
+          "item": "ECFDO001 Foundation Correction Examination fee -Overseas",
+          "item_internal_id": 3791,
+          "description": "Foundation Correction Examination Fee for Nepal Exam Center",
+          "event_seminar_type_internal_id": 12,
+          "event_seminar_type": "Student - Foundation",
+          "event_seminar_sub_type_internal_id": 32,
+          "event_seminar_sub_type": "Foundation",
+          "events_seminars_internal_id": 101,
+          "events_seminars": "Foundation"
+        }
+      ]
+    }
+  }
+}
