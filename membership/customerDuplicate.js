@@ -62,6 +62,7 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
   const hasMembershipId = newEntityId && newEntityId.trim().length > 0;
 
   const newCustomerData = {
+    autoname: false,
     entityid: newEntityId,
     isPerson: true,
     firstName: c.firstName || "",
@@ -78,7 +79,7 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
 
     receivablesaccount: { id: hasMembershipId ? "2724" : "2725" },
 
-    custentity_ino_icai_appseq_no: `${transaction.Customer_ID}-1`,
+    custentity_ino_icai_appseq_no: transaction.Customer_ID,
     custentity_ino_icai_father_name: c.custentity_ino_icai_father_name || "",
     custentity_ino_icai_dob: c.custentity_ino_icai_dob || "",
     custentity_permanent_account_number: c.custentity_permanent_account_number || "",
