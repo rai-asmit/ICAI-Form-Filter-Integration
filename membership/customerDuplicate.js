@@ -29,27 +29,33 @@ async function createCustomerRecord(data) {
 
 /**
  * Form 2 — New Membership:
- *   1. Fetch existing customer by Customer_ID (category: Student)
- *   2. Create a duplicate customer with category: Member, copying all fields
- *   3. The new customer's entityid = Application_number from the transaction
+ *   1. Check if member customer (Customer_ID-1) already exists
+ *   2. If exists → reuse it
+ *   3. If not → duplicate student customer as member with entityid = Customer_ID-1
  */
 async function duplicateCustomerAsMember(customerEntityId, transaction) {
+  const memberEntityId = `${transaction.Customer_ID}-1`;
+
+  // Check if member customer already exists
+  const existing = await fetchCustomerByEntityId(memberEntityId);
+  if (existing) {
+    console.log(
+      `[MembershipSync] [Form 2] Member customer already exists: entityid=${memberEntityId}, id=${existing.id} — reusing`
+    );
+    return existing;
+  }
+
+  // Fetch original student customer
   console.log(
     `[MembershipSync] [Form 2] Fetching student customer: ${customerEntityId}`
   );
-
   const c = await fetchCustomerByEntityId(customerEntityId);
   if (!c) {
     throw new Error(`Student customer not found in NetSuite: ${customerEntityId}`);
   }
-
-  const originalInternalId = c.id;
-  const originalEntityId = c.entityId || c.entityid;
   console.log(
-    `[MembershipSync] [Form 2] Found student: id=${originalInternalId}, entityid=${originalEntityId}`
+    `[MembershipSync] [Form 2] Found student: id=${c.id}, entityid=${c.entityId || c.entityid}`
   );
-
-  const newEntityId = `${transaction.Customer_ID}-1`;
 
   function pickId(field) {
     if (!field) return null;
@@ -59,16 +65,15 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
 
   const gstin = c.custentity_ino_icai_gstin || "";
   const hasGSTIN = typeof gstin === "string" && gstin.trim().length > 0;
-  const hasMembershipId = newEntityId && newEntityId.trim().length > 0;
 
   const newCustomerData = {
     autoname: false,
-    entityid: newEntityId,
+    entityid: memberEntityId,
     isPerson: true,
     firstName: c.firstName || "",
     middleName: c.middleName || "",
     lastName: c.lastName || ".",
-    email: c.email || c.altEmail || `${newEntityId}@placeholder.icai.org`,
+    email: c.email || c.altEmail || `${memberEntityId}@placeholder.icai.org`,
     altEmail: c.altEmail || "",
     phone: c.phone || "",
     altPhone: c.altPhone || "",
@@ -77,7 +82,7 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
     category: { id: "1" },
     custentity_ino_icai_nationality: 1,
 
-    receivablesaccount: { id: hasMembershipId ? "2724" : "2725" },
+    receivablesaccount: { id: "2724" },
 
     custentity_ino_icai_appseq_no: transaction.Customer_ID,
     custentity_ino_icai_father_name: c.custentity_ino_icai_father_name || "",
@@ -143,20 +148,12 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
   }
 
   console.log(
-    `[MembershipSync] [Form 2] Creating member customer: entityid=${newEntityId}`
+    `[MembershipSync] [Form 2] Creating member customer: entityid=${memberEntityId}`
   );
 
   const newCustomer = await withRetry(
     () => createCustomerRecord(newCustomerData),
-    `CreateCustomer:${newEntityId}`
-  );
-
-  await netsuiteRequest(
-    "PATCH",
-    `/services/rest/record/v1/customer/${newCustomer.id}`,
-    {
-      entityid: `${transaction.Customer_ID}-1`
-    }
+    `CreateCustomer:${memberEntityId}`
   );
 
   console.log(
