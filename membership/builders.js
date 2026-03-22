@@ -137,62 +137,124 @@ function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, f
   };
 }
 
-/**
- * Build Customer Deposit payload.
- * CD captures the FULL payment amount (includes contributions + tax).
- */
-function buildCustomerDepositData(soId, transaction, formConfig) {
-  const tranDate = parseDateDDMMYYYY(transaction.Payment_Date);
+// /**
+//  * Build Customer Deposit payload. (COMMENTED OUT — replaced by Customer Payment)
+//  * CD captures the FULL payment amount (includes contributions + tax).
+//  */
+// function buildCustomerDepositData(soId, transaction, formConfig) {
+//   const tranDate = parseDateDDMMYYYY(transaction.Payment_Date);
+//
+//   const igst = parseFloat(transaction.IGST) || 0;
+//   const cgst = parseFloat(transaction.CGST) || 0;
+//   const sgst = parseFloat(transaction.SGST) || 0;
+//   const taxTotal = Number.parseFloat(transaction.Total_Tax);
+//   const mid = firstNonEmpty(transaction.MID);
+//
+//   const gstFields = {};
+//   if (igst > 0) {
+//     gstFields.custbody_inoday_icai_igst_val = igst;
+//   } else if (cgst > 0 || sgst > 0) {
+//     gstFields.custbody_ino_icai_gst_value = cgst;
+//     gstFields.custbody_inoday_icai_sgst_val = sgst;
+//   }
+//
+//   // Resolve CD account from MID mapping -> fallback to config -> fallback to 3341
+//   const midToAccount = msConfig.mid_to_account || {};
+//   const cdAccountId = (mid && midToAccount[mid])
+//     ? midToAccount[mid]
+//     : (msConfig.cd_fallback_account || formConfig.cd_account_id || "3341");
+//
+//   if (mid && !midToAccount[mid]) {
+//     console.warn(
+//       `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cdAccountId}`
+//     );
+//   }
+//
+//   return {
+//     salesorder: { id: String(soId) },
+//     account: { id: String(cdAccountId) },
+//     payment: parseFloat(transaction.Payment_Amount) || 0,
+//     memo: transaction.Payment_Order_Id,
+//     tranDate,
+//     custbody_in_return_form_period: { refName: getMonthYear(tranDate) },
+//     custbody_inoday_payment_ref: transaction.Payment_Order_Id,
+//     custbody_ino_icai_reference_number: transaction.Reference_Number,
+//     custbodypayment_reference_number: transaction.Reference_Number,
+//     custbody_ino_icai_utr: transaction.Reference_Number,
+//     custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
+//     custbody_ino_icai_source_portal_url:
+//       formConfig.source_portal_url || "https://eservices.icai.org/",
+//     custbody40: true,
+//     ...(mid ? { custbody_icai_ino_mid: mid } : {}),
+//     ...(Number.isFinite(taxTotal)
+//       ? { custbody_ino_icai_taxtotal: taxTotal }
+//       : {}),
+//     department: { id: formConfig.department_id },
+//     location: { id: formConfig.location_id },
+//     ...(formConfig.class_id ? { class: { id: formConfig.class_id } } : {}),
+//     ...gstFields,
+//   };
+// }
 
-  const igst = parseFloat(transaction.IGST) || 0;
-  const cgst = parseFloat(transaction.CGST) || 0;
-  const sgst = parseFloat(transaction.SGST) || 0;
-  const taxTotal = Number.parseFloat(transaction.Total_Tax);
+/**
+ * Build Customer Payment payload.
+ * Replaces Customer Deposit — directly settles open invoices via autoApply.
+ * Same mapping & process as CD but uses customerPayment endpoint.
+ * Payment amount = FULL payment (all items + tax).
+ */
+function buildCustomerPaymentData(customerInternalId, transaction, formConfig) {
+  const tranDate = parseDateDDMMYYYY(transaction.Payment_Date);
   const mid = firstNonEmpty(transaction.MID);
 
-  const gstFields = {};
-  if (igst > 0) {
-    gstFields.custbody_inoday_icai_igst_val = igst;
-  } else if (cgst > 0 || sgst > 0) {
-    gstFields.custbody_ino_icai_gst_value = cgst;
-    gstFields.custbody_inoday_icai_sgst_val = sgst;
-  }
-
-  // Resolve CD account from MID mapping -> fallback to config -> fallback to 3341
+  // Resolve account from MID mapping -> fallback to config -> fallback to 3341 (same as CD logic)
   const midToAccount = msConfig.mid_to_account || {};
-  const cdAccountId = (mid && midToAccount[mid])
+  const cpAccountId = (mid && midToAccount[mid])
     ? midToAccount[mid]
     : (msConfig.cd_fallback_account || formConfig.cd_account_id || "3341");
 
   if (mid && !midToAccount[mid]) {
     console.warn(
-      `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cdAccountId}`
+      `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cpAccountId}`
     );
   }
 
   return {
-    salesorder: { id: String(soId) },
-    account: { id: String(cdAccountId) },
+    // ── Required fields ──
+    customer: { id: String(customerInternalId), type: "customer" },
     payment: parseFloat(transaction.Payment_Amount) || 0,
-    memo: transaction.Payment_Order_Id,
-    tranDate,
-    custbody_in_return_form_period: { refName: getMonthYear(tranDate) },
-    custbody_inoday_payment_ref: transaction.Payment_Order_Id,
-    custbody_ino_icai_reference_number: transaction.Reference_Number,
-    custbodypayment_reference_number: transaction.Reference_Number,
-    custbody_ino_icai_utr: transaction.Reference_Number,
-    custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
-    custbody_ino_icai_source_portal_url:
-      formConfig.source_portal_url || "https://eservices.icai.org/",
-    custbody40: true,
-    ...(mid ? { custbody_icai_ino_mid: mid } : {}),
-    ...(Number.isFinite(taxTotal)
-      ? { custbody_ino_icai_taxtotal: taxTotal }
-      : {}),
+
+    // ── Classification (same as CD) ──
     department: { id: formConfig.department_id },
     location: { id: formConfig.location_id },
     ...(formConfig.class_id ? { class: { id: formConfig.class_id } } : {}),
-    ...gstFields,
+
+    // ── AR Account (dynamic from MID mapping) ──
+    // TODO: Temporarily commented out — account IDs from mid_to_account are deposit accounts, not valid for Customer Payment. Update with correct AR account IDs.
+    // account: { id: String(cpAccountId) },
+
+    // ── Invoice Application ──
+    autoApply: true,
+
+    // ── Date & period ──
+    tranDate,
+    custbody_in_return_form_period: { refName: getMonthYear(tranDate) },
+
+    // ── Custom fields ──
+    custbodycreate_middleware: true,
+    custbody_ino_icai_reference_number: transaction.Reference_Number,
+    custbody_inoday_payment_ref: transaction.Payment_Order_Id,
+    custbody_ino_payment_amount_po: Number(transaction.Payment_Amount) || 0,
+    custbodypayment_reference_number: transaction.Reference_Number,
+    custbody_ino_icai_utr: transaction.Reference_Number,
+    memo: transaction.Payment_Order_Id,
+
+    // ── Source portal ──
+    custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
+    custbody_ino_icai_source_portal_url:
+      formConfig.source_portal_url || "https://eservices.icai.org/",
+
+    // ── MID tracking ──
+    ...(mid ? { custbody_icai_ino_mid: mid } : {}),
   };
 }
 
@@ -267,7 +329,8 @@ function buildJournalEntryData(transaction, contributionItems, formConfig, custo
 
 module.exports = {
   buildSalesOrderData,
-  buildCustomerDepositData,
+  // buildCustomerDepositData,  // COMMENTED OUT — replaced by Customer Payment
+  buildCustomerPaymentData,
   buildInvoiceBody,
   buildJournalEntryData,
 };

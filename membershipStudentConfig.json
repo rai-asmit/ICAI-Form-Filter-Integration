@@ -49,7 +49,7 @@
       "M99": { "internal_id": "631", "description": "E-Journal Discount" },
       "M100": { "internal_id": "622", "description": "Airmail Charges" }
     },
-    "contribution_codes": ["M15", "M18", "M23", "M22"],
+    "contribution_codes": ["M13", "M14", "M15", "M18", "M22", "M23"],
     "allowed_forms": ["Form 2", "Form 6", "Form 3/Fellowship"]
   },
   "student_registration": {

@@ -4,15 +4,15 @@
  * syncMembershipStudent.js — Orchestrator
  *
  * Handles processing for:
- *   - Form 2   (New Membership)        → Duplicate Customer + SO + CD + Invoice + JV + DepositApp
- *   - Form 6   (COP Application)       → SO + CD + Invoice + JV (if contributions) + DepositApp
- *   - Form 3/Fellowship                → SO + CD + Invoice + JV (if contributions) + DepositApp
- *   - Student Registration Form        → SO + CD + Invoice + DepositApp (no JV — no contributions)
+ *   - Form 2   (New Membership)        → Duplicate Customer + SO + Invoice + Customer Payment + JV
+ *   - Form 6   (COP Application)       → SO + Invoice + Customer Payment + JV (if contributions)
+ *   - Form 3/Fellowship                → SO + Invoice + Customer Payment + JV (if contributions)
+ *   - Student Registration Form        → SO + Invoice + Customer Payment (no JV — no contributions)
  *
  * Fee head classification:
  *   - Regular + Discount items (M05, M06, M07, M08, M09, M10, M99) → Sales Order & Invoice
  *   - Contribution items (M15, M18, M23, M22, M13) → Journal Voucher (Debit 2724, Credit 2764)
- *   - Customer Deposit captures FULL payment amount (all items + tax)
+ *   - Customer Payment (autoApply) settles invoices directly (replaces Customer Deposit)
  */
 
 require("dotenv").config();
@@ -25,7 +25,8 @@ const {
   netsuiteRequest,
   fetchAllCustomers,
   createSalesOrder,
-  createCustomerDeposit,
+  // createCustomerDeposit,  // COMMENTED OUT — replaced by Customer Payment
+  createCustomerPayment,
   createTransFormRecordInvoice,
 } = require("./netsuiteClient--Rest");
 
@@ -42,7 +43,8 @@ const {
 } = require("./membership/helpers");
 const {
   buildSalesOrderData,
-  buildCustomerDepositData,
+  // buildCustomerDepositData,  // COMMENTED OUT — replaced by Customer Payment
+  buildCustomerPaymentData,
   buildInvoiceBody,
   buildJournalEntryData,
 } = require("./membership/builders");
@@ -66,10 +68,9 @@ async function createJournalEntry(data) {
  *   1. Parse & classify fee heads (Regular/Discount → SO, Contribution → JV)
  *   2. [Form 2] Duplicate customer (Student → Member)
  *   3. Create Sales Order (Regular + Discount items only, with tax)
- *   4. Create Customer Deposit (full Payment_Amount)
- *   5. Transform SO → Invoice
+ *   4. Transform SO → Invoice
+ *   5. Create Customer Payment (autoApply settles invoices directly)
  *   6. Create Journal Voucher (contribution items only, if any)
- *   7. Apply Deposit to Invoice (Deposit Application)
  */
 async function processTransaction(transaction, customerMap, formConfig) {
   const ref = transaction.Reference_Number;
@@ -189,25 +190,8 @@ async function processTransaction(transaction, customerMap, formConfig) {
     };
     console.log(`[MembershipSync] [${ref}] SO created: ${soId}`);
 
-    // ── Step 4: Create Customer Deposit (full payment amount) ─────────────────
-    const cdData = buildCustomerDepositData(soId, transaction, formConfig);
-    const resolvedCdAccount = cdData.account?.id || "unknown";
-    console.log(
-      `[MembershipSync] [${ref}] Creating Customer Deposit (amount: ${transaction.Payment_Amount}, MID: ${transaction.MID || "N/A"}, account: ${resolvedCdAccount})...`
-    );
-    const cdResponse = await withRetry(
-      () => createCustomerDeposit(cdData),
-      `CD:${ref}`
-    );
-    if (!cdResponse || !cdResponse.id) {
-      console.error(`[MembershipSync] [${ref}] CD response was null/empty:`, JSON.stringify(cdResponse));
-      throw new Error(`Customer Deposit creation returned no ID — response: ${JSON.stringify(cdResponse)}`);
-    }
-    const cdId = cdResponse.id;
-    result.steps.customerDeposit = { success: true, id: cdId };
-    console.log(`[MembershipSync] [${ref}] CD created: ${cdId}`);
-
-    // ── Step 5: Transform SO → Invoice ───────────────────────────────────────
+    // ── Step 4: Transform SO → Invoice ───────────────────────────────────────
+    // Invoice must be created BEFORE Customer Payment so autoApply can find it
     const invoiceBody = buildInvoiceBody(transaction, formConfig);
     console.log(
       `[MembershipSync] [${ref}] Creating Invoice from SO ${soId}...`
@@ -223,6 +207,25 @@ async function processTransaction(transaction, customerMap, formConfig) {
     const invoiceId = invoiceResponse.id;
     result.steps.invoice = { success: true, id: invoiceId };
     console.log(`[MembershipSync] [${ref}] Invoice created: ${invoiceId}`);
+
+    // ── Step 5: Create Customer Payment (replaces Customer Deposit) ─────────
+    // Customer Payment with autoApply: true directly settles open invoices
+    const cpData = buildCustomerPaymentData(customerInternalId, transaction, formConfig);
+    const resolvedCpAccount = cpData.account?.id || "unknown";
+    console.log(
+      `[MembershipSync] [${ref}] Creating Customer Payment (amount: ${transaction.Payment_Amount}, MID: ${transaction.MID || "N/A"}, account: ${resolvedCpAccount})...`
+    );
+    const cpResponse = await withRetry(
+      () => createCustomerPayment(cpData),
+      `CP:${ref}`
+    );
+    if (!cpResponse || !cpResponse.id) {
+      console.error(`[MembershipSync] [${ref}] CP response was null/empty:`, JSON.stringify(cpResponse));
+      throw new Error(`Customer Payment creation returned no ID — response: ${JSON.stringify(cpResponse)}`);
+    }
+    const cpId = cpResponse.id;
+    result.steps.customerPayment = { success: true, id: cpId };
+    console.log(`[MembershipSync] [${ref}] Customer Payment created: ${cpId} (autoApply → Invoice ${invoiceId})`);
 
     // ── Step 6: Create JV for contributions (if any) ─────────────────────────
     if (contributionItems.length > 0) {
@@ -257,17 +260,6 @@ async function processTransaction(transaction, customerMap, formConfig) {
         };
       }
     }
-
-    // ── Step 7: Deposit Application ──────────────────────────────────────────
-    console.log(
-      `[MembershipSync] [${ref}] Deposit auto-applied by NetSuite (CD ${cdId} → Invoice ${invoiceId})`
-    );
-    result.steps.depositApplication = {
-      success: true,
-      id: null,
-      skipped: true,
-      reason: "NetSuite auto-applies deposit when invoice is created from the same SO",
-    };
 
     result.success = true;
     console.log(
