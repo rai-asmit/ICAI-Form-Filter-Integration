@@ -4,10 +4,11 @@
  * syncMembershipStudent.js — Orchestrator
  *
  * Handles processing for:
+ *   - Student Registration Form        → SO + Customer Deposit (no Invoice, no JV, no CP)
  *   - Form 2   (New Membership)        → Duplicate Customer + SO + Invoice + Customer Payment + JV
  *   - Form 6   (COP Application)       → SO + Invoice + Customer Payment + JV (if contributions)
  *   - Form 3/Fellowship                → SO + Invoice + Customer Payment + JV (if contributions)
- *   - Student Registration Form        → SO + Customer Payment (no Invoice, no JV — no contributions)
+ *   - Other Forms                      → SO + Customer Deposit + Invoice
  *
  * Data pipeline:
  *   1. Fetch transactions from ICAI
@@ -33,6 +34,7 @@ const {
   netsuiteRequest,
   fetchAllCustomers,
   createSalesOrder,
+  createCustomerDeposit,
   createCustomerPayment,
   createTransFormRecordInvoice,
 } = require("./netsuiteClient--Rest");
@@ -50,6 +52,7 @@ const {
 } = require("./membership/helpers");
 const {
   buildSalesOrderData,
+  buildCustomerDepositData,
   buildCustomerPaymentData,
   buildInvoiceBody,
   buildJournalEntryData,
@@ -217,21 +220,36 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
     console.log(`[MembershipSync] [${ref}] SO created: ${soId}`);
     logStep("sales-order", true, { salesOrderId: soId, tranId: soResponse.tranid || null });
 
-    // ── Step 4: Transform SO → Invoice ───────────────────────────────────────
-    // Skip invoice creation for Student Registration Form
-    currentStep = "invoice";
-    let invoiceId = null;
-    const isStudentRegistration = form === "Student Registration Form";
+    const isStudentRegistration = formConfig.type === "student_registration";
+    const isMembershipForm = formConfig.type === "membership";
 
     if (isStudentRegistration) {
-      console.log(`[MembershipSync] [${ref}] Skipping Invoice creation (Student Registration Form)`);
-      result.steps.invoice = { success: true, skipped: true, reason: "Student Registration Form — no invoice required" };
-      logStep("invoice", true, { skipped: true, reason: "Student Registration Form" });
-    } else {
-      const invoiceBody = buildInvoiceBody(transaction, formConfig);
+      // ── Student Registration: SO + Customer Deposit ─────────────────────────
+      currentStep = "customer-deposit";
+      const cdData = buildCustomerDepositData(soId, transaction, formConfig);
       console.log(
-        `[MembershipSync] [${ref}] Creating Invoice from SO ${soId}...`
+        `[MembershipSync] [${ref}] Creating Customer Deposit (amount: ${transaction.Payment_Amount}, MID: ${transaction.MID || "N/A"})...`
       );
+      const cdResponse = await withRetry(
+        () => createCustomerDeposit(cdData),
+        `CD:${ref}`
+      );
+      if (!cdResponse || !cdResponse.id) {
+        console.error(`[MembershipSync] [${ref}] CD response was null/empty:`, JSON.stringify(cdResponse));
+        throw new Error(`Customer Deposit creation returned no ID — response: ${JSON.stringify(cdResponse)}`);
+      }
+      const cdId = cdResponse.id;
+      result.steps.customerDeposit = { success: true, id: cdId };
+      console.log(`[MembershipSync] [${ref}] Customer Deposit created: ${cdId}`);
+      logStep("customer-deposit", true, { customerDepositId: cdId, amount: transaction.Payment_Amount });
+
+    } else if (isMembershipForm) {
+      // ── Membership (Form 2 / 3 / 6): SO + Invoice + JV (if any) + Customer Payment ──
+
+      // Step 4: Invoice
+      currentStep = "invoice";
+      const invoiceBody = buildInvoiceBody(transaction, formConfig);
+      console.log(`[MembershipSync] [${ref}] Creating Invoice from SO ${soId}...`);
       const invoiceResponse = await withRetry(
         () => createTransFormRecordInvoice(soId, invoiceBody),
         `Invoice:${ref}`
@@ -240,79 +258,92 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
         console.error(`[MembershipSync] [${ref}] Invoice response was null/empty:`, JSON.stringify(invoiceResponse));
         throw new Error(`Invoice creation returned no ID — response: ${JSON.stringify(invoiceResponse)}`);
       }
-      invoiceId = invoiceResponse.id;
+      const invoiceId = invoiceResponse.id;
+      result.steps.invoice = { success: true, id: invoiceId };
+      console.log(`[MembershipSync] [${ref}] Invoice created: ${invoiceId}`);
+      logStep("invoice", true, { invoiceId, salesOrderId: soId });
+
+      // Step 5: JV for contributions (if any) — must be before CP
+      let jvId = null;
+      let totalContribution = 0;
+      if (contributionItems.length > 0) {
+        currentStep = "journal-voucher";
+        try {
+          const vendorMap = msConfig.contribution_vendor_mapping || {};
+          totalContribution = contributionItems.reduce((sum, item) => sum + item.amount, 0);
+          const jvData = buildJournalEntryData(transaction, contributionItems, formConfig, customerInternalId, vendorMap);
+          if (jvData) {
+            console.log(
+              `[MembershipSync] [${ref}] Creating JV for ${contributionItems.length} contribution item(s) (total: ${totalContribution})...`
+            );
+            const jvResponse = await withRetry(() => createJournalEntry(jvData), `JV:${ref}`);
+            jvId = jvResponse.id;
+            result.steps.journalVoucher = { success: true, id: jvId };
+            console.log(`[MembershipSync] [${ref}] JV created: ${jvId}`);
+            logStep("journal-voucher", true, { journalVoucherId: jvId, amount: totalContribution });
+          }
+        } catch (err) {
+          console.error(
+            `[MembershipSync] [${ref}] JV creation failed (non-blocking): ${err.response?.data ? JSON.stringify(err.response.data) : err.message}`
+          );
+          result.steps.journalVoucher = { success: false, error: err.response?.data ?? err.message };
+          logStep("journal-voucher", false, { error: err.response?.data ?? err.message, amount: totalContribution });
+        }
+      }
+
+      // Step 6: Customer Payment — applied to Invoice + JV
+      currentStep = "customer-payment";
+      const cpData = buildCustomerPaymentData(customerInternalId, transaction, formConfig, invoiceId, jvId, totalContribution);
+      const applyDesc = jvId ? `Invoice ${invoiceId} + JV ${jvId}` : `Invoice ${invoiceId}`;
+      console.log(
+        `[MembershipSync] [${ref}] Creating Customer Payment (amount: ${transaction.Payment_Amount}, MID: ${transaction.MID || "N/A"}, apply → ${applyDesc})...`
+      );
+      const cpResponse = await withRetry(() => createCustomerPayment(cpData), `CP:${ref}`);
+      if (!cpResponse || !cpResponse.id) {
+        console.error(`[MembershipSync] [${ref}] CP response was null/empty:`, JSON.stringify(cpResponse));
+        throw new Error(`Customer Payment creation returned no ID — response: ${JSON.stringify(cpResponse)}`);
+      }
+      const cpId = cpResponse.id;
+      result.steps.customerPayment = { success: true, id: cpId };
+      console.log(`[MembershipSync] [${ref}] Customer Payment created: ${cpId} (applied → ${applyDesc})`);
+      logStep("customer-payment", true, { customerPaymentId: cpId, amount: transaction.Payment_Amount });
+
+    } else {
+      // ── Other Forms: SO + Customer Deposit + Invoice ────────────────────────
+
+      // Step 4: Customer Deposit
+      currentStep = "customer-deposit";
+      const cdData = buildCustomerDepositData(soId, transaction, formConfig);
+      console.log(
+        `[MembershipSync] [${ref}] Creating Customer Deposit (amount: ${transaction.Payment_Amount}, MID: ${transaction.MID || "N/A"})...`
+      );
+      const cdResponse = await withRetry(() => createCustomerDeposit(cdData), `CD:${ref}`);
+      if (!cdResponse || !cdResponse.id) {
+        console.error(`[MembershipSync] [${ref}] CD response was null/empty:`, JSON.stringify(cdResponse));
+        throw new Error(`Customer Deposit creation returned no ID — response: ${JSON.stringify(cdResponse)}`);
+      }
+      const cdId = cdResponse.id;
+      result.steps.customerDeposit = { success: true, id: cdId };
+      console.log(`[MembershipSync] [${ref}] Customer Deposit created: ${cdId}`);
+      logStep("customer-deposit", true, { customerDepositId: cdId, amount: transaction.Payment_Amount });
+
+      // Step 5: Invoice
+      currentStep = "invoice";
+      const invoiceBody = buildInvoiceBody(transaction, formConfig);
+      console.log(`[MembershipSync] [${ref}] Creating Invoice from SO ${soId}...`);
+      const invoiceResponse = await withRetry(
+        () => createTransFormRecordInvoice(soId, invoiceBody),
+        `Invoice:${ref}`
+      );
+      if (!invoiceResponse || !invoiceResponse.id) {
+        console.error(`[MembershipSync] [${ref}] Invoice response was null/empty:`, JSON.stringify(invoiceResponse));
+        throw new Error(`Invoice creation returned no ID — response: ${JSON.stringify(invoiceResponse)}`);
+      }
+      const invoiceId = invoiceResponse.id;
       result.steps.invoice = { success: true, id: invoiceId };
       console.log(`[MembershipSync] [${ref}] Invoice created: ${invoiceId}`);
       logStep("invoice", true, { invoiceId, salesOrderId: soId });
     }
-
-    // ── Step 5: Create JV for contributions (if any) ─────────────────────────
-    // JV must be created BEFORE Customer Payment so it can be included in the manual apply list
-    let jvId = null;
-    let totalContribution = 0;
-    if (contributionItems.length > 0) {
-      currentStep = "journal-voucher";
-      try {
-        const vendorMap = msConfig.contribution_vendor_mapping || {};
-        totalContribution = contributionItems.reduce((sum, item) => sum + item.amount, 0);
-
-        const jvData = buildJournalEntryData(
-          transaction,
-          contributionItems,
-          formConfig,
-          customerInternalId,
-          vendorMap
-        );
-        if (jvData) {
-          console.log(
-            `[MembershipSync] [${ref}] Creating JV for ${contributionItems.length} contribution item(s) (total: ${totalContribution})...`
-          );
-          const jvResponse = await withRetry(
-            () => createJournalEntry(jvData),
-            `JV:${ref}`
-          );
-          jvId = jvResponse.id;
-          result.steps.journalVoucher = { success: true, id: jvId };
-          console.log(`[MembershipSync] [${ref}] JV created: ${jvId}`);
-          logStep("journal-voucher", true, { journalVoucherId: jvId, amount: totalContribution });
-        }
-      } catch (err) {
-        console.error(
-          `[MembershipSync] [${ref}] JV creation failed (non-blocking): ${err.response?.data ? JSON.stringify(err.response.data) : err.message}`
-        );
-        result.steps.journalVoucher = {
-          success: false,
-          error: err.response?.data ?? err.message,
-        };
-        logStep("journal-voucher", false, { error: err.response?.data ?? err.message, amount: totalContribution });
-      }
-    }
-
-    // ── Step 6: Create Customer Payment ──────────────────────────────────────
-    // Manual apply — targets invoice + JV (if created) from this transaction
-    currentStep = "customer-payment";
-    const cpData = buildCustomerPaymentData(customerInternalId, transaction, formConfig, invoiceId, jvId, totalContribution);
-    const resolvedCpAccount = cpData.account?.id || "default";
-    const applyDesc = jvId
-      ? `Invoice ${invoiceId} + JV ${jvId}`
-      : invoiceId
-        ? `Invoice ${invoiceId}`
-        : "autoApply";
-    console.log(
-      `[MembershipSync] [${ref}] Creating Customer Payment (amount: ${transaction.Payment_Amount}, MID: ${transaction.MID || "N/A"}, account: ${resolvedCpAccount}, apply → ${applyDesc})...`
-    );
-    const cpResponse = await withRetry(
-      () => createCustomerPayment(cpData),
-      `CP:${ref}`
-    );
-    if (!cpResponse || !cpResponse.id) {
-      console.error(`[MembershipSync] [${ref}] CP response was null/empty:`, JSON.stringify(cpResponse));
-      throw new Error(`Customer Payment creation returned no ID — response: ${JSON.stringify(cpResponse)}`);
-    }
-    const cpId = cpResponse.id;
-    result.steps.customerPayment = { success: true, id: cpId };
-    console.log(`[MembershipSync] [${ref}] Customer Payment created: ${cpId} (applied → ${applyDesc})`);
-    logStep("customer-payment", true, { customerPaymentId: cpId, amount: transaction.Payment_Amount });
 
     result.success = true;
     console.log(
@@ -326,7 +357,7 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
     );
 
     // Log failure for the step that threw (JV logs its own failure — it's non-blocking)
-    if (["sales-order", "invoice", "customer-payment"].includes(currentStep)) {
+    if (["sales-order", "customer-deposit", "invoice", "customer-payment"].includes(currentStep)) {
       logStep(currentStep, false, { error: err.response?.data ?? err.message });
     }
   }

@@ -20,9 +20,13 @@ function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, f
   const hsnCode = firstNonEmpty(transaction.HSN_SAC_Code);
   const hsnInternalId = firstNonEmpty(
     formConfig.hsn_code_internal_id,
-    hsnCode && formConfig.hsn_code_map ? formConfig.hsn_code_map[hsnCode] : null,
-    hsnCode === "9995" ? "1377" : null
+    hsnCode && formConfig.hsn_code_map ? formConfig.hsn_code_map[hsnCode] : null
   );
+  if (hsnCode && !hsnInternalId) {
+    console.warn(
+      `[MembershipSync] HSN/SAC code "${hsnCode}" has no internal ID mapping — custcol_in_hsn_code will be omitted. Add it to hsn_code_map in config.`
+    );
+  }
   const gstPosField = toSelectField(
     firstNonEmpty(
       transaction.GST_POS_ID,
@@ -58,6 +62,12 @@ function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, f
   let subtotal = 0;
   let taxTotal = 0;
 
+  const hasTax =
+    parseFloat(transaction.SGST || 0) > 0 ||
+    parseFloat(transaction.CGST || 0) > 0 ||
+    parseFloat(transaction.IGST || 0) > 0 ||
+    parseFloat(transaction.Total_Tax || 0) > 0;
+
   for (const feeHead of invoiceFeeHeads) {
     const itemDef = formConfig.items[feeHead.code];
     const internalId = itemDef?.internal_id;
@@ -71,7 +81,7 @@ function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, f
     }
 
     const amount = feeHead.amount;
-    const taxAmount = (amount * TAX_RATE) / 100;
+    const taxAmount = hasTax ? (amount * TAX_RATE) / 100 : 0;
     const grossAmount = amount + taxAmount;
     subtotal += amount;
     taxTotal += taxAmount;
@@ -85,7 +95,7 @@ function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, f
       grossamt: grossAmount,
       description: feeHead.description,
       custcol_in_nature_of_item: { id: "3" },
-      custcol_in_gst_rate: { id: GST_RATE_ID },
+      ...(hasTax ? { custcol_in_gst_rate: { id: GST_RATE_ID } } : {}),
       ...(hsnInternalId ? { custcol_in_hsn_code: { id: String(hsnInternalId) } } : {}),
       department: { id: formConfig.department_id },
       ...(formConfig.class_id ? { class: { id: formConfig.class_id } } : {}),
@@ -137,64 +147,68 @@ function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, f
   };
 }
 
-// /**
-//  * Build Customer Deposit payload. (COMMENTED OUT — replaced by Customer Payment)
-//  * CD captures the FULL payment amount (includes contributions + tax).
-//  */
-// function buildCustomerDepositData(soId, transaction, formConfig) {
-//   const tranDate = parseDateDDMMYYYY(transaction.Payment_Date);
-//
-//   const igst = parseFloat(transaction.IGST) || 0;
-//   const cgst = parseFloat(transaction.CGST) || 0;
-//   const sgst = parseFloat(transaction.SGST) || 0;
-//   const taxTotal = Number.parseFloat(transaction.Total_Tax);
-//   const mid = firstNonEmpty(transaction.MID);
-//
-//   const gstFields = {};
-//   if (igst > 0) {
-//     gstFields.custbody_inoday_icai_igst_val = igst;
-//   } else if (cgst > 0 || sgst > 0) {
-//     gstFields.custbody_ino_icai_gst_value = cgst;
-//     gstFields.custbody_inoday_icai_sgst_val = sgst;
-//   }
-//
-//   // Resolve CD account from MID mapping -> fallback to config -> fallback to 3341
-//   const midToAccount = msConfig.mid_to_account || {};
-//   const cdAccountId = (mid && midToAccount[mid])
-//     ? midToAccount[mid]
-//     : (msConfig.cd_fallback_account || formConfig.cd_account_id || "3341");
-//
-//   if (mid && !midToAccount[mid]) {
-//     console.warn(
-//       `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cdAccountId}`
-//     );
-//   }
-//
-//   return {
-//     salesorder: { id: String(soId) },
-//     account: { id: String(cdAccountId) },
-//     payment: parseFloat(transaction.Payment_Amount) || 0,
-//     memo: transaction.Payment_Order_Id,
-//     tranDate,
-//     custbody_in_return_form_period: { refName: getMonthYear(tranDate) },
-//     custbody_inoday_payment_ref: transaction.Payment_Order_Id,
-//     custbody_ino_icai_reference_number: transaction.Reference_Number,
-//     custbodypayment_reference_number: transaction.Reference_Number,
-//     custbody_ino_icai_utr: transaction.Reference_Number,
-//     custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
-//     custbody_ino_icai_source_portal_url:
-//       formConfig.source_portal_url || "https://eservices.icai.org/",
-//     custbody40: true,
-//     ...(mid ? { custbody_icai_ino_mid: mid } : {}),
-//     ...(Number.isFinite(taxTotal)
-//       ? { custbody_ino_icai_taxtotal: taxTotal }
-//       : {}),
-//     department: { id: formConfig.department_id },
-//     location: { id: formConfig.location_id },
-//     ...(formConfig.class_id ? { class: { id: formConfig.class_id } } : {}),
-//     ...gstFields,
-//   };
-// }
+/**
+ * Build Customer Deposit payload.
+ * Used by: Student Registration (SO + CD) and Other Forms (SO + CD + Invoice).
+ * CD captures the FULL payment amount and is linked to the Sales Order.
+ */
+function buildCustomerDepositData(soId, transaction, formConfig) {
+  const tranDate = parseDateDDMMYYYY(transaction.Payment_Date);
+
+  const igst = parseFloat(transaction.IGST) || 0;
+  const cgst = parseFloat(transaction.CGST) || 0;
+  const sgst = parseFloat(transaction.SGST) || 0;
+  const taxTotal = Number.parseFloat(transaction.Total_Tax);
+  const mid = firstNonEmpty(transaction.MID);
+
+  const gstFields = {};
+  if (igst > 0) {
+    gstFields.custbody_inoday_icai_igst_val = igst;
+  } else if (cgst > 0 || sgst > 0) {
+    gstFields.custbody_ino_icai_gst_value = cgst;
+    gstFields.custbody_inoday_icai_sgst_val = sgst;
+  }
+
+  const midToAccount = msConfig.mid_to_account || {};
+  const cdAccountId = (mid && midToAccount[mid])
+    ? midToAccount[mid]
+    : (msConfig.cd_fallback_account || formConfig.cd_account_id || null);
+
+  if (mid && !midToAccount[mid]) {
+    console.warn(
+      `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cdAccountId ?? "none (not set in config)"}`
+    );
+  }
+
+  if (!cdAccountId) {
+    console.warn(
+      `[MembershipSync] No account ID resolved for Customer Deposit — mid_to_account, cd_fallback_account, and cd_account_id are all unset.`
+    );
+  }
+
+  return {
+    salesorder: { id: String(soId) },
+    ...(cdAccountId ? { account: { id: String(cdAccountId) } } : {}),
+    payment: parseFloat(transaction.Payment_Amount) || 0,
+    memo: transaction.Payment_Order_Id,
+    tranDate,
+    custbody_in_return_form_period: { refName: getMonthYear(tranDate) },
+    custbody_inoday_payment_ref: transaction.Payment_Order_Id,
+    custbody_ino_icai_reference_number: transaction.Reference_Number,
+    custbodypayment_reference_number: transaction.Reference_Number,
+    custbody_ino_icai_utr: transaction.Reference_Number,
+    custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
+    custbody_ino_icai_source_portal_url:
+      formConfig.source_portal_url || "https://eservices.icai.org/",
+    custbodycreate_middleware: true,
+    ...(mid ? { custbody_icai_ino_mid: mid } : {}),
+    ...(Number.isFinite(taxTotal) ? { custbody_ino_icai_taxtotal: taxTotal } : {}),
+    department: { id: formConfig.department_id },
+    location: { id: formConfig.location_id },
+    ...(formConfig.class_id ? { class: { id: formConfig.class_id } } : {}),
+    ...gstFields,
+  };
+}
 
 /**
  * Build Customer Payment payload.
@@ -218,11 +232,17 @@ function buildCustomerPaymentData(customerInternalId, transaction, formConfig, i
   const midToAccount = msConfig.mid_to_account || {};
   const cpAccountId = (mid && midToAccount[mid])
     ? midToAccount[mid]
-    : (msConfig.cd_fallback_account || formConfig.cd_account_id || "3341");
+    : (msConfig.cd_fallback_account || formConfig.cd_account_id || null);
 
   if (mid && !midToAccount[mid]) {
     console.warn(
-      `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cpAccountId}`
+      `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cpAccountId ?? "none (not set in config)"}`
+    );
+  }
+
+  if (!cpAccountId) {
+    console.warn(
+      `[MembershipSync] No account ID resolved for Customer Payment — mid_to_account, cd_fallback_account, and cd_account_id are all unset.`
     );
   }
 
@@ -356,7 +376,7 @@ function buildJournalEntryData(transaction, contributionItems, formConfig, custo
 
 module.exports = {
   buildSalesOrderData,
-  // buildCustomerDepositData,  // COMMENTED OUT — replaced by Customer Payment
+  buildCustomerDepositData,
   buildCustomerPaymentData,
   buildInvoiceBody,
   buildJournalEntryData,

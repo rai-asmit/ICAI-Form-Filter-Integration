@@ -53,29 +53,23 @@ function firstNonEmpty(...values) {
 function parseFeeHeads(feeHeadArray) {
   if (!Array.isArray(feeHeadArray)) return [];
 
-  return feeHeadArray
-    .map((entry, index) => {
-      const n = index + 1;
-      let code = entry[`FeeHeadCode${n}`] || null;
-      let description = entry[`FeeHead${n}`] || "";
-      let amount = parseFloat(entry[`FeeAmount${n}`]) || 0;
+  const results = [];
 
-      if (!code) {
-        for (const key of Object.keys(entry)) {
-          if (key.startsWith("FeeHeadCode")) {
-            const num = key.replace("FeeHeadCode", "");
-            code = entry[key];
-            description = entry[`FeeHead${num}`] || "";
-            amount = parseFloat(entry[`FeeAmount${num}`]) || 0;
-            break;
-          }
+  for (const entry of feeHeadArray) {
+    for (const key of Object.keys(entry)) {
+      if (key.startsWith("FeeHeadCode")) {
+        const num = key.replace("FeeHeadCode", "");
+        const code = entry[key];
+        const description = entry[`FeeHead${num}`] || "";
+        const amount = parseFloat(entry[`FeeAmount${num}`]) || 0;
+        if (code) {
+          results.push({ code, description, amount });
         }
       }
+    }
+  }
 
-      if (!code) return null;
-      return { code, description, amount };
-    })
-    .filter(Boolean);
+  return results;
 }
 
 function classifyFeeHeads(allFeeHeads, contributionCodes) {
