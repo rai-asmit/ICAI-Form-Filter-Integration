@@ -12,7 +12,7 @@ require("dotenv").config();
 // 🔧 CONFIGURATION
 // ─────────────────────────────────────────────
 // const ACCOUNT_ID = process.env.; // ← replace with your account ID
-const BASE_URL = process.env.NS_BASE_URL || `https://5003897-sb1.suitetalk.api.netsuite.com/services/rest`;
+const BASE_URL = process.env.NS_BASE_URL;
 const REALM = process.env.NS_ACCOUNT;
 
 // load credentials from env vars
