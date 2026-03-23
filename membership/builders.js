@@ -198,13 +198,21 @@ function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, f
 
 /**
  * Build Customer Payment payload.
- * Replaces Customer Deposit — directly settles open invoices via autoApply.
+ * Replaces Customer Deposit — directly settles open invoices + JV via manual apply.
  * Same mapping & process as CD but uses customerPayment endpoint.
  * Payment amount = FULL payment (all items + tax).
+ *
+ * @param {string} customerInternalId - NetSuite internal customer ID
+ * @param {object} transaction - SSP transaction data
+ * @param {object} formConfig - Config for this form type
+ * @param {string} invoiceId - Invoice ID to apply payment against
+ * @param {string|null} jvId - Journal Voucher ID to apply payment against (if contributions exist)
+ * @param {number} totalContribution - Total contribution amount from JV (0 if no JV)
  */
-function buildCustomerPaymentData(customerInternalId, transaction, formConfig) {
+function buildCustomerPaymentData(customerInternalId, transaction, formConfig, invoiceId, jvId, totalContribution) {
   const tranDate = parseDateDDMMYYYY(transaction.Payment_Date);
   const mid = firstNonEmpty(transaction.MID);
+  const paymentAmount = parseFloat(transaction.Payment_Amount) || 0;
 
   // Resolve account from MID mapping -> fallback to config -> fallback to 3341 (same as CD logic)
   const midToAccount = msConfig.mid_to_account || {};
@@ -218,10 +226,28 @@ function buildCustomerPaymentData(customerInternalId, transaction, formConfig) {
     );
   }
 
+  // Build manual apply list — invoice + JV (if created)
+  const invoiceAmount = paymentAmount - (totalContribution || 0);
+  const applyItems = [];
+  if (invoiceId) {
+    applyItems.push({
+      apply: true,
+      doc: { id: String(invoiceId), type: "invoice" },
+      amount: invoiceAmount,
+    });
+  }
+  if (jvId && totalContribution > 0) {
+    applyItems.push({
+      apply: true,
+      doc: { id: String(jvId), type: "journalEntry" },
+      amount: totalContribution,
+    });
+  }
+
   return {
     // ── Required fields ──
     customer: { id: String(customerInternalId), type: "customer" },
-    payment: parseFloat(transaction.Payment_Amount) || 0,
+    payment: paymentAmount,
 
     // ── Classification (same as CD) ──
     department: { id: formConfig.department_id },
@@ -232,8 +258,9 @@ function buildCustomerPaymentData(customerInternalId, transaction, formConfig) {
     // TODO: Temporarily commented out — account IDs from mid_to_account are deposit accounts, not valid for Customer Payment. Update with correct AR account IDs.
     // account: { id: String(cpAccountId) },
 
-    // ── Invoice Application ──
-    autoApply: true,
+    // ── Apply — manual if invoice/JV exist, auto otherwise ──
+    autoApply: applyItems.length === 0,
+    ...(applyItems.length > 0 ? { apply: { items: applyItems } } : {}),
 
     // ── Date & period ──
     tranDate,

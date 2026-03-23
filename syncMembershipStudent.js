@@ -7,17 +7,25 @@
  *   - Form 2   (New Membership)        → Duplicate Customer + SO + Invoice + Customer Payment + JV
  *   - Form 6   (COP Application)       → SO + Invoice + Customer Payment + JV (if contributions)
  *   - Form 3/Fellowship                → SO + Invoice + Customer Payment + JV (if contributions)
- *   - Student Registration Form        → SO + Invoice + Customer Payment (no JV — no contributions)
+ *   - Student Registration Form        → SO + Customer Payment (no Invoice, no JV — no contributions)
  *
- * Fee head classification:
- *   - Regular + Discount items (M05, M06, M07, M08, M09, M10, M99) → Sales Order & Invoice
- *   - Contribution items (M15, M18, M23, M22, M13) → Journal Voucher (Debit 2724, Credit 2764)
- *   - Customer Payment (autoApply) settles invoices directly (replaces Customer Deposit)
+ * Data pipeline:
+ *   1. Fetch transactions from ICAI
+ *   2. Verify duplicates (Reference_Number + Payment_Order_Id)
+ *   3. Save unique records → incoming.json
+ *   4. Process each record — log step results to per-step success/failure files
+ *   5. Save sync-summary.json
+ *
+ * Daily directory: data/YYYY/MM/DD/
+ *   incoming.json, duplicates.json,
+ *   sales-order-success.json, sales-order-failure.json,
+ *   invoice-success.json, invoice-failure.json,
+ *   customer-payment-success.json, customer-payment-failure.json,
+ *   journal-voucher-success.json, journal-voucher-failure.json,
+ *   sync-summary.json
  */
 
 require("dotenv").config();
-const fs = require("fs");
-const path = require("path");
 const pLimit = require("p-limit").default;
 const { Mutex } = require("async-mutex");
 
@@ -25,7 +33,6 @@ const {
   netsuiteRequest,
   fetchAllCustomers,
   createSalesOrder,
-  // createCustomerDeposit,  // COMMENTED OUT — replaced by Customer Payment
   createCustomerPayment,
   createTransFormRecordInvoice,
 } = require("./netsuiteClient--Rest");
@@ -43,12 +50,12 @@ const {
 } = require("./membership/helpers");
 const {
   buildSalesOrderData,
-  // buildCustomerDepositData,  // COMMENTED OUT — replaced by Customer Payment
   buildCustomerPaymentData,
   buildInvoiceBody,
   buildJournalEntryData,
 } = require("./membership/builders");
 const { duplicateCustomerAsMember } = require("./membership/customerDuplicate");
+const stateManager = require("./membership/stateManager");
 
 // ── Constants ────────────────────────────────────────────────────────────────
 const CONCURRENCY_LIMIT = 3;
@@ -68,11 +75,13 @@ async function createJournalEntry(data) {
  *   1. Parse & classify fee heads (Regular/Discount → SO, Contribution → JV)
  *   2. [Form 2] Duplicate customer (Student → Member)
  *   3. Create Sales Order (Regular + Discount items only, with tax)
- *   4. Transform SO → Invoice
- *   5. Create Customer Payment (autoApply settles invoices directly)
- *   6. Create Journal Voucher (contribution items only, if any)
+ *   4. Transform SO → Invoice (skip for Student Registration Form)
+ *   5. Create Journal Voucher (contribution items only, if any)
+ *   6. Create Customer Payment
+ *
+ * Each step's result is logged to the appropriate success/failure file.
  */
-async function processTransaction(transaction, customerMap, formConfig) {
+async function processTransaction(transaction, customerMap, formConfig, dailyDir) {
   const ref = transaction.Reference_Number;
   const form = transaction.Form_Description;
 
@@ -85,6 +94,21 @@ async function processTransaction(transaction, customerMap, formConfig) {
     success: false,
     error: null,
   };
+
+  // Helper — log step result to the correct daily file
+  const logStep = (step, success, extra = {}) => {
+    stateManager.logStepResult(dailyDir, step, {
+      reference: ref,
+      form,
+      customerId: transaction.Customer_ID,
+      paymentOrderId: transaction.Payment_Order_Id,
+      success,
+      timestamp: new Date().toISOString(),
+      ...extra,
+    });
+  };
+
+  let currentStep = "init";
 
   try {
     // ── Step 1: Parse & classify fee heads ────────────────────────────────────
@@ -155,6 +179,8 @@ async function processTransaction(transaction, customerMap, formConfig) {
     };
 
     // ── Step 3: Create Sales Order (Regular + Discount items only) ────────────
+    currentStep = "sales-order";
+
     if (invoiceItems.length === 0) {
       throw new Error(
         "No invoice items (Regular/Discount) found — cannot create Sales Order"
@@ -189,31 +215,91 @@ async function processTransaction(transaction, customerMap, formConfig) {
       tranId: soResponse.tranid || null,
     };
     console.log(`[MembershipSync] [${ref}] SO created: ${soId}`);
+    logStep("sales-order", true, { salesOrderId: soId, tranId: soResponse.tranid || null });
 
     // ── Step 4: Transform SO → Invoice ───────────────────────────────────────
-    // Invoice must be created BEFORE Customer Payment so autoApply can find it
-    const invoiceBody = buildInvoiceBody(transaction, formConfig);
-    console.log(
-      `[MembershipSync] [${ref}] Creating Invoice from SO ${soId}...`
-    );
-    const invoiceResponse = await withRetry(
-      () => createTransFormRecordInvoice(soId, invoiceBody),
-      `Invoice:${ref}`
-    );
-    if (!invoiceResponse || !invoiceResponse.id) {
-      console.error(`[MembershipSync] [${ref}] Invoice response was null/empty:`, JSON.stringify(invoiceResponse));
-      throw new Error(`Invoice creation returned no ID — response: ${JSON.stringify(invoiceResponse)}`);
-    }
-    const invoiceId = invoiceResponse.id;
-    result.steps.invoice = { success: true, id: invoiceId };
-    console.log(`[MembershipSync] [${ref}] Invoice created: ${invoiceId}`);
+    // Skip invoice creation for Student Registration Form
+    currentStep = "invoice";
+    let invoiceId = null;
+    const isStudentRegistration = form === "Student Registration Form";
 
-    // ── Step 5: Create Customer Payment (replaces Customer Deposit) ─────────
-    // Customer Payment with autoApply: true directly settles open invoices
-    const cpData = buildCustomerPaymentData(customerInternalId, transaction, formConfig);
-    const resolvedCpAccount = cpData.account?.id || "unknown";
+    if (isStudentRegistration) {
+      console.log(`[MembershipSync] [${ref}] Skipping Invoice creation (Student Registration Form)`);
+      result.steps.invoice = { success: true, skipped: true, reason: "Student Registration Form — no invoice required" };
+      logStep("invoice", true, { skipped: true, reason: "Student Registration Form" });
+    } else {
+      const invoiceBody = buildInvoiceBody(transaction, formConfig);
+      console.log(
+        `[MembershipSync] [${ref}] Creating Invoice from SO ${soId}...`
+      );
+      const invoiceResponse = await withRetry(
+        () => createTransFormRecordInvoice(soId, invoiceBody),
+        `Invoice:${ref}`
+      );
+      if (!invoiceResponse || !invoiceResponse.id) {
+        console.error(`[MembershipSync] [${ref}] Invoice response was null/empty:`, JSON.stringify(invoiceResponse));
+        throw new Error(`Invoice creation returned no ID — response: ${JSON.stringify(invoiceResponse)}`);
+      }
+      invoiceId = invoiceResponse.id;
+      result.steps.invoice = { success: true, id: invoiceId };
+      console.log(`[MembershipSync] [${ref}] Invoice created: ${invoiceId}`);
+      logStep("invoice", true, { invoiceId, salesOrderId: soId });
+    }
+
+    // ── Step 5: Create JV for contributions (if any) ─────────────────────────
+    // JV must be created BEFORE Customer Payment so it can be included in the manual apply list
+    let jvId = null;
+    let totalContribution = 0;
+    if (contributionItems.length > 0) {
+      currentStep = "journal-voucher";
+      try {
+        const vendorMap = msConfig.contribution_vendor_mapping || {};
+        totalContribution = contributionItems.reduce((sum, item) => sum + item.amount, 0);
+
+        const jvData = buildJournalEntryData(
+          transaction,
+          contributionItems,
+          formConfig,
+          customerInternalId,
+          vendorMap
+        );
+        if (jvData) {
+          console.log(
+            `[MembershipSync] [${ref}] Creating JV for ${contributionItems.length} contribution item(s) (total: ${totalContribution})...`
+          );
+          const jvResponse = await withRetry(
+            () => createJournalEntry(jvData),
+            `JV:${ref}`
+          );
+          jvId = jvResponse.id;
+          result.steps.journalVoucher = { success: true, id: jvId };
+          console.log(`[MembershipSync] [${ref}] JV created: ${jvId}`);
+          logStep("journal-voucher", true, { journalVoucherId: jvId, amount: totalContribution });
+        }
+      } catch (err) {
+        console.error(
+          `[MembershipSync] [${ref}] JV creation failed (non-blocking): ${err.response?.data ? JSON.stringify(err.response.data) : err.message}`
+        );
+        result.steps.journalVoucher = {
+          success: false,
+          error: err.response?.data ?? err.message,
+        };
+        logStep("journal-voucher", false, { error: err.response?.data ?? err.message, amount: totalContribution });
+      }
+    }
+
+    // ── Step 6: Create Customer Payment ──────────────────────────────────────
+    // Manual apply — targets invoice + JV (if created) from this transaction
+    currentStep = "customer-payment";
+    const cpData = buildCustomerPaymentData(customerInternalId, transaction, formConfig, invoiceId, jvId, totalContribution);
+    const resolvedCpAccount = cpData.account?.id || "default";
+    const applyDesc = jvId
+      ? `Invoice ${invoiceId} + JV ${jvId}`
+      : invoiceId
+        ? `Invoice ${invoiceId}`
+        : "autoApply";
     console.log(
-      `[MembershipSync] [${ref}] Creating Customer Payment (amount: ${transaction.Payment_Amount}, MID: ${transaction.MID || "N/A"}, account: ${resolvedCpAccount})...`
+      `[MembershipSync] [${ref}] Creating Customer Payment (amount: ${transaction.Payment_Amount}, MID: ${transaction.MID || "N/A"}, account: ${resolvedCpAccount}, apply → ${applyDesc})...`
     );
     const cpResponse = await withRetry(
       () => createCustomerPayment(cpData),
@@ -225,41 +311,8 @@ async function processTransaction(transaction, customerMap, formConfig) {
     }
     const cpId = cpResponse.id;
     result.steps.customerPayment = { success: true, id: cpId };
-    console.log(`[MembershipSync] [${ref}] Customer Payment created: ${cpId} (autoApply → Invoice ${invoiceId})`);
-
-    // ── Step 6: Create JV for contributions (if any) ─────────────────────────
-    if (contributionItems.length > 0) {
-      try {
-        const vendorMap = msConfig.contribution_vendor_mapping || {};
-
-        const jvData = buildJournalEntryData(
-          transaction,
-          contributionItems,
-          formConfig,
-          customerInternalId,
-          vendorMap
-        );
-        if (jvData) {
-          console.log(
-            `[MembershipSync] [${ref}] Creating JV for ${contributionItems.length} contribution item(s)...`
-          );
-          const jvResponse = await withRetry(
-            () => createJournalEntry(jvData),
-            `JV:${ref}`
-          );
-          result.steps.journalVoucher = { success: true, id: jvResponse.id };
-          console.log(`[MembershipSync] [${ref}] JV created: ${jvResponse.id}`);
-        }
-      } catch (err) {
-        console.error(
-          `[MembershipSync] [${ref}] JV creation failed (non-blocking): ${err.response?.data ? JSON.stringify(err.response.data) : err.message}`
-        );
-        result.steps.journalVoucher = {
-          success: false,
-          error: err.response?.data ?? err.message,
-        };
-      }
-    }
+    console.log(`[MembershipSync] [${ref}] Customer Payment created: ${cpId} (applied → ${applyDesc})`);
+    logStep("customer-payment", true, { customerPaymentId: cpId, amount: transaction.Payment_Amount });
 
     result.success = true;
     console.log(
@@ -271,36 +324,14 @@ async function processTransaction(transaction, customerMap, formConfig) {
     console.error(
       `[MembershipSync] [${ref}] Transaction FAILED: ${JSON.stringify(result.error)}`
     );
+
+    // Log failure for the step that threw (JV logs its own failure — it's non-blocking)
+    if (["sales-order", "invoice", "customer-payment"].includes(currentStep)) {
+      logStep(currentStep, false, { error: err.response?.data ?? err.message });
+    }
   }
 
   return result;
-}
-
-// ═══════════════════════════════════════════════════════════════════════════════
-// RESULTS LOGGER
-// ═══════════════════════════════════════════════════════════════════════════════
-
-function saveResults(results) {
-  const now = new Date();
-  const dateDir = path.join(
-    __dirname,
-    "data",
-    "membership",
-    String(now.getFullYear()),
-    String(now.getMonth() + 1).padStart(2, "0"),
-    String(now.getDate()).padStart(2, "0")
-  );
-
-  if (!fs.existsSync(dateDir)) {
-    fs.mkdirSync(dateDir, { recursive: true });
-  }
-
-  const timestamp = now.toISOString().replace(/[:.]/g, "-");
-  const filePath = path.join(dateDir, `sync-results-${timestamp}.json`);
-
-  fs.writeFileSync(filePath, JSON.stringify(results, null, 2), "utf-8");
-  console.log(`[MembershipSync] Results saved: ${filePath}`);
-  return filePath;
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -322,14 +353,22 @@ async function runMembershipStudentSync({ integrationId } = {}) {
   const startTime = Date.now();
 
   try {
-    // ── 1. Authenticate ──────────────────────────────────────────────────────
+    // ── 1. Initialize daily data directory ──────────────────────────────────
+    const dailyDir = stateManager.getDailyDir();
+    console.log(`[MembershipSync] Daily data directory: ${dailyDir}`);
+
+    // ── 2. Authenticate ──────────────────────────────────────────────────────
     const tokenid = await authenticate();
 
-    // ── 2. Fetch transactions ────────────────────────────────────────────────
+    // ── 3. Fetch transactions ────────────────────────────────────────────────
     const allTransactions = await fetchTransactions(tokenid);
     console.log(
       `[MembershipSync] Total fetched from ICAI: ${allTransactions.length}`
     );
+
+    // Save all raw transactions from ICAI before any filtering
+    stateManager.writeFile(dailyDir, "transaction.json", allTransactions);
+    console.log(`[MembershipSync] Saved ${allTransactions.length} raw transactions to transaction.json`);
 
     if (allTransactions.length === 0) {
       return {
@@ -339,7 +378,7 @@ async function runMembershipStudentSync({ integrationId } = {}) {
       };
     }
 
-    // ── 3. Filter for membership/student forms ───────────────────────────────
+    // ── 4. Filter for membership/student forms ───────────────────────────────
     const allowedForms = getAllAllowedForms();
     const matchingTransactions = allTransactions.filter((t) =>
       allowedForms.includes(t.Form_Description)
@@ -371,7 +410,7 @@ async function runMembershipStudentSync({ integrationId } = {}) {
       };
     }
 
-    // ── 4. Pre-validate: check subsidiary config ─────────────────────────────
+    // ── 5. Pre-validate: check subsidiary config ─────────────────────────────
     const invalidTransactions = [];
     const validTransactions = [];
 
@@ -410,9 +449,39 @@ async function runMembershipStudentSync({ integrationId } = {}) {
       };
     }
 
-    // ── 5. Fetch customers from NetSuite (batched) ───────────────────────────
+    // ── 6. Filter duplicates (by Reference_Number + Payment_Order_Id) ────────
+    const { unique, duplicates } = stateManager.filterDuplicates(validTransactions);
+
+    console.log(
+      `[MembershipSync] Unique: ${unique.length} | Duplicates: ${duplicates.length}`
+    );
+
+    // Save incoming unique records and duplicates to daily directory
+    stateManager.appendToFile(dailyDir, "incoming.json", unique);
+    if (duplicates.length > 0) {
+      stateManager.appendToFile(dailyDir, "duplicates.json", duplicates);
+      console.log(
+        `[MembershipSync] Duplicate references: ${duplicates.map((d) => d.Reference_Number).join(", ")}`
+      );
+    }
+
+    // Mark as processed to prevent re-processing on next sync
+    stateManager.markAsProcessed(unique);
+
+    if (unique.length === 0) {
+      return {
+        success: true,
+        message: "All valid transactions are duplicates — already processed",
+        totalFetched: allTransactions.length,
+        totalMatching: matchingTransactions.length,
+        duplicatesSkipped: duplicates.length,
+        processed: 0,
+      };
+    }
+
+    // ── 7. Fetch customers from NetSuite (batched) ───────────────────────────
     const uniqueCustomerIds = [
-      ...new Set(validTransactions.map((t) => t.Customer_ID)),
+      ...new Set(unique.map((t) => t.Customer_ID)),
     ];
     console.log(
       `[MembershipSync] Fetching ${uniqueCustomerIds.length} customers from NetSuite...`
@@ -439,39 +508,43 @@ async function runMembershipStudentSync({ integrationId } = {}) {
       `[MembershipSync] Found ${Object.keys(customerMap).length}/${uniqueCustomerIds.length} customers`
     );
 
-    // ── 6. Process each transaction ──────────────────────────────────────────
+    // ── 8. Process each transaction ──────────────────────────────────────────
     const limit = pLimit(CONCURRENCY_LIMIT);
     const allResults = [];
 
-    const tasks = validTransactions.map((transaction, index) =>
+    const tasks = unique.map((transaction, index) =>
       limit(async () => {
         const formConfig = getConfigForForm(transaction.Form_Description);
         console.log(
-          `\n[MembershipSync] ── [${index + 1}/${validTransactions.length}] ${transaction.Reference_Number} (${transaction.Form_Description}) ──`
+          `\n[MembershipSync] ── [${index + 1}/${unique.length}] ${transaction.Reference_Number} (${transaction.Form_Description}) ──`
         );
-        return processTransaction(transaction, customerMap, formConfig);
+        return processTransaction(transaction, customerMap, formConfig, dailyDir);
       })
     );
 
     const results = await Promise.all(tasks);
     allResults.push(...results);
 
-    // ── 7. Save results ──────────────────────────────────────────────────────
-    const resultsFile = saveResults({
-      syncedAt: new Date().toISOString(),
-      durationMs: Date.now() - startTime,
-      totalFetched: allTransactions.length,
-      totalMatching: matchingTransactions.length,
-      totalProcessed: validTransactions.length,
-      skipped: invalidTransactions,
-      results: allResults,
-    });
-
-    // ── 8. Summary ───────────────────────────────────────────────────────────
+    // ── 9. Save sync summary ─────────────────────────────────────────────────
     const successCount = allResults.filter((r) => r.success).length;
     const failCount = allResults.filter((r) => !r.success).length;
     const durationMs = Date.now() - startTime;
 
+    stateManager.writeFile(dailyDir, "sync-summary.json", {
+      syncedAt: new Date().toISOString(),
+      durationMs,
+      totalFetched: allTransactions.length,
+      totalMatching: matchingTransactions.length,
+      totalValid: validTransactions.length,
+      duplicatesSkipped: duplicates.length,
+      configSkipped: invalidTransactions.length,
+      totalProcessed: unique.length,
+      successCount,
+      failCount,
+      results: allResults,
+    });
+
+    // ── 10. Console summary ──────────────────────────────────────────────────
     console.log(
       `\n[MembershipSync] ════════════════════════════════════════`
     );
@@ -483,7 +556,10 @@ async function runMembershipStudentSync({ integrationId } = {}) {
       `[MembershipSync]   Matching Forms   : ${matchingTransactions.length}`
     );
     console.log(
-      `[MembershipSync]   Processed        : ${validTransactions.length}`
+      `[MembershipSync]   Duplicates       : ${duplicates.length}`
+    );
+    console.log(
+      `[MembershipSync]   Processed        : ${unique.length}`
     );
     console.log(
       `[MembershipSync]   Success          : ${successCount}`
@@ -508,9 +584,10 @@ async function runMembershipStudentSync({ integrationId } = {}) {
       totalMatching: matchingTransactions.length,
       processed: successCount,
       failed: failCount,
+      duplicatesSkipped: duplicates.length,
       configSkipped: invalidTransactions.length,
       durationMs,
-      resultsFile,
+      dailyDir,
       details: allResults.map((r) => ({
         reference: r.reference,
         form: r.form,

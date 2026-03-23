@@ -151,25 +151,20 @@ async function createTransFormRecordInvoice(salesOrderId, body = {}) {
   return netsuiteRequest("POST", `/services/rest/record/v1/salesOrder/${salesOrderId}/!transform/invoice`, body);
 }
 
-// /***
-//  * Customer Deposit (COMMENTED OUT — replaced by Customer Payment)
-//  * JSON structure based on NetSuite REST API schema gainst the salesOrder record.
-//  * https://www.netsuite.com/portal/developers/resources/apis/rest-api/schema-records/customerDeposit.shtml
-//
-// {
-//   "salesorder": { "id": "5298034" },
-//   "payment": 500.00,
-//   "memo": "Deposit created via REST API"
-// }
-//
-//  */
-//
-//
-// async function createCustomerDeposit(data) {
-//   const customerDepositNSData = data;
-//
-//   return netsuiteRequest("POST", `/services/rest/record/v1/customerDeposit`, customerDepositNSData);
-// }
+/***
+ * Customer Deposit
+ * Used by Exam Enrollment & other forms (SO → Customer Deposit → Invoice flow).
+ * https://www.netsuite.com/portal/developers/resources/apis/rest-api/schema-records/customerDeposit.shtml
+ *
+ * {
+ *   "salesorder": { "id": "5298034" },
+ *   "payment": 500.00,
+ *   "memo": "Deposit created via REST API"
+ * }
+ */
+async function createCustomerDeposit(data) {
+  return netsuiteRequest("POST", `/services/rest/record/v1/customerDeposit`, data);
+}
 
 /***
  * Customer Payment
@@ -221,7 +216,7 @@ module.exports = {
   fetchAllCustomers,
   createSalesOrder,
   netsuiteRequest,
-  // createCustomerDeposit,  // COMMENTED OUT — replaced by Customer Payment
+  createCustomerDeposit,
   createCustomerPayment,
   createTransFormRecordInvoice
 };
