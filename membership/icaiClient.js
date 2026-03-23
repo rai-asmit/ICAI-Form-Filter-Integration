@@ -29,15 +29,12 @@ async function authenticate() {
 }
 
 async function fetchTransactions(tokenid) {
-  // Auto date: yesterday (date - 1) in DD/MM/YYYY format
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
-  const autoDate = `${String(yesterday.getDate()).padStart(2, "0")}/${String(yesterday.getMonth() + 1).padStart(2, "0")}/${yesterday.getFullYear()}`;
+  const dateFilter = `${String(yesterday.getDate()).padStart(2, "0")}/${String(yesterday.getMonth() + 1).padStart(2, "0")}/${yesterday.getFullYear()}`;
 
-  // const fromDate = autoDate;
-  // const toDate = autoDate;
-  const fromDate = process.env.FROM_DATE || "12/03/2026";
-  const toDate = process.env.TO_DATE || fromDate;
+  const fromDate = dateFilter;
+  const toDate = dateFilter;
 
   const NUMBER_OF_RECORDS = 800;
   const DELAY_MS = 3000;

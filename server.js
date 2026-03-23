@@ -150,8 +150,10 @@ app.post("/webhook/examination/:id", async (req, res) => {
   }
 });
 
-app.listen(3003, () => {
-  console.log("Server running on port 3003");
+const PORT = process.env.PORT || 3003;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
   console.log("Endpoints:");
   console.log("  POST /webhook/membership/:id    -> Auth + Fetch ICAI + SO + Invoice + CP + JV (Membership/Student)");
   console.log("  POST /webhook/examination/:id   -> Auth + Fetch ICAI + SO + Customer Deposit + Invoice (Exam/Other)");

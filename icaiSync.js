@@ -88,11 +88,9 @@ async function authenticate() {
 
 // Fetch Transactions
 async function fetchTransactions(tokenid) {
-    const dateFilter = "12/03/2026";
-    // For dynamic yesterday, replace the line above with:
-    // const yesterday = new Date();
-    // yesterday.setDate(yesterday.getDate() - 1);
-    // const dateFilter = `${String(yesterday.getDate()).padStart(2,'0')}/${String(yesterday.getMonth()+1).padStart(2,'0')}/${yesterday.getFullYear()}`;
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const dateFilter = `${String(yesterday.getDate()).padStart(2, "0")}/${String(yesterday.getMonth() + 1).padStart(2, "0")}/${yesterday.getFullYear()}`;
 
     const NUMBER_OF_RECORDS = 800;
     const DELAY_MS = 3000;
