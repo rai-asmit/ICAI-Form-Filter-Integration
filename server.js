@@ -1,6 +1,5 @@
 const express = require("express");
-const { runMembershipStudentSync } = require("./syncMembershipStudent");
-const { runExamEnrollmentSync } = require("./syncExamEnrollment");
+const { runFormBasedSync } = require("./syncFormBasedTransactions");
 
 const app = express();
 app.use(express.json());
@@ -88,9 +87,8 @@ async function runWithLogging(integrationId, source, fn) {
   }
 }
 
-// Membership & Student Registration — SO + CD + JV + Invoice in one flow
-// Handles: Form 2 (New Membership), Form 6 (COP), Form 3/Fellowship, Student Registration Form
-app.post("/webhook/membership/:id", async (req, res) => {
+// Unified Form-Based Transactions — fetches once, splits by form, processes both pipelines
+app.post("/webhook/form-based-transactions/:id", async (req, res) => {
   const integrationId = req.params.id;
 
   if (!integrationId) {
@@ -101,48 +99,17 @@ app.post("/webhook/membership/:id", async (req, res) => {
   }
 
   try {
-    streamLog(integrationId, "info", "[Membership Webhook] Starting Membership/Student Sync...", "webhook");
+    streamLog(integrationId, "info", "[FormSync Webhook] Starting Form-Based Transaction Sync...", "webhook");
     const result = await runWithLogging(
       integrationId,
-      "Membership Student Sync",
-      () => runMembershipStudentSync({ integrationId })
+      "Form-Based Transaction Sync",
+      () => runFormBasedSync({ integrationId })
     );
-    streamLog(integrationId, "info", `[Membership Webhook] Sync completed: ${JSON.stringify({ processed: result.processed, failed: result.failed })}`, "webhook");
+    streamLog(integrationId, "info", `[FormSync Webhook] Sync completed: ${JSON.stringify({ totalProcessed: result.totalProcessed, totalFailed: result.totalFailed })}`, "webhook");
 
     res.json(result);
   } catch (e) {
-    streamLog(integrationId, "error", `[Membership Webhook] Error: ${e.message}`, "webhook");
-    res.status(500).json({
-      success: false,
-      error: e.message,
-    });
-  }
-});
-
-// Exam Enrollment & Other Forms — SO + Customer Deposit + Invoice
-// Handles: All forms NOT handled by membership/student (Exam Enrollment, etc.)
-app.post("/webhook/examination/:id", async (req, res) => {
-  const integrationId = req.params.id;
-
-  if (!integrationId) {
-    return res.status(400).json({
-      success: false,
-      error: "Integration ID is required",
-    });
-  }
-
-  try {
-    streamLog(integrationId, "info", "[Exam Webhook] Starting Exam Enrollment Sync...", "webhook");
-    const result = await runWithLogging(
-      integrationId,
-      "Exam Enrollment Sync",
-      () => runExamEnrollmentSync({ integrationId })
-    );
-    streamLog(integrationId, "info", `[Exam Webhook] Sync completed: ${JSON.stringify({ processed: result.processed, failed: result.failed })}`, "webhook");
-
-    res.json(result);
-  } catch (e) {
-    streamLog(integrationId, "error", `[Exam Webhook] Error: ${e.message}`, "webhook");
+    streamLog(integrationId, "error", `[FormSync Webhook] Error: ${e.message}`, "webhook");
     res.status(500).json({
       success: false,
       error: e.message,
@@ -155,6 +122,5 @@ const PORT = process.env.PORT || 3003;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log("Endpoints:");
-  console.log("  POST /webhook/membership/:id    -> Auth + Fetch ICAI + SO + Invoice + CP + JV (Membership/Student)");
-  console.log("  POST /webhook/examination/:id   -> Auth + Fetch ICAI + SO + Customer Deposit + Invoice (Exam/Other)");
+  console.log("  POST /webhook/form-based-transactions/:id -> Fetch ICAI once, split by form, process Membership + Exam pipelines");
 });

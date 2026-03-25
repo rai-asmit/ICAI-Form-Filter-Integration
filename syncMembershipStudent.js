@@ -28,8 +28,6 @@
 
 require("dotenv").config();
 const pLimit = require("p-limit").default;
-const { Mutex } = require("async-mutex");
-
 const {
   netsuiteRequest,
   fetchAllCustomers,
@@ -61,8 +59,7 @@ const { duplicateCustomerAsMember } = require("./membership/customerDuplicate");
 const stateManager = require("./membership/stateManager");
 
 // ── Constants ────────────────────────────────────────────────────────────────
-const CONCURRENCY_LIMIT = 3;
-const syncMutex = new Mutex();
+const CONCURRENCY_LIMIT = 40;
 
 // ── NetSuite JV creation ─────────────────────────────────────────────────────
 async function createJournalEntry(data) {
@@ -369,18 +366,7 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
 // MAIN ENTRY POINT
 // ═══════════════════════════════════════════════════════════════════════════════
 
-async function runMembershipStudentSync({ integrationId } = {}) {
-  if (syncMutex.isLocked()) {
-    console.log(
-      "[MembershipSync] Sync already running — request cancelled."
-    );
-    return {
-      success: false,
-      message: "Membership/Student sync already in progress. Try again later.",
-    };
-  }
-
-  const release = await syncMutex.acquire();
+async function runMembershipStudentSync({ integrationId, transactions } = {}) {
   const startTime = Date.now();
 
   try {
@@ -388,57 +374,69 @@ async function runMembershipStudentSync({ integrationId } = {}) {
     const dailyDir = stateManager.getDailyDir();
     console.log(`[MembershipSync] Daily data directory: ${dailyDir}`);
 
-    // ── 2. Authenticate ──────────────────────────────────────────────────────
-    const tokenid = await authenticate();
+    // ── 2. Get transactions (pre-fetched from orchestrator or fetch directly) ──
+    let matchingTransactions;
 
-    // ── 3. Fetch transactions ────────────────────────────────────────────────
-    const allTransactions = await fetchTransactions(tokenid);
-    console.log(
-      `[MembershipSync] Total fetched from ICAI: ${allTransactions.length}`
-    );
-
-    // Save all raw transactions from ICAI before any filtering
-    stateManager.writeFile(dailyDir, "transaction.json", allTransactions);
-    console.log(`[MembershipSync] Saved ${allTransactions.length} raw transactions to transaction.json`);
-
-    if (allTransactions.length === 0) {
-      return {
-        success: true,
-        message: "No transactions fetched from ICAI",
-        processed: 0,
-      };
-    }
-
-    // ── 4. Filter for membership/student forms ───────────────────────────────
-    const allowedForms = getAllAllowedForms();
-    const matchingTransactions = allTransactions.filter((t) =>
-      allowedForms.includes(t.Form_Description)
-    );
-    const rejectedTransactions = allTransactions.filter(
-      (t) => !allowedForms.includes(t.Form_Description)
-    );
-
-    console.log(
-      `[MembershipSync] Matching: ${matchingTransactions.length} | ` +
-        `Rejected: ${rejectedTransactions.length}`
-    );
-
-    if (rejectedTransactions.length > 0) {
-      const rejectedForms = [
-        ...new Set(rejectedTransactions.map((t) => t.Form_Description)),
-      ];
+    if (transactions && transactions.length > 0) {
+      // Pre-filtered membership/student transactions passed from orchestrator
+      matchingTransactions = transactions;
       console.log(
-        `[MembershipSync] Rejected form types: ${rejectedForms.join(", ")}`
+        `[MembershipSync] Using ${matchingTransactions.length} pre-filtered membership/student transactions`
       );
-    }
-
-    if (matchingTransactions.length === 0) {
+    } else if (transactions && transactions.length === 0) {
       return {
         success: true,
         message: "No matching membership/student transactions found",
-        totalFetched: allTransactions.length,
         processed: 0,
       };
+    } else {
+      // Standalone mode — fetch and filter ourselves
+      const tokenid = await authenticate();
+      const allTransactions = await fetchTransactions(tokenid);
+      console.log(
+        `[MembershipSync] Total fetched from ICAI: ${allTransactions.length}`
+      );
+
+      stateManager.writeFile(dailyDir, "transaction.json", allTransactions);
+      console.log(`[MembershipSync] Saved ${allTransactions.length} raw transactions to transaction.json`);
+
+      if (allTransactions.length === 0) {
+        return {
+          success: true,
+          message: "No transactions fetched from ICAI",
+          processed: 0,
+        };
+      }
+
+      const allowedForms = getAllAllowedForms();
+      matchingTransactions = allTransactions.filter((t) =>
+        allowedForms.includes(t.Form_Description)
+      );
+      const rejectedTransactions = allTransactions.filter(
+        (t) => !allowedForms.includes(t.Form_Description)
+      );
+
+      console.log(
+        `[MembershipSync] Matching: ${matchingTransactions.length} | ` +
+          `Rejected: ${rejectedTransactions.length}`
+      );
+
+      if (rejectedTransactions.length > 0) {
+        const rejectedForms = [
+          ...new Set(rejectedTransactions.map((t) => t.Form_Description)),
+        ];
+        console.log(
+          `[MembershipSync] Rejected form types: ${rejectedForms.join(", ")}`
+        );
+      }
+
+      if (matchingTransactions.length === 0) {
+        return {
+          success: true,
+          message: "No matching membership/student transactions found",
+          processed: 0,
+        };
+      }
     }
 
     // ── 5. Pre-validate: check subsidiary config ─────────────────────────────
@@ -473,7 +471,6 @@ async function runMembershipStudentSync({ integrationId } = {}) {
       return {
         success: true,
         message: "All matching transactions skipped due to missing config",
-        totalFetched: allTransactions.length,
         totalMatching: matchingTransactions.length,
         skipped: invalidTransactions,
         processed: 0,
@@ -503,7 +500,6 @@ async function runMembershipStudentSync({ integrationId } = {}) {
       return {
         success: true,
         message: "All valid transactions are duplicates — already processed",
-        totalFetched: allTransactions.length,
         totalMatching: matchingTransactions.length,
         duplicatesSkipped: duplicates.length,
         processed: 0,
@@ -564,7 +560,6 @@ async function runMembershipStudentSync({ integrationId } = {}) {
     stateManager.writeFile(dailyDir, "sync-summary.json", {
       syncedAt: new Date().toISOString(),
       durationMs,
-      totalFetched: allTransactions.length,
       totalMatching: matchingTransactions.length,
       totalValid: validTransactions.length,
       duplicatesSkipped: duplicates.length,
@@ -580,9 +575,6 @@ async function runMembershipStudentSync({ integrationId } = {}) {
       `\n[MembershipSync] ════════════════════════════════════════`
     );
     console.log(`[MembershipSync] SYNC COMPLETE`);
-    console.log(
-      `[MembershipSync]   Total Fetched    : ${allTransactions.length}`
-    );
     console.log(
       `[MembershipSync]   Matching Forms   : ${matchingTransactions.length}`
     );
@@ -611,7 +603,6 @@ async function runMembershipStudentSync({ integrationId } = {}) {
     return {
       success: true,
       message: `Processed ${successCount} transactions successfully, ${failCount} failed`,
-      totalFetched: allTransactions.length,
       totalMatching: matchingTransactions.length,
       processed: successCount,
       failed: failCount,
@@ -631,8 +622,6 @@ async function runMembershipStudentSync({ integrationId } = {}) {
   } catch (err) {
     console.error("[MembershipSync] Fatal error:", err);
     throw err;
-  } finally {
-    release();
   }
 }
 

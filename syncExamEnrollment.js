@@ -22,7 +22,6 @@
 
 require("dotenv").config();
 const pLimit = require("p-limit").default;
-const { Mutex } = require("async-mutex");
 
 const {
   fetchAllCustomers,
@@ -38,13 +37,13 @@ const {
   buildExamSalesOrderData,
   buildExamCustomerDepositData,
   buildExamInvoiceBody,
+  parseFeeHeads,
   getMatchedItem,
   parseDateDDMMYYYY,
 } = require("./examination/builders");
 
 // ── Constants ────────────────────────────────────────────────────────────────
-const CONCURRENCY_LIMIT = 3;
-const syncMutex = new Mutex();
+const CONCURRENCY_LIMIT = 40;
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // SINGLE TRANSACTION PROCESSOR
@@ -102,6 +101,9 @@ async function processTransaction(transaction, customerMap, dailyDir) {
     // ── Step 2: Create Sales Order ────────────────────────────────────────
     currentStep = "sales-order";
     const soData = buildExamSalesOrderData(transaction, customerInternalId);
+    if (!soData) {
+      throw new Error("Failed to build Sales Order — no valid line items with mapped fee head codes");
+    }
 
     console.log(`[ExamSync] [${ref}] Creating Sales Order...`);
     const soResponse = await withRetry(
@@ -133,8 +135,9 @@ async function processTransaction(transaction, customerMap, dailyDir) {
 
     // ── Step 3: Create Customer Deposit ───────────────────────────────────
     currentStep = "customer-deposit";
-    const feeHeadCode = transaction.Fee_Head?.[0]?.FeeHeadCode1 ?? null;
-    const matchedItem = getMatchedItem(feeHeadCode);
+    const feeHeads = parseFeeHeads(transaction.Fee_Head);
+    const firstFeeHeadCode = feeHeads.length > 0 ? feeHeads[0].code : null;
+    const matchedItem = getMatchedItem(firstFeeHeadCode);
     const cdData = buildExamCustomerDepositData(
       soId,
       transaction,
@@ -219,16 +222,7 @@ async function processTransaction(transaction, customerMap, dailyDir) {
 // MAIN ENTRY POINT
 // ═══════════════════════════════════════════════════════════════════════════════
 
-async function runExamEnrollmentSync({ integrationId } = {}) {
-  if (syncMutex.isLocked()) {
-    console.log("[ExamSync] Sync already running — request cancelled.");
-    return {
-      success: false,
-      message: "Exam Enrollment sync already in progress. Try again later.",
-    };
-  }
-
-  const release = await syncMutex.acquire();
+async function runExamEnrollmentSync({ integrationId, transactions } = {}) {
   const startTime = Date.now();
 
   try {
@@ -236,58 +230,70 @@ async function runExamEnrollmentSync({ integrationId } = {}) {
     const dailyDir = stateManager.getDailyDir();
     console.log(`[ExamSync] Daily data directory: ${dailyDir}`);
 
-    // ── 2. Authenticate ───────────────────────────────────────────────────
-    const tokenid = await authenticate();
+    // ── 2. Get transactions (pre-fetched from orchestrator or fetch directly) ──
+    let examTransactions;
 
-    // ── 3. Fetch transactions ─────────────────────────────────────────────
-    const allTransactions = await fetchTransactions(tokenid);
-    console.log(
-      `[ExamSync] Total fetched from ICAI: ${allTransactions.length}`
-    );
-
-    // Save all raw transactions
-    stateManager.writeFile(dailyDir, "transaction.json", allTransactions);
-
-    if (allTransactions.length === 0) {
-      return {
-        success: true,
-        message: "No transactions fetched from ICAI",
-        processed: 0,
-      };
-    }
-
-    // ── 4. Filter: keep ONLY forms NOT handled by membership/student ──────
-    const membershipStudentForms = getAllAllowedForms();
-    const examTransactions = allTransactions.filter(
-      (t) => !membershipStudentForms.includes(t.Form_Description)
-    );
-    const skippedTransactions = allTransactions.filter((t) =>
-      membershipStudentForms.includes(t.Form_Description)
-    );
-
-    console.log(
-      `[ExamSync] Exam/Other: ${examTransactions.length} | Skipped (membership/student): ${skippedTransactions.length}`
-    );
-
-    if (skippedTransactions.length > 0) {
-      const skippedForms = [
-        ...new Set(skippedTransactions.map((t) => t.Form_Description)),
-      ];
+    if (transactions && transactions.length > 0) {
+      // Pre-filtered exam transactions passed from orchestrator
+      examTransactions = transactions;
       console.log(
-        `[ExamSync] Skipped form types: ${skippedForms.join(", ")}`
+        `[ExamSync] Using ${examTransactions.length} pre-filtered exam/other transactions`
       );
-    }
-
-    if (examTransactions.length === 0) {
+    } else if (transactions && transactions.length === 0) {
       return {
         success: true,
         message: "No exam/other form transactions found",
-        totalFetched: allTransactions.length,
         processed: 0,
       };
+    } else {
+      // Standalone mode — fetch and filter ourselves
+      const tokenid = await authenticate();
+      const allTransactions = await fetchTransactions(tokenid);
+      console.log(
+        `[ExamSync] Total fetched from ICAI: ${allTransactions.length}`
+      );
+
+      stateManager.writeFile(dailyDir, "transaction.json", allTransactions);
+
+      if (allTransactions.length === 0) {
+        return {
+          success: true,
+          message: "No transactions fetched from ICAI",
+          processed: 0,
+        };
+      }
+
+      const membershipStudentForms = getAllAllowedForms();
+      examTransactions = allTransactions.filter(
+        (t) => !membershipStudentForms.includes(t.Form_Description)
+      );
+      const skippedTransactions = allTransactions.filter((t) =>
+        membershipStudentForms.includes(t.Form_Description)
+      );
+
+      console.log(
+        `[ExamSync] Exam/Other: ${examTransactions.length} | Skipped (membership/student): ${skippedTransactions.length}`
+      );
+
+      if (skippedTransactions.length > 0) {
+        const skippedForms = [
+          ...new Set(skippedTransactions.map((t) => t.Form_Description)),
+        ];
+        console.log(
+          `[ExamSync] Skipped form types: ${skippedForms.join(", ")}`
+        );
+      }
+
+      if (examTransactions.length === 0) {
+        return {
+          success: true,
+          message: "No exam/other form transactions found",
+          processed: 0,
+        };
+      }
     }
 
-    // ── 5. Filter duplicates (Reference_Number + Payment_Order_Id) ────────
+    // ── 3. Filter duplicates (Reference_Number + Payment_Order_Id) ────────
     const { unique, duplicates } =
       stateManager.filterDuplicates(examTransactions);
 
@@ -309,7 +315,7 @@ async function runExamEnrollmentSync({ integrationId } = {}) {
       return {
         success: true,
         message: "All exam transactions are duplicates — already processed",
-        totalFetched: allTransactions.length,
+        examMatching: examTransactions.length,
         duplicatesSkipped: duplicates.length,
         processed: 0,
       };
@@ -367,7 +373,6 @@ async function runExamEnrollmentSync({ integrationId } = {}) {
       syncType: "exam-enrollment",
       syncedAt: new Date().toISOString(),
       durationMs,
-      totalFetched: allTransactions.length,
       examMatching: examTransactions.length,
       duplicatesSkipped: duplicates.length,
       totalProcessed: unique.length,
@@ -379,9 +384,6 @@ async function runExamEnrollmentSync({ integrationId } = {}) {
     // ── 9. Console summary ────────────────────────────────────────────────
     console.log(`\n[ExamSync] ════════════════════════════════════════`);
     console.log(`[ExamSync] SYNC COMPLETE`);
-    console.log(
-      `[ExamSync]   Total Fetched    : ${allTransactions.length}`
-    );
     console.log(
       `[ExamSync]   Exam/Other Forms : ${examTransactions.length}`
     );
@@ -405,7 +407,6 @@ async function runExamEnrollmentSync({ integrationId } = {}) {
     return {
       success: true,
       message: `Processed ${successCount} transactions successfully, ${failCount} failed`,
-      totalFetched: allTransactions.length,
       examMatching: examTransactions.length,
       processed: successCount,
       failed: failCount,
@@ -424,8 +425,6 @@ async function runExamEnrollmentSync({ integrationId } = {}) {
   } catch (err) {
     console.error("[ExamSync] Fatal error:", err);
     throw err;
-  } finally {
-    release();
   }
 }
 

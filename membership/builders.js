@@ -370,6 +370,7 @@ function buildJournalEntryData(transaction, contributionItems, formConfig, custo
     custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
     custbody_ino_icai_source_portal_url:
       formConfig.source_portal_url || "https://eservices.icai.org/",
+    custbodycreate_middleware: true,
     line: { items: [debitLine, ...creditLines] },
   };
 }
