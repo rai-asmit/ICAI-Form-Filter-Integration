@@ -96,7 +96,7 @@ function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, f
       description: feeHead.description,
       custcol_in_nature_of_item: { id: "3" },
       ...(hasTax ? { custcol_in_gst_rate: { id: GST_RATE_ID } } : {}),
-      ...(hsnInternalId ? { custcol_in_hsn_code: { id: String(hsnInternalId) } } : {}),
+      ...(hasTax && hsnInternalId ? { custcol_in_hsn_code: { id: String(hsnInternalId) } } : {}),
       department: { id: formConfig.department_id },
       ...(formConfig.class_id ? { class: { id: formConfig.class_id } } : {}),
     });
