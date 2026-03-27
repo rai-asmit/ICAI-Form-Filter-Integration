@@ -40,7 +40,7 @@ const {
 const msConfig = require("./membershipStudentConfig.json");
 
 // ── Modules ──────────────────────────────────────────────────────────────────
-const { authenticate, fetchTransactions } = require("./membership/icaiClient");
+const { getToken, fetchTransactions } = require("./membership/icaiClient");
 const {
   parseFeeHeads,
   classifyFeeHeads,
@@ -95,17 +95,14 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
     error: null,
   };
 
-  // Helper — log step result to the correct daily file
+  // Helper — log full transaction record to the correct success/failure file
   const logStep = (step, success, extra = {}) => {
-    stateManager.logStepResult(dailyDir, step, {
-      reference: ref,
-      form,
-      customerId: transaction.Customer_ID,
-      paymentOrderId: transaction.Payment_Order_Id,
-      success,
-      timestamp: new Date().toISOString(),
-      ...extra,
-    });
+    const record = { ...transaction, success, timestamp: new Date().toISOString(), ...extra };
+    if (!success && extra.error) {
+      record.reason = extra.error;
+      delete record.error;
+    }
+    stateManager.logStepResult(dailyDir, step, record);
   };
 
   let currentStep = "init";
@@ -391,7 +388,7 @@ async function runMembershipStudentSync({ integrationId, transactions } = {}) {
       };
     } else {
       // Standalone mode — fetch and filter ourselves
-      const tokenid = await authenticate();
+      const tokenid = await getToken();
       const allTransactions = await fetchTransactions(tokenid);
       console.log(
         `[MembershipSync] Total fetched from ICAI: ${allTransactions.length}`

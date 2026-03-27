@@ -6,22 +6,16 @@ const path = require("path");
 const DATA_ROOT = path.join(__dirname, "..", "data");
 const PROCESSED_DB = path.join(DATA_ROOT, "processed-records.json");
 
-// ── Daily directory ─────────────────────────────────────────────────────────
+// ── Data directory ──────────────────────────────────────────────────────────
 
 /**
- * Create and return the daily data directory: data/YYYY/MM/DD/
+ * Ensure the root data directory exists and return its path.
  */
-function getDailyDir(date = new Date()) {
-  const dir = path.join(
-    DATA_ROOT,
-    String(date.getFullYear()),
-    String(date.getMonth() + 1).padStart(2, "0"),
-    String(date.getDate()).padStart(2, "0")
-  );
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
+function getDailyDir() {
+  if (!fs.existsSync(DATA_ROOT)) {
+    fs.mkdirSync(DATA_ROOT, { recursive: true });
   }
-  return dir;
+  return DATA_ROOT;
 }
 
 // ── Duplicate detection ─────────────────────────────────────────────────────
@@ -85,12 +79,12 @@ function markAsProcessed(transactions) {
 // ── File operations ─────────────────────────────────────────────────────────
 
 /**
- * Append records to a JSON array file in the daily directory.
+ * Append records to a JSON array file in the data directory.
  * Creates the file if it doesn't exist.
  */
-function appendToFile(dailyDir, fileName, records) {
+function appendToFile(dataDir, fileName, records) {
   if (!records || records.length === 0) return;
-  const filePath = path.join(dailyDir, fileName);
+  const filePath = path.join(dataDir, fileName);
   let existing = [];
   try {
     existing = JSON.parse(fs.readFileSync(filePath, "utf-8"));
@@ -102,10 +96,10 @@ function appendToFile(dailyDir, fileName, records) {
 }
 
 /**
- * Write (overwrite) a JSON file in the daily directory.
+ * Write (overwrite) a JSON file in the data directory.
  */
-function writeFile(dailyDir, fileName, data) {
-  const filePath = path.join(dailyDir, fileName);
+function writeFile(dataDir, fileName, data) {
+  const filePath = path.join(dataDir, fileName);
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
 }
 
@@ -113,15 +107,13 @@ function writeFile(dailyDir, fileName, data) {
 
 /**
  * Log a processing step result to the appropriate file.
- * success → {step}-success.json
- * failure → {step}-failure.json
- *
- * Steps: "sales-order", "invoice", "customer-payment", "journal-voucher"
+ * success → {step}-success.json  (stores full transaction record)
+ * failure → {step}-failure.json  (stores full transaction record + reason)
  */
-function logStepResult(dailyDir, step, record) {
+function logStepResult(dataDir, step, record) {
   try {
     const suffix = record.success ? "success" : "failure";
-    appendToFile(dailyDir, `${step}-${suffix}.json`, [record]);
+    appendToFile(dataDir, `${step}-${suffix}.json`, [record]);
   } catch (err) {
     console.error(`[StateManager] Failed to log ${step} result: ${err.message}`);
   }

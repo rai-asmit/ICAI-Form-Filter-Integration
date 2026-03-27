@@ -17,16 +17,8 @@ const {
  */
 function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, formConfig) {
   const tranDate = parseDateDDMMYYYY(transaction.Payment_Date);
-  const hsnCode = firstNonEmpty(transaction.HSN_SAC_Code);
-  const hsnInternalId = firstNonEmpty(
-    formConfig.hsn_code_internal_id,
-    hsnCode && formConfig.hsn_code_map ? formConfig.hsn_code_map[hsnCode] : null
-  );
-  if (hsnCode && !hsnInternalId) {
-    console.warn(
-      `[MembershipSync] HSN/SAC code "${hsnCode}" has no internal ID mapping — custcol_in_hsn_code will be omitted. Add it to hsn_code_map in config.`
-    );
-  }
+  const HSN_CODE_ID = "1377"; // HSN 999512 internal ID in NetSuite
+
   const gstPosField = toSelectField(
     firstNonEmpty(
       transaction.GST_POS_ID,
@@ -96,7 +88,7 @@ function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, f
       description: feeHead.description,
       custcol_in_nature_of_item: { id: "3" },
       ...(hasTax ? { custcol_in_gst_rate: { id: GST_RATE_ID } } : {}),
-      ...(hasTax && hsnInternalId ? { custcol_in_hsn_code: { id: String(hsnInternalId) } } : {}),
+      ...(hasTax ? { custcol_in_hsn_code: { id: HSN_CODE_ID } } : {}),
       department: { id: formConfig.department_id },
       ...(formConfig.class_id ? { class: { id: formConfig.class_id } } : {}),
     });

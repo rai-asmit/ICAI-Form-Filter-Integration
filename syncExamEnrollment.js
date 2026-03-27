@@ -30,7 +30,7 @@ const {
   createTransFormRecordInvoice,
 } = require("./netsuiteClient--Rest");
 
-const { authenticate, fetchTransactions } = require("./membership/icaiClient");
+const { getToken, fetchTransactions } = require("./membership/icaiClient");
 const { getAllAllowedForms, withRetry } = require("./membership/helpers");
 const stateManager = require("./membership/stateManager");
 const {
@@ -71,15 +71,12 @@ async function processTransaction(transaction, customerMap, dailyDir) {
   };
 
   const logStep = (step, success, extra = {}) => {
-    stateManager.logStepResult(dailyDir, step, {
-      reference: ref,
-      form,
-      customerId: transaction.Customer_ID,
-      paymentOrderId: transaction.Payment_Order_Id,
-      success,
-      timestamp: new Date().toISOString(),
-      ...extra,
-    });
+    const record = { ...transaction, success, timestamp: new Date().toISOString(), ...extra };
+    if (!success && extra.error) {
+      record.reason = extra.error;
+      delete record.error;
+    }
+    stateManager.logStepResult(dailyDir, step, record);
   };
 
   let currentStep = "init";
@@ -247,7 +244,7 @@ async function runExamEnrollmentSync({ integrationId, transactions } = {}) {
       };
     } else {
       // Standalone mode — fetch and filter ourselves
-      const tokenid = await authenticate();
+      const tokenid = await getToken();
       const allTransactions = await fetchTransactions(tokenid);
       console.log(
         `[ExamSync] Total fetched from ICAI: ${allTransactions.length}`

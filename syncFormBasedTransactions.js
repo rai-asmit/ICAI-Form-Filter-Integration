@@ -16,7 +16,7 @@
 require("dotenv").config();
 const { Mutex } = require("async-mutex");
 
-const { authenticate, fetchTransactions } = require("./membership/icaiClient");
+const { getToken, fetchTransactions } = require("./membership/icaiClient");
 const { getAllAllowedForms } = require("./membership/helpers");
 const stateManager = require("./membership/stateManager");
 const { runMembershipStudentSync } = require("./syncMembershipStudent");
@@ -41,8 +41,8 @@ async function runFormBasedSync({ integrationId } = {}) {
     const dailyDir = stateManager.getDailyDir();
     console.log(`[FormSync] Daily data directory: ${dailyDir}`);
 
-    // ── 2. Authenticate with ICAI (once) ──────────────────────────────────
-    const tokenid = await authenticate();
+    // ── 2. Get token (uses cache or authenticates fresh) ──────────────────
+    const tokenid = await getToken();
 
     // ── 3. Fetch ALL transactions (once) ──────────────────────────────────
     const allTransactions = await fetchTransactions(tokenid);
