@@ -2,8 +2,8 @@
 function setupLogStreaming({ integrationId, source }) {
   async function sendLog(level, message) {
     try {
-      await fetch('https://localhost/3000/logs/stream', {
-      // await fetch('https://api.nidish.com/api/logs/stream', {
+      // await fetch('https://localhost/3000/logs/stream', {
+      await fetch('https://api.nidish.com/api/logs/stream', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
