@@ -161,22 +161,24 @@ function buildCustomerDepositData(soId, transaction, formConfig) {
     gstFields.custbody_inoday_icai_sgst_val = sgst;
   }
 
-  const midToAccount = msConfig.mid_to_account || {};
-  const cdAccountId = (mid && midToAccount[mid])
-    ? midToAccount[mid]
-    : (msConfig.cd_fallback_account || formConfig.cd_account_id || null);
+  // const midToAccount = msConfig.mid_to_account || {};
+  // const cdAccountId = (mid && midToAccount[mid])
+  //   ? midToAccount[mid]
+  //   : (msConfig.cd_fallback_account || formConfig.cd_account_id || null);
 
-  if (mid && !midToAccount[mid]) {
-    console.warn(
-      `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cdAccountId ?? "none (not set in config)"}`
-    );
-  }
+  // if (mid && !midToAccount[mid]) {
+  //   console.warn(
+  //     `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cdAccountId ?? "none (not set in config)"}`
+  //   );
+  // }
 
-  if (!cdAccountId) {
-    console.warn(
-      `[MembershipSync] No account ID resolved for Customer Deposit — mid_to_account, cd_fallback_account, and cd_account_id are all unset.`
-    );
-  }
+  // if (!cdAccountId) {
+  //   console.warn(
+  //     `[MembershipSync] No account ID resolved for Customer Deposit — mid_to_account, cd_fallback_account, and cd_account_id are all unset.`
+  //   );
+  // }
+
+  const cdAccountId = "2770"; // TEMP: hardcoded account ID, revert when mid_to_account mapping is fixed
 
   return {
     salesorder: { id: String(soId) },
