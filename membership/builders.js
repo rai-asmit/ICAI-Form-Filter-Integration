@@ -161,10 +161,10 @@ function buildCustomerDepositData(soId, transaction, formConfig) {
     gstFields.custbody_inoday_icai_sgst_val = sgst;
   }
 
-  const midToAccount = msConfig.mid_to_account || {};
-  const cdAccountId = (mid && midToAccount[mid])
-    ? midToAccount[mid]
-    : (msConfig.cd_fallback_account || formConfig.cd_account_id || null);
+  // const midToAccount = msConfig.mid_to_account || {};
+  // const cdAccountId = (mid && midToAccount[mid])
+  //   ? midToAccount[mid]
+  //   : (msConfig.cd_fallback_account || formConfig.cd_account_id || null);
 
   if (mid && !midToAccount[mid]) {
     console.warn(
