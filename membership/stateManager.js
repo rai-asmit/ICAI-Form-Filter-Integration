@@ -9,13 +9,19 @@ const PROCESSED_DB = path.join(DATA_ROOT, "processed-records.json");
 // ── Data directory ──────────────────────────────────────────────────────────
 
 /**
- * Ensure the root data directory exists and return its path.
+ * Return today's data directory, partitioned as data/yyyy/mm/dd.
+ * Creates the folder chain if it doesn't exist. Cross-run global files
+ * (e.g. processed-records.json) stay at DATA_ROOT, not in here.
  */
-function getDailyDir() {
-  if (!fs.existsSync(DATA_ROOT)) {
-    fs.mkdirSync(DATA_ROOT, { recursive: true });
+function getDailyDir(date = new Date()) {
+  const yyyy = String(date.getFullYear());
+  const mm = String(date.getMonth() + 1).padStart(2, "0");
+  const dd = String(date.getDate()).padStart(2, "0");
+  const dailyDir = path.join(DATA_ROOT, yyyy, mm, dd);
+  if (!fs.existsSync(dailyDir)) {
+    fs.mkdirSync(dailyDir, { recursive: true });
   }
-  return DATA_ROOT;
+  return dailyDir;
 }
 
 // ── Duplicate detection ─────────────────────────────────────────────────────

@@ -162,19 +162,11 @@ function buildCustomerDepositData(soId, transaction, formConfig) {
   }
 
   const midToAccount = msConfig.mid_to_account || {};
-  const cdAccountId = (mid && midToAccount[mid])
-    ? midToAccount[mid]
-    : (msConfig.cd_fallback_account || formConfig.cd_account_id || null);
+  const cdAccountId = (mid && midToAccount[mid]) ? midToAccount[mid] : null;
 
   if (mid && !midToAccount[mid]) {
     console.warn(
-      `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cdAccountId ?? "none (not set in config)"}`
-    );
-  }
-
-  if (!cdAccountId) {
-    console.warn(
-      `[MembershipSync] No account ID resolved for Customer Deposit — mid_to_account, cd_fallback_account, and cd_account_id are all unset.`
+      `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — skipping account field on Customer Deposit`
     );
   }
 
