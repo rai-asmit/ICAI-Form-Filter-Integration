@@ -214,21 +214,12 @@ function buildCustomerPaymentData(customerInternalId, transaction, formConfig, i
   const mid = firstNonEmpty(transaction.MID);
   const paymentAmount = parseFloat(transaction.Payment_Amount) || 0;
 
-  // Resolve account from MID mapping -> fallback to config -> fallback to 3341 (same as CD logic)
   const midToAccount = msConfig.mid_to_account || {};
-  const cpAccountId = (mid && midToAccount[mid])
-    ? midToAccount[mid]
-    : (msConfig.cd_fallback_account || formConfig.cd_account_id || null);
-
-  if (mid && !midToAccount[mid]) {
-    console.warn(
-      `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — using fallback account ${cpAccountId ?? "none (not set in config)"}`
-    );
-  }
+  const cpAccountId = mid ? midToAccount[mid] : null;
 
   if (!cpAccountId) {
     console.warn(
-      `[MembershipSync] No account ID resolved for Customer Payment — mid_to_account, cd_fallback_account, and cd_account_id are all unset.`
+      `[MembershipSync] MID "${mid ?? "(missing)"}" not found in mid_to_account mapping — skipping account field on Customer Payment`
     );
   }
 
@@ -260,9 +251,7 @@ function buildCustomerPaymentData(customerInternalId, transaction, formConfig, i
     location: { id: formConfig.location_id },
     ...(formConfig.class_id ? { class: { id: formConfig.class_id } } : {}),
 
-    // ── AR Account (dynamic from MID mapping) ──
-    // TODO: Temporarily commented out — account IDs from mid_to_account are deposit accounts, not valid for Customer Payment. Update with correct AR account IDs.
-    // account: { id: String(cpAccountId) },
+    ...(cpAccountId ? { account: { id: String(cpAccountId) } } : {}),
 
     // ── Apply — manual if invoice/JV exist, auto otherwise ──
     autoApply: false,
