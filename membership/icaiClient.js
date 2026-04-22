@@ -205,6 +205,20 @@ async function fetchTransactions(tokenid) {
   console.log(
     `[MembershipSync] Fetch complete. Total records: ${allTransactions.length}`
   );
+
+  // Skip "Annual Renewal Form" entirely — excluded from all downstream processing
+  const SKIPPED_FORMS = ["Annual Renewal Form"];
+  const beforeSkip = allTransactions.length;
+  allTransactions = allTransactions.filter(
+    (t) => !SKIPPED_FORMS.includes(t.Form_Description)
+  );
+  const skippedCount = beforeSkip - allTransactions.length;
+  if (skippedCount > 0) {
+    console.log(
+      `[MembershipSync] Skipped ${skippedCount} "Annual Renewal Form" records — excluded from processing`
+    );
+  }
+
   return allTransactions;
 }
 
