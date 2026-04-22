@@ -88,10 +88,10 @@ async function authenticate() {
 
 // Fetch Transactions
 async function fetchTransactions(tokenid) {
-    // const yesterday = new Date();
-    // yesterday.setDate(yesterday.getDate() - 1);
-    // const dateFilter = `${String(yesterday.getDate()).padStart(2, "0")}/${String(yesterday.getMonth() + 1).padStart(2, "0")}/${yesterday.getFullYear()}`;
-    const dateFilter = "27/03/2026";
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const dateFilter = `${String(yesterday.getDate()).padStart(2, "0")}/${String(yesterday.getMonth() + 1).padStart(2, "0")}/${yesterday.getFullYear()}`;
+    // const dateFilter = "28/03/2026";
     const NUMBER_OF_RECORDS = 800;
     const DELAY_MS = 3000;
     const MAX_RETRIES = 3;

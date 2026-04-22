@@ -85,5 +85,37 @@
     },
     "contribution_codes": [],
     "allowed_forms": ["Student Registration Form"]
+  },
+  "other_forms": {
+    "subsidiary_id": "168",
+    "location_id": "285",
+    "department_id": "267",
+    "class_id": "123",
+    "cd_account_id": "3341",
+    "source_portal": "SSP",
+    "source_portal_url": "https://eservices.icai.org/",
+    "items": {
+      "M05": { "internal_id": "616", "description": "Membership Fee - Associate" },
+      "M06": { "internal_id": "617", "description": "Membership Fee - Fellow Senior Citizen" },
+      "M07": { "internal_id": "618", "description": "Member COP Fee" },
+      "M08": { "internal_id": "619", "description": "Member Entrance Fee" },
+      "M09": { "internal_id": "620", "description": "Member-Fellow Admission" },
+      "M10": { "internal_id": "621", "description": "Member-Fellow Conversion" },
+      "M11": { "internal_id": "623", "description": "Member Restoration Fee - Within 3 Years" },
+      "M12": { "internal_id": "624", "description": "Old Membership Fee" },
+      "M13": { "internal_id": "625", "description": "CABF Annual Subscription" },
+      "M14": { "internal_id": "626", "description": "CABF Life Membership" },
+      "M15": { "internal_id": "627", "description": "CABF Voluntary Contribution" },
+      "M18": { "internal_id": "628", "description": "Life Contribution To S.Vaidyanathan Aiyar Memorial Fund" },
+      "M22": { "internal_id": "629", "description": "Annual Contribution To S.Vaidyanathan Aiyar Memorial Fund" },
+      "M23": { "internal_id": "630", "description": "Vol. Contribution To S.Vaidyanathan Aiyar Memorial Fund" },
+      "M99": { "internal_id": "631", "description": "E-Journal Discount" },
+      "M100": { "internal_id": "622", "description": "Airmail Charges" },
+      "CONDON": { "internal_id": "", "description": "Condonation Fee" },
+      "R0015": { "internal_id": "", "description": "Fee for Certified Copy of Ans Book" },
+      "R0016": { "internal_id": "", "description": "Fee for Inspection of Ans Book" }
+    },
+    "contribution_codes": [],
+    "allowed_forms": ["Form 9", "Form 103", "MarksVerify"]
   }
 }

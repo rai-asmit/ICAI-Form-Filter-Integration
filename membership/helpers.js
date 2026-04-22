@@ -96,6 +96,9 @@ function getConfigForForm(formDescription) {
   if (msConfig.student_registration.allowed_forms.includes(formDescription)) {
     return { type: "student_registration", ...msConfig.student_registration };
   }
+  if (msConfig.other_forms.allowed_forms.includes(formDescription)) {
+    return { type: "other_forms", ...msConfig.other_forms };
+  }
   return null;
 }
 
@@ -103,6 +106,7 @@ function getAllAllowedForms() {
   return [
     ...msConfig.membership.allowed_forms,
     ...msConfig.student_registration.allowed_forms,
+    ...msConfig.other_forms.allowed_forms,
   ];
 }
 
