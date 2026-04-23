@@ -34,18 +34,7 @@ async function createCustomerRecord(data) {
  *   3. If not → duplicate student customer as member with entityid = Customer_ID-1
  */
 async function duplicateCustomerAsMember(customerEntityId, transaction) {
-  const memberEntityId = `${transaction.Customer_ID}-1`;
-
-  // Check if member customer already exists
-  const existing = await fetchCustomerByEntityId(memberEntityId);
-  if (existing) {
-    console.log(
-      `[MembershipSync] [Form 2] Member customer already exists: entityid=${memberEntityId}, id=${existing.id} — reusing`
-    );
-    return existing;
-  }
-
-  // Fetch original student customer
+  // Fetch original student customer first to get appseq_no for entityid
   console.log(
     `[MembershipSync] [Form 2] Fetching student customer: ${customerEntityId}`
   );
@@ -56,6 +45,22 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
   console.log(
     `[MembershipSync] [Form 2] Found student: id=${c.id}, entityid=${c.entityId || c.entityid}`
   );
+
+  const appseqNo = c.custentity_ino_icai_appseq_no;
+  if (!appseqNo) {
+    throw new Error(`custentity_ino_icai_appseq_no missing on student customer: ${customerEntityId}`);
+  }
+
+  const memberEntityId = `${appseqNo}-1`;
+
+  // Check if member customer already exists
+  const existing = await fetchCustomerByEntityId(memberEntityId);
+  if (existing) {
+    console.log(
+      `[MembershipSync] [Form 2] Member customer already exists: entityid=${memberEntityId}, id=${existing.id} — reusing`
+    );
+    return existing;
+  }
 
   function pickId(field) {
     if (!field) return null;
@@ -84,7 +89,7 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
 
     receivablesaccount: { id: "2724" },
 
-    custentity_ino_icai_appseq_no: transaction.Customer_ID,
+    custentity_ino_icai_appseq_no: c.custentity_ino_icai_appseq_no || "",
     custentity_ino_icai_father_name: c.custentity_ino_icai_father_name || "",
     custentity_ino_icai_dob: c.custentity_ino_icai_dob || "",
     custentity_permanent_account_number: c.custentity_permanent_account_number || "",

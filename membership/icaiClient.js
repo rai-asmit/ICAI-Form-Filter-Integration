@@ -38,10 +38,6 @@ async function authenticate() {
 
   const raw = typeof data === "string" ? data : JSON.stringify(data);
 
-  // The auth endpoint returns XML like:
-  //   <RESPONSE><RESULT STATUS='1' TOKENID='abc123' MSG='Success'/></RESPONSE>
-  // or on failure:
-  //   <RESPONSE><RESULT STATUS='0' TOKENID='0' MSG='Invalid User...'/></RESPONSE>
   if (typeof data === "string" && data.includes("<RESULT")) {
     const statusMatch = data.match(/STATUS\s*=\s*'([^']*)'/i);
     const tokenMatch = data.match(/TOKENID\s*=\s*'([^']*)'/i);
