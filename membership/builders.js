@@ -117,6 +117,7 @@ function buildSalesOrderData(transaction, customerInternalId, invoiceFeeHeads, f
     custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
     custbody_ino_icai_source_portal_url:
       formConfig.source_portal_url || "https://eservices.icai.org/",
+    custbody_sspformtype: transaction.Form_Description || "",
     custbodycreate_middleware: true,
     custbody_process_invoice: true,
 
@@ -184,6 +185,7 @@ function buildCustomerDepositData(soId, transaction, formConfig) {
     custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
     custbody_ino_icai_source_portal_url:
       formConfig.source_portal_url || "https://eservices.icai.org/",
+    custbody_sspformtype: transaction.Form_Description || "",
     custbodycreate_middleware: true,
     ...(mid ? { custbody_icai_ino_mid: mid } : {}),
     ...(Number.isFinite(taxTotal) ? { custbody_ino_icai_taxtotal: taxTotal } : {}),
@@ -271,6 +273,7 @@ function buildCustomerPaymentData(customerInternalId, transaction, formConfig, i
     custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
     custbody_ino_icai_source_portal_url:
       formConfig.source_portal_url || "https://eservices.icai.org/",
+    custbody_sspformtype: transaction.Form_Description || "",
 
     // ── MID tracking ──
     ...(mid ? { custbody_icai_ino_mid: mid } : {}),
@@ -294,6 +297,7 @@ function buildInvoiceBody(transaction, formConfig) {
     custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
     custbody_ino_icai_source_portal_url:
       formConfig.source_portal_url || "https://eservices.icai.org/",
+    custbody_sspformtype: transaction.Form_Description || "",
   };
 }
 
@@ -341,6 +345,7 @@ function buildJournalEntryData(transaction, contributionItems, formConfig, custo
     custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
     custbody_ino_icai_source_portal_url:
       formConfig.source_portal_url || "https://eservices.icai.org/",
+    custbody_sspformtype: transaction.Form_Description || "",
     custbodycreate_middleware: true,
     line: { items: [debitLine, ...creditLines] },
   };

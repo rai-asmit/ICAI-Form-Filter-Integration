@@ -185,6 +185,7 @@ function buildExamSalesOrderData(transaction, customerInternalId) {
     custbody_ino_icai_utr: transaction.Reference_Number,
     custbody_ino_icai_source_portal: "SSP",
     custbody_ino_icai_source_portal_url: "https://eservices.icai.org/",
+    custbody_sspformtype: transaction.Form_Description || "",
     custbodycreate_middleware: true,
     custbody_process_invoice: true,
     subsidiary: { id: SUBSIDIARY_ID, type: "subsidiary" },
@@ -224,6 +225,7 @@ function buildExamCustomerDepositData(salesOrderId, transaction, tranDate, match
     custbodycreate_middleware: true,
     custbody_ino_icai_source_portal: "SSP",
     custbody_ino_icai_source_portal_url: "https://eservices.icai.org/",
+    custbody_sspformtype: transaction.Form_Description || "",
     department: { id: DEPARTMENT_ID },
     location: { id: LOCATION_ID },
     ...(matchedItem?.events_seminars_internal_id
@@ -246,6 +248,7 @@ function buildExamInvoiceBody(transaction) {
     approvalStatus: { id: "2" },
     tranDate,
     custbody_in_return_form_period: { refName: getMonthYear(tranDate) },
+    custbody_sspformtype: transaction.Form_Description || "",
     custbodycreate_middleware: true,
   };
 }
