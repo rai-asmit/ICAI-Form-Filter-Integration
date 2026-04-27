@@ -47,7 +47,13 @@
       "M22": { "internal_id": "629", "description": "Annual Contribution To S.Vaidyanathan Aiyar Memorial Fund" },
       "M23": { "internal_id": "630", "description": "Vol. Contribution To S.Vaidyanathan Aiyar Memorial Fund" },
       "M99": { "internal_id": "631", "description": "E-Journal Discount" },
-      "M100": { "internal_id": "622", "description": "Airmail Charges" }
+      "M100": { "internal_id": "622", "description": "Airmail Charges" },
+      "R0017": { "internal_id": "665", "description": "Exam Fee - AICITSS ", "event_seminar": "Student - Final" },
+      "R0020": { "internal_id": "668", "description": "Duplicate Mark Sheet", "event_seminar": "Exam Misc Income – Common" },
+      "R0021": { "internal_id": "669", "description": "Duplicate Pass Certificate", "event_seminar": "Duplicate Pass Certificate" },
+      "R0022": { "internal_id": "670", "description": "Duplicate Mark Sheet - Taxable", "event_seminar": "Exam Misc Income – Common" },
+      "R0037": { "internal_id": "5105", "description": "Postage Charges - Duplicate Pass /Rank Certificate/ Marksheet (Taxable)", "event_seminar": "Exam Misc Income – Common" }
+
     },
     "contribution_codes": ["M13", "M14", "M15", "M18", "M22", "M23"],
     "allowed_forms": ["Form 2", "Form 6", "Form 3/Fellowship"]
@@ -111,9 +117,9 @@
       "M23": { "internal_id": "630", "description": "Vol. Contribution To S.Vaidyanathan Aiyar Memorial Fund" },
       "M99": { "internal_id": "631", "description": "E-Journal Discount" },
       "M100": { "internal_id": "622", "description": "Airmail Charges" },
-      "CONDON": { "internal_id": "", "description": "Condonation Fee" },
-      "R0015": { "internal_id": "", "description": "Fee for Certified Copy of Ans Book" },
-      "R0016": { "internal_id": "", "description": "Fee for Inspection of Ans Book" }
+      "CONDON": { "internal_id": "615", "description": "Condonation Fees", "event_seminar": "Student - Intermediate" },
+      "R0015": { "internal_id": "663", "description": "Fee for Certified Copy", "event_seminar": "Exam Misc Income – Common" },
+      "R0016": { "internal_id": "5405", "description": "Fee for Inspection", "event_seminar": "Exam Misc Income – Common" }
     },
     "contribution_codes": [],
     "allowed_forms": ["Form 9", "Form 103", "MarksVerify"]
