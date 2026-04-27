@@ -168,4 +168,60 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
   return newCustomer;
 }
 
-module.exports = { duplicateCustomerAsMember, fetchCustomerByEntityId };
+function checkStudentMember(item) {
+  const sub = item.Subsidiary;
+  if (sub === "Examination") {
+    return {
+      category:                { id: "2" },
+      subsidiary:              { id: "171" },
+      additionalSubsidiaryIds: ["168", "170"],
+    };
+  }
+  if (sub === "Delhi") {
+    return {
+      category:                { id: "1" },
+      subsidiary:              { id: "168" },
+      additionalSubsidiaryIds: ["170", "171"],
+    };
+  }
+  // Noida → student
+  return {
+    category:                { id: "2" },
+    subsidiary:              { id: "170" },
+    additionalSubsidiaryIds: ["168", "171"],
+  };
+}
+
+async function addAdditionalSubsidiary(customerId, additionalSubsidiaryIds) {
+  if (!additionalSubsidiaryIds || additionalSubsidiaryIds.length === 0) return;
+
+  const existing = await netsuiteRequest(
+    "POST",
+    "/services/rest/query/v1/suiteql?limit=100",
+    { q: `SELECT subsidiary FROM customersubsidiaryrelationship WHERE entity = ${customerId}` }
+  );
+  const existingIds = new Set((existing.items || []).map(r => String(r.subsidiary)));
+
+  for (const subsidiaryId of additionalSubsidiaryIds) {
+    if (existingIds.has(String(subsidiaryId))) {
+      console.log(`[SUBSIDIARY] Subsidiary ${subsidiaryId} already linked to customer ${customerId} — skipping`);
+      continue;
+    }
+    try {
+      await netsuiteRequest(
+        "POST",
+        "/services/rest/record/v1/customersubsidiaryrelationship",
+        {
+          entity:     { id: String(customerId) },
+          subsidiary: { id: String(subsidiaryId) },
+        }
+      );
+      console.log(`[SUBSIDIARY] Linked subsidiary ${subsidiaryId} to customer ${customerId}`);
+    } catch (err) {
+      const detail = err.response?.data?.["o:errorDetails"]?.[0]?.detail || "";
+      console.error(`[SUBSIDIARY] Failed subsidiary ${subsidiaryId} for customer ${customerId}: ${detail || err.message}`);
+    }
+  }
+}
+
+module.exports = { duplicateCustomerAsMember, fetchCustomerByEntityId, checkStudentMember, addAdditionalSubsidiary };

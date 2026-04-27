@@ -55,7 +55,7 @@ const {
   buildInvoiceBody,
   buildJournalEntryData,
 } = require("./membership/builders");
-const { duplicateCustomerAsMember } = require("./membership/customerDuplicate");
+const { duplicateCustomerAsMember, checkStudentMember, addAdditionalSubsidiary } = require("./membership/customerDuplicate");
 const stateManager = require("./membership/stateManager");
 
 // ── Constants ────────────────────────────────────────────────────────────────
@@ -174,6 +174,9 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
       entityId: transaction.Customer_ID,
       internalId: customerInternalId,
     };
+
+    const { additionalSubsidiaryIds } = checkStudentMember(transaction);
+    await addAdditionalSubsidiary(customerInternalId, additionalSubsidiaryIds);
 
     // ── Step 3: Create Sales Order (Regular + Discount items only) ────────────
     currentStep = "sales-order";

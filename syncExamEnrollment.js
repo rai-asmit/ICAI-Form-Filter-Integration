@@ -32,6 +32,7 @@ const {
 
 const { getToken, fetchTransactions } = require("./membership/icaiClient");
 const { getAllAllowedForms, withRetry } = require("./membership/helpers");
+const { checkStudentMember, addAdditionalSubsidiary } = require("./membership/customerDuplicate");
 const stateManager = require("./membership/stateManager");
 const {
   buildExamSalesOrderData,
@@ -94,6 +95,9 @@ async function processTransaction(transaction, customerMap, dailyDir) {
       entityId: transaction.Customer_ID,
       internalId: customerInternalId,
     };
+
+    const { additionalSubsidiaryIds } = checkStudentMember(transaction);
+    await addAdditionalSubsidiary(customerInternalId, additionalSubsidiaryIds);
 
     // ── Step 2: Create Sales Order ────────────────────────────────────────
     currentStep = "sales-order";
