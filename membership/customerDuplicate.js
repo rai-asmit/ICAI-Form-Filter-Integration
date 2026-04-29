@@ -46,9 +46,10 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
     `[MembershipSync] [Form 2] Found student: id=${c.id}, entityid=${c.entityId || c.entityid}`
   );
 
-  const appseqNo = c.custentity_ino_icai_appseq_no;
+  // const appseqNo = c.custentity_ino_icai_appseq_no;
+  const appseqNo = c.entityId;
   if (!appseqNo) {
-    throw new Error(`custentity_ino_icai_appseq_no missing on student customer: ${customerEntityId}`);
+    throw new Error(`entityId missing on student customer: ${customerEntityId}`);
   }
 
   const memberEntityId = `${appseqNo}-1`;
