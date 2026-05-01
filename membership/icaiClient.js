@@ -89,14 +89,18 @@ async function getToken(forceRefresh = false) {
   return authenticate();
 }
 
-async function fetchTransactions(tokenid) {
-  
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  const dateFilter = `${String(yesterday.getDate()).padStart(2, "0")}/${String(yesterday.getMonth() + 1).padStart(2, "0")}/${yesterday.getFullYear()}`;
-  // const dateFilter = "28/03/2026";
-  const fromDate = dateFilter;
-  const toDate = dateFilter;
+async function fetchTransactions(tokenid, dateRange = {}) {
+
+  let fromDate = dateRange.fromDate;
+  let toDate = dateRange.toDate;
+
+  if (!fromDate || !toDate) {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const dateFilter = `${String(yesterday.getDate()).padStart(2, "0")}/${String(yesterday.getMonth() + 1).padStart(2, "0")}/${yesterday.getFullYear()}`;
+    fromDate = fromDate || dateFilter;
+    toDate = toDate || dateFilter;
+  }
 
   const NUMBER_OF_RECORDS = 800;
   const DELAY_MS = 3000;

@@ -117,10 +117,60 @@ app.post("/webhook/form-based-transactions/:id", async (req, res) => {
   }
 });
 
+// Date-range variant — accepts ?fromDate=DD/MM/YYYY&toDate=DD/MM/YYYY query params.
+// If both are omitted, falls back to the default (yesterday) behaviour.
+const DATE_RE = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+
+app.post("/webhook/form-based-transactions-range/:id", async (req, res) => {
+  const integrationId = req.params.id;
+  const { fromDate, toDate } = req.query;
+
+  if (!integrationId) {
+    return res.status(400).json({
+      success: false,
+      error: "Integration ID is required",
+    });
+  }
+
+  if ((fromDate && !toDate) || (!fromDate && toDate)) {
+    return res.status(400).json({
+      success: false,
+      error: "Both fromDate and toDate must be provided together",
+    });
+  }
+
+  if (fromDate && (!DATE_RE.test(fromDate) || !DATE_RE.test(toDate))) {
+    return res.status(400).json({
+      success: false,
+      error: "fromDate and toDate must be in DD/MM/YYYY format",
+    });
+  }
+
+  try {
+    const rangeLabel = fromDate ? ` for range ${fromDate} → ${toDate}` : " (default: yesterday)";
+    streamLog(integrationId, "info", `[FormSync Webhook] Starting Form-Based Transaction Sync${rangeLabel}...`, "webhook");
+    const result = await runWithLogging(
+      integrationId,
+      "Form-Based Transaction Sync (Date Range)",
+      () => runFormBasedSync({ integrationId, fromDate, toDate })
+    );
+    streamLog(integrationId, "info", `[FormSync Webhook] Sync completed: ${JSON.stringify({ totalProcessed: result.totalProcessed, totalFailed: result.totalFailed })}`, "webhook");
+
+    res.json(result);
+  } catch (e) {
+    streamLog(integrationId, "error", `[FormSync Webhook] Error: ${e.message}`, "webhook");
+    res.status(500).json({
+      success: false,
+      error: e.message,
+    });
+  }
+});
+
 const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log("Endpoints:");
   console.log("  POST /webhook/form-based-transactions/:id -> Fetch ICAI once, split by form, process Membership + Exam pipelines");
+  console.log("  POST /webhook/form-based-transactions-range/:id?fromDate=DD/MM/YYYY&toDate=DD/MM/YYYY -> Same as above for a custom date range");
 });

@@ -24,7 +24,7 @@ const { runExamEnrollmentSync } = require("./syncExamEnrollment");
 
 const syncMutex = new Mutex();
 
-async function runFormBasedSync({ integrationId } = {}) {
+async function runFormBasedSync({ integrationId, fromDate, toDate } = {}) {
   if (syncMutex.isLocked()) {
     console.log("[FormSync] Sync already running — request cancelled.");
     return {
@@ -45,7 +45,10 @@ async function runFormBasedSync({ integrationId } = {}) {
     const tokenid = await getToken();
 
     // ── 3. Fetch ALL transactions (once) ──────────────────────────────────
-    const allTransactions = await fetchTransactions(tokenid);
+    if (fromDate && toDate) {
+      console.log(`[FormSync] Using date range from request — fromDate: ${fromDate} | toDate: ${toDate}`);
+    }
+    const allTransactions = await fetchTransactions(tokenid, { fromDate, toDate });
     console.log(`[FormSync] Total fetched from ICAI: ${allTransactions.length}`);
 
     // Save all raw transactions
