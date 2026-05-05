@@ -132,6 +132,7 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
     );
 
     // ── Step 2: Resolve customer ─────────────────────────────────────────────
+    currentStep = "customer-duplicate";
     let customerInternalId = customerMap[transaction.Customer_ID];
 
     if (form === "Form 2") {
@@ -146,20 +147,16 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
           newCustomerId: newCustomer.id,
         };
       } catch (err) {
+        const errDetail = err.response?.data ? JSON.stringify(err.response.data) : err.message;
         console.error(
-          `[MembershipSync] [${ref}] Customer duplication failed: ${err.message}`
+          `[MembershipSync] [${ref}] Customer duplication failed: ${errDetail}`
         );
         result.steps.customerDuplication = {
           success: false,
-          error: err.message,
+          error: errDetail,
         };
-        if (!customerInternalId) {
-          throw new Error(
-            `Customer ${transaction.Customer_ID} not found and duplication failed: ${err.message}`
-          );
-        }
-        console.warn(
-          `[MembershipSync] [${ref}] Falling back to existing customer: ${customerInternalId}`
+        throw new Error(
+          `Form 2 requires a duplicate member customer — duplication failed for ${transaction.Customer_ID}: ${errDetail}`
         );
       }
     } else {
@@ -354,7 +351,7 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
     );
 
     // Log failure for the step that threw (JV logs its own failure — it's non-blocking)
-    if (["sales-order", "customer-deposit", "invoice", "customer-payment"].includes(currentStep)) {
+    if (["customer-duplicate", "sales-order", "customer-deposit", "invoice", "customer-payment"].includes(currentStep)) {
       logStep(currentStep, false, { error: err.response?.data ?? err.message });
     }
   }
@@ -625,4 +622,4 @@ async function runMembershipStudentSync({ integrationId, transactions } = {}) {
   }
 }
 
-module.exports = { runMembershipStudentSync };
+module.exports = { runMembershipStudentSync, processTransaction };

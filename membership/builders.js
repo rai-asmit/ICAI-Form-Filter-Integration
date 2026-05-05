@@ -179,7 +179,9 @@ function buildCustomerDepositData(soId, transaction, formConfig) {
     memo: transaction.Payment_Order_Id,
     tranDate,
     custbody_in_return_form_period: { refName: getMonthYear(tranDate) },
-    custbody_ino_icai_reference_number: transaction.Reference_Number,
+    // custbody_ino_icai_reference_number: transaction.Reference_Number,
+    custbody_ino_icai_reference_number: transaction.Payment_Order_Id,
+    custbody_inoday_payment_ref: transaction.Reference_Number,
     custbodypayment_reference_number: transaction.Reference_Number,
     custbody_ino_icai_utr: transaction.Reference_Number,
     custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
@@ -263,12 +265,14 @@ function buildCustomerPaymentData(customerInternalId, transaction, formConfig, i
 
     // ── Custom fields ──
     custbodycreate_middleware: true,
-    custbody_ino_icai_reference_number: transaction.Reference_Number,
+    // Payment Transaction Number
+    custbody_ino_icai_reference_number: transaction.Payment_Order_Id,
     custbody_ino_payment_amount_po: Number(transaction.Payment_Amount) || 0,
     custbodypayment_reference_number: transaction.Reference_Number,
     custbody_ino_icai_utr: transaction.Reference_Number,
     memo: transaction.Payment_Order_Id,
-
+    //ACKNOWLEDGEMENT NUMBER
+    custbody_inoday_payment_ref: transaction.Reference_Number,
     // ── Source portal ──
     custbody_ino_icai_source_portal: formConfig.source_portal || "SSP",
     custbody_ino_icai_source_portal_url:
