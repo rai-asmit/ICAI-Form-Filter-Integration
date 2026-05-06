@@ -38,11 +38,11 @@ function fileBrowser(baseDir) {
         .sort((a, b) => (a.isDirectory() === b.isDirectory() ? a.name.localeCompare(b.name) : a.isDirectory() ? -1 : 1))
         .map(e => {
           const href = e.isDirectory() ? `${e.name}/` : e.name;
-          const type = e.isDirectory() ? "dir" : "file";
+          const type = e.isDirectory() ? "directory" : "file";
           return `<tr><td>${type}</td><td><a href="${href}">${e.name}</a></td></tr>`;
         });
 
-      if (!isRoot) rows.unshift(`<tr><td>up</td><td><a href="../">.. (up)</a></td></tr>`);
+      if (!isRoot) rows.unshift(`<tr><td>directory</td><td><a href="../">.. (up)</a></td></tr>`);
 
       res.setHeader("Content-Type", "text/html");
       return res.send(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Data Browser</title>
