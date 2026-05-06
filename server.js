@@ -1,8 +1,27 @@
 const express = require("express");
+const path = require("path");
+const serveIndex = require("serve-index");
 const { runFormBasedSync } = require("./syncFormBasedTransactions");
 
 const app = express();
 app.use(express.json());
+
+// --- File Browser ---
+const DATA_DIR = path.join(__dirname, "data");
+const FB_USER = process.env.FILE_BROWSER_USER || "admin";
+const FB_PASS = process.env.FILE_BROWSER_PASS || "admin123";
+
+function basicAuth(req, res, next) {
+  const auth = req.headers["authorization"];
+  if (auth && auth.startsWith("Basic ")) {
+    const [user, pass] = Buffer.from(auth.slice(6), "base64").toString().split(":");
+    if (user === FB_USER && pass === FB_PASS) return next();
+  }
+  res.set("WWW-Authenticate", 'Basic realm="Data Browser"');
+  return res.status(401).send("Unauthorized");
+}
+
+app.use("/files", basicAuth, express.static(DATA_DIR), serveIndex(DATA_DIR, { icons: true }));
 
 const cors = require('cors');
 
@@ -105,7 +124,16 @@ app.post("/webhook/form-based-transactions/:id", async (req, res) => {
       "Form-Based Transaction Sync",
       () => runFormBasedSync({ integrationId })
     );
-    streamLog(integrationId, "info", `[FormSync Webhook] Sync completed: ${JSON.stringify({ totalProcessed: result.totalProcessed, totalFailed: result.totalFailed })}`, "webhook");
+    streamLog(integrationId, "info", [
+      `[FormSync] ---- FINAL SUMMARY ----`,
+      `Total Fetched     : ${result.totalFetched ?? 0}`,
+      `Membership        : ${result.membershipCount ?? 0}`,
+      `Exam/Other        : ${result.examCount ?? 0}`,
+      `Total Processed   : ${result.totalProcessed ?? 0}`,
+      `Total Failed      : ${result.totalFailed ?? 0}`,
+      `Duration          : ${result.durationMs ?? 0}ms`,
+      `Status            : ${result.success ? "SUCCESS" : "FAILED"}`,
+    ].join(" | "), "webhook");
 
     res.json(result);
   } catch (e) {
@@ -154,7 +182,17 @@ app.post("/webhook/form-based-transactions-range/:id", async (req, res) => {
       "Form-Based Transaction Sync (Date Range)",
       () => runFormBasedSync({ integrationId, fromDate, toDate })
     );
-    streamLog(integrationId, "info", `[FormSync Webhook] Sync completed: ${JSON.stringify({ totalProcessed: result.totalProcessed, totalFailed: result.totalFailed })}`, "webhook");
+    streamLog(integrationId, "info", [
+      `[FormSync] ---- FINAL SUMMARY ----`,
+      `Range             : ${fromDate ?? "default"} -> ${toDate ?? "default"}`,
+      `Total Fetched     : ${result.totalFetched ?? 0}`,
+      `Membership        : ${result.membershipCount ?? 0}`,
+      `Exam/Other        : ${result.examCount ?? 0}`,
+      `Total Processed   : ${result.totalProcessed ?? 0}`,
+      `Total Failed      : ${result.totalFailed ?? 0}`,
+      `Duration          : ${result.durationMs ?? 0}ms`,
+      `Status            : ${result.success ? "SUCCESS" : "FAILED"}`,
+    ].join(" | "), "webhook");
 
     res.json(result);
   } catch (e) {
@@ -171,6 +209,7 @@ const PORT = process.env.PORT || 3003;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log("Endpoints:");
-  console.log("  POST /webhook/form-based-transactions/:id -> Fetch ICAI once, split by form, process Membership + Exam pipelines");
-  console.log("  POST /webhook/form-based-transactions-range/:id?fromDate=DD/MM/YYYY&toDate=DD/MM/YYYY -> Same as above for a custom date range");
+  console.log("  POST /webhook/form-based-transactions/:id");
+  console.log("  POST /webhook/form-based-transactions-range/:id?fromDate=DD/MM/YYYY&toDate=DD/MM/YYYY");
+  console.log(`  GET  /files  ->  Data browser (user: ${FB_USER})`);
 });

@@ -1,0 +1,2031 @@
+{
+  "syncType": "exam-enrollment",
+  "syncedAt": "2026-03-30T20:43:29.395Z",
+  "durationMs": 7998,
+  "examMatching": 149,
+  "duplicatesSkipped": 3,
+  "totalProcessed": 146,
+  "successCount": 0,
+  "failCount": 146,
+  "results": [
+    {
+      "reference": "2012608700010162494",
+      "form": "BAAFresh",
+      "customerId": "SRO0553126",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0553126",
+          "internalId": "1395802"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608700080072508",
+      "form": "BAAFresh",
+      "customerId": "CRO0496444",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0496444",
+          "internalId": "1746926"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608700180012527",
+      "form": "BAAFresh",
+      "customerId": "CRO0537314",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0537314",
+          "internalId": "1753063"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608700480312564",
+      "form": "BAAFresh",
+      "customerId": "SRO0440040",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0440040",
+          "internalId": "1365358"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608702490162621",
+      "form": "BAAFresh",
+      "customerId": "WRO0558302",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0558302",
+          "internalId": "1153138"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608702500272622",
+      "form": "BAAFresh",
+      "customerId": "WRO0533389",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0533389",
+          "internalId": "1146567"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608705060322649",
+      "form": "PostQualification",
+      "customerId": "221076",
+      "paymentAmount": "3068",
+      "steps": {
+        "customer": {
+          "entityId": "221076",
+          "internalId": "1060463"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608707360432777",
+      "form": "BAAFresh",
+      "customerId": "NRO0467019",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0467019",
+          "internalId": "1318565"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608708150572929",
+      "form": "BAAFresh",
+      "customerId": "WRO0583459",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0583459",
+          "internalId": "1161358"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608708200132952",
+      "form": "PostQualification",
+      "customerId": "487761",
+      "paymentAmount": "283",
+      "steps": {},
+      "success": false,
+      "error": "Customer 487761 not found in NetSuite"
+    },
+    {
+      "reference": "2022608709120023291",
+      "form": "BAAFresh",
+      "customerId": "SRO0487469",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0487469",
+          "internalId": "1377005"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608710050193858",
+      "form": "BAAFresh",
+      "customerId": "WRO0542497",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0542497",
+          "internalId": "1148799"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608710050073854",
+      "form": "PostQualification",
+      "customerId": "NRO0553754",
+      "paymentAmount": "140",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0553754",
+          "internalId": "2342636"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608710080143898",
+      "form": "BAAFresh",
+      "customerId": "SRO0575476",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0575476",
+          "internalId": "1402720"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608710150413992",
+      "form": "BAAFresh",
+      "customerId": "NRO0379982",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0379982",
+          "internalId": "1290125"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608710170064011",
+      "form": "BAAFresh",
+      "customerId": "CRO0633075",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0633075",
+          "internalId": "1786894"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608710240214101",
+      "form": "BAAFresh",
+      "customerId": "SRO0481467",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0481467",
+          "internalId": "1375402"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608710360384307",
+      "form": "BAAFresh",
+      "customerId": "NRO0390118",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0390118",
+          "internalId": "1292028"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608710410544399",
+      "form": "BAAFresh",
+      "customerId": "CRO0617673",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0617673",
+          "internalId": "1778518"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608710460084480",
+      "form": "BAAFresh",
+      "customerId": "SRO0590356",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0590356",
+          "internalId": "1408720"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608710490564543",
+      "form": "Form 108",
+      "customerId": "SRO0754542",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0754542",
+          "internalId": "1622959"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608710510144571",
+      "form": "BAAFresh",
+      "customerId": "SRO0610982",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0610982",
+          "internalId": "1416194"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608710530284607",
+      "form": "BAAFresh",
+      "customerId": "SRO0491252",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0491252",
+          "internalId": "1378047"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608711170405065",
+      "form": "PostQualification",
+      "customerId": "266769",
+      "paymentAmount": "165",
+      "steps": {
+        "customer": {
+          "entityId": "266769",
+          "internalId": "2152741"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608711240115201",
+      "form": "BAAFresh",
+      "customerId": "SRO0375678",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0375678",
+          "internalId": "1353633"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608711240595214",
+      "form": "BAAFresh",
+      "customerId": "ERO0135108",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "ERO0135108",
+          "internalId": "1239593"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608711380285513",
+      "form": "BAAFresh",
+      "customerId": "SRO0630400",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0630400",
+          "internalId": "1425383"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608711470515713",
+      "form": "BAAFresh",
+      "customerId": "NRO0438894",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0438894",
+          "internalId": "1304514"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608711540315857",
+      "form": "Form 108",
+      "customerId": "CRO0689249",
+      "paymentAmount": "1000",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0689249",
+          "internalId": "1582356"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608712000265994",
+      "form": "Form 108",
+      "customerId": "CRO0641646",
+      "paymentAmount": "1000",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0641646",
+          "internalId": "1791620"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608712010216012",
+      "form": "BAAFresh",
+      "customerId": "ERO0230998",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "ERO0230998",
+          "internalId": "1225150"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608712030126052",
+      "form": "BAAFresh",
+      "customerId": "NRO0430444",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0430444",
+          "internalId": "1301635"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608712030266060",
+      "form": "PostQualification",
+      "customerId": "489279",
+      "paymentAmount": "165",
+      "steps": {},
+      "success": false,
+      "error": "Customer 489279 not found in NetSuite"
+    },
+    {
+      "reference": "2022608712230236522",
+      "form": "BAAFresh",
+      "customerId": "CRO0628273",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0628273",
+          "internalId": "1784401"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608712230316527",
+      "form": "BAAFresh",
+      "customerId": "SRO0523334",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0523334",
+          "internalId": "1386362"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608712260336592",
+      "form": "Form 108",
+      "customerId": "CRO0685164",
+      "paymentAmount": "1000",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0685164",
+          "internalId": "1565108"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608712570457279",
+      "form": "Form 104",
+      "customerId": "WRO0748506",
+      "paymentAmount": "1000.0",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0748506",
+          "internalId": "1687697"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608713080187508",
+      "form": "BAAFresh",
+      "customerId": "CRO0472891",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0472891",
+          "internalId": "1743980"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608713100527552",
+      "form": "BAAFresh",
+      "customerId": "WRO0368460",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0368460",
+          "internalId": "1222403"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608713110087558",
+      "form": "BAAFresh",
+      "customerId": "SRO0447603",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0447603",
+          "internalId": "1366955"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608713120577602",
+      "form": "BAAFresh",
+      "customerId": "CRO0584378",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0584378",
+          "internalId": "1895368"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608713130027604",
+      "form": "BAAFresh",
+      "customerId": "SRO0440350",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0440350",
+          "internalId": "1365441"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608713290387908",
+      "form": "BAAFresh",
+      "customerId": "SRO0526961",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0526961",
+          "internalId": "1387402"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608713350318008",
+      "form": "Form 108",
+      "customerId": "SRO0829087",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0829087",
+          "internalId": "2167472"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608713480458264",
+      "form": "Form 108",
+      "customerId": "SRO0804066",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0804066",
+          "internalId": "1867856"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608713520118331",
+      "form": "BAAFresh",
+      "customerId": "SRO0584515",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0584515",
+          "internalId": "1406581"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608713470048228",
+      "form": "Form 108",
+      "customerId": "SRO0707301",
+      "paymentAmount": "1000",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0707301",
+          "internalId": "1198946"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260328210510000244653779371513967",
+      "form": "Intimation Delay -  Remove Partner( MRN : 221781) FRN : 012135S",
+      "customerId": "012135S",
+      "paymentAmount": "1180",
+      "steps": {
+        "customer": {
+          "entityId": "012135S",
+          "internalId": "640199"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608714270498918",
+      "form": "BAAFresh",
+      "customerId": "SRO0425658",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0425658",
+          "internalId": "1362400"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608714330359022",
+      "form": "Form 104",
+      "customerId": "CRO0739589",
+      "paymentAmount": "1000.0",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0739589",
+          "internalId": "2052012"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608714350579057",
+      "form": "Form 108",
+      "customerId": "NRO0423028",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0423028",
+          "internalId": "1811349"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608714360149064",
+      "form": "PostQualification",
+      "customerId": "320115",
+      "paymentAmount": "283",
+      "steps": {
+        "customer": {
+          "entityId": "320115",
+          "internalId": "2490189"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608714360469072",
+      "form": "BAAFresh",
+      "customerId": "ERO0166843",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "ERO0166843",
+          "internalId": "1242566"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260328210560000244661814928341413",
+      "form": "Intimation Delay -  Add Partner( MRN : 634607,642194), Remove Partner( MRN : 041461) FRN : 126819W",
+      "customerId": "126819W",
+      "paymentAmount": "590",
+      "steps": {
+        "customer": {
+          "entityId": "126819W",
+          "internalId": "701249"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608714460269218",
+      "form": "BAAFresh",
+      "customerId": "CRO0549787",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0549787",
+          "internalId": "1755137"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608714480259241",
+      "form": "Form 108",
+      "customerId": "WRO0606895",
+      "paymentAmount": "10000",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0606895",
+          "internalId": "1170197"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608714500129273",
+      "form": "BAAFresh",
+      "customerId": "SRO0553099",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0553099",
+          "internalId": "1395795"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608714490149257",
+      "form": "Form 108",
+      "customerId": "WRO0698482",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0698482",
+          "internalId": "1515888"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608714500419282",
+      "form": "PostQualification",
+      "customerId": "NRO0491539",
+      "paymentAmount": "140",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0491539",
+          "internalId": "1526702"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608714530359324",
+      "form": "Form 108",
+      "customerId": "SRO0722890",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0722890",
+          "internalId": "1525399"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608714540269333",
+      "form": "BAAFresh",
+      "customerId": "WRO0592315",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0592315",
+          "internalId": "1164469"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608714550179344",
+      "form": "Form 108",
+      "customerId": "CRO0638274",
+      "paymentAmount": "1000",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0638274",
+          "internalId": "1789681"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608714590139397",
+      "form": "BAAFresh",
+      "customerId": "SRO0543595",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0543595",
+          "internalId": "1392898"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608715070429530",
+      "form": "BAAFresh",
+      "customerId": "WRO0485984",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0485984",
+          "internalId": "1137109"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608715110349583",
+      "form": "PostQualification",
+      "customerId": "CRO0780641",
+      "paymentAmount": "140",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0780641",
+          "internalId": "2276188"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608715170519659",
+      "form": "BAAFresh",
+      "customerId": "WRO0520949",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0520949",
+          "internalId": "1143818"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608715180139672",
+      "form": "BAAFresh",
+      "customerId": "SRO0486434",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0486434",
+          "internalId": "1376742"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608715190599696",
+      "form": "Form 108",
+      "customerId": "WRO0761866",
+      "paymentAmount": "1000",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0761866",
+          "internalId": "1855885"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608715260119762",
+      "form": "Form 104",
+      "customerId": "WRO0764302",
+      "paymentAmount": "1000.0",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0764302",
+          "internalId": "2014659"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608715250539757",
+      "form": "QV",
+      "customerId": "MC001",
+      "paymentAmount": "590",
+      "steps": {},
+      "success": false,
+      "error": "Customer MC001 not found in NetSuite"
+    },
+    {
+      "reference": "20260328210330000244675235639761046",
+      "form": "Member Request Form",
+      "customerId": "443879",
+      "paymentAmount": "118.0",
+      "steps": {
+        "customer": {
+          "entityId": "443879",
+          "internalId": "1102310"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608715370549940",
+      "form": "Form 108",
+      "customerId": "NRO0485119",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0485119",
+          "internalId": "1488337"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608715450510062",
+      "form": "BAAFresh",
+      "customerId": "SRO0536715",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0536715",
+          "internalId": "1390367"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260328210630000244679173545919412",
+      "form": "Member Request Form",
+      "customerId": "109511",
+      "paymentAmount": "590.0",
+      "steps": {
+        "customer": {
+          "entityId": "109511",
+          "internalId": "787600"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260328210590000244679734882371130",
+      "form": "Member Request Form",
+      "customerId": "109511",
+      "paymentAmount": "590.0",
+      "steps": {
+        "customer": {
+          "entityId": "109511",
+          "internalId": "787600"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260328210520000244682995668114117",
+      "form": "Intimation Delay -  Remove Paid Assistants( MRN : 632689) FRN : 115024W",
+      "customerId": "115024W",
+      "paymentAmount": "1180",
+      "steps": {
+        "customer": {
+          "entityId": "115024W",
+          "internalId": "709917"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608716060520344",
+      "form": "BAAFresh",
+      "customerId": "SRO0651188",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0651188",
+          "internalId": "1436813"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608716190000503",
+      "form": "Form 108",
+      "customerId": "SRO0794111",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0794111",
+          "internalId": "1882920"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608716260550610",
+      "form": "Form 104",
+      "customerId": "NRO0497194",
+      "paymentAmount": "2000.0",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0497194",
+          "internalId": "1546585"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608716270530625",
+      "form": "BAAFresh",
+      "customerId": "WRO0583664",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0583664",
+          "internalId": "1898083"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608716300490669",
+      "form": "BAAFresh",
+      "customerId": "SRO0537135",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0537135",
+          "internalId": "1390513"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608716370050757",
+      "form": "BAAFresh",
+      "customerId": "NRO0300259",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0300259",
+          "internalId": "1279650"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608716380370781",
+      "form": "PostQualification",
+      "customerId": "FRO0583566",
+      "paymentAmount": "140",
+      "steps": {
+        "customer": {
+          "entityId": "FRO0583566",
+          "internalId": "3411055"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260328210510000244693049754864777",
+      "form": "Intimation Delay -  Add Paid Assistants( MRN : 629671) FRN : 100149W",
+      "customerId": "100149W",
+      "paymentAmount": "590",
+      "steps": {
+        "customer": {
+          "entityId": "100149W",
+          "internalId": "686518"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608716480090932",
+      "form": "BAAFresh",
+      "customerId": "SRO0661523",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0661523",
+          "internalId": "1441559"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608716490160950",
+      "form": "Form 108",
+      "customerId": "WRO0753083",
+      "paymentAmount": "10000",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0753083",
+          "internalId": "1998633"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608716500310967",
+      "form": "Form 108",
+      "customerId": "WRO0663210",
+      "paymentAmount": "1000",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0663210",
+          "internalId": "1697290"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608716540211026",
+      "form": "PostQualification",
+      "customerId": "CRO0733800",
+      "paymentAmount": "240",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0733800",
+          "internalId": "2019080"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608716550291045",
+      "form": "Form 107",
+      "customerId": "CRO0646231",
+      "paymentAmount": "1000.0",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0646231",
+          "internalId": "1197911"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260328210500000244698104519967586",
+      "form": "Member Request Form",
+      "customerId": "273992",
+      "paymentAmount": "118.0",
+      "steps": {
+        "customer": {
+          "entityId": "273992",
+          "internalId": "2837459"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608717050321185",
+      "form": "QV",
+      "customerId": "MC001",
+      "paymentAmount": "590",
+      "steps": {},
+      "success": false,
+      "error": "Customer MC001 not found in NetSuite"
+    },
+    {
+      "reference": "2012608717060471209",
+      "form": "BAAFresh",
+      "customerId": "SRO0576947",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0576947",
+          "internalId": "1870141"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608717130191299",
+      "form": "BAAFresh",
+      "customerId": "WRO0499378",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0499378",
+          "internalId": "1139339"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608717140521318",
+      "form": "BAAFresh",
+      "customerId": "CRO0446852",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0446852",
+          "internalId": "1898159"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608717210021388",
+      "form": "BAAFresh",
+      "customerId": "SRO0433140",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0433140",
+          "internalId": "1363755"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608717260111458",
+      "form": "BAAFresh",
+      "customerId": "FRO0008894",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "FRO0008894",
+          "internalId": "1484297"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608717240501435",
+      "form": "PostQualification",
+      "customerId": "CRO0775728",
+      "paymentAmount": "340",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0775728",
+          "internalId": "2171913"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608717360381584",
+      "form": "BAAFresh",
+      "customerId": "WRO0472029",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0472029",
+          "internalId": "1134726"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608717510431796",
+      "form": "Form 108",
+      "customerId": "SRO0654028",
+      "paymentAmount": "1000",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0654028",
+          "internalId": "1438226"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608717560041864",
+      "form": "BAAFresh",
+      "customerId": "SRO0477958",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0477958",
+          "internalId": "1897695"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608717570321875",
+      "form": "BAAFresh",
+      "customerId": "SRO0679853",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0679853",
+          "internalId": "1452563"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608718020091932",
+      "form": "BAAFresh",
+      "customerId": "SRO0619996",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0619996",
+          "internalId": "1420259"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608718050021975",
+      "form": "BAAFresh",
+      "customerId": "NRO0410810",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0410810",
+          "internalId": "1296253"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608718070012006",
+      "form": "PostQualification",
+      "customerId": "NRO0619430",
+      "paymentAmount": "140",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0619430",
+          "internalId": "5415188"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260328210590000244718468457674172",
+      "form": "Member Request Form",
+      "customerId": "521195",
+      "paymentAmount": "118.0",
+      "steps": {
+        "customer": {
+          "entityId": "521195",
+          "internalId": "833772"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608718310592339",
+      "form": "Form 108",
+      "customerId": "WRO0575421",
+      "paymentAmount": "10000",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0575421",
+          "internalId": "1158491"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608718360102399",
+      "form": "PostQualification",
+      "customerId": "CRO0839158",
+      "paymentAmount": "140",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0839158",
+          "internalId": "3499176"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608718550182685",
+      "form": "BAAFresh",
+      "customerId": "SRO0650461",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0650461",
+          "internalId": "1436414"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608718590182732",
+      "form": "BAAFresh",
+      "customerId": "NRO0448504",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0448504",
+          "internalId": "1308027"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608718570512718",
+      "form": "PostQualification",
+      "customerId": "106556",
+      "paymentAmount": "3068",
+      "steps": {
+        "customer": {
+          "entityId": "106556",
+          "internalId": "777645"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608719020372779",
+      "form": "BAAFresh",
+      "customerId": "WRO0521711",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0521711",
+          "internalId": "1144013"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608719070152833",
+      "form": "BAAFresh",
+      "customerId": "ERO0235002",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "ERO0235002",
+          "internalId": "1226693"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608719260133073",
+      "form": "BAAFresh",
+      "customerId": "CRO0579872",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0579872",
+          "internalId": "1763087"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608719340013174",
+      "form": "Form 108",
+      "customerId": "NRO0533121",
+      "paymentAmount": "1000",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0533121",
+          "internalId": "1918801"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608719350083184",
+      "form": "Form 108",
+      "customerId": "CRO0699343",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0699343",
+          "internalId": "1613639"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608719410403266",
+      "form": "BAAFresh",
+      "customerId": "WRO0534812",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0534812",
+          "internalId": "1146858"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608719470353331",
+      "form": "BAAFresh",
+      "customerId": "SRO0236670",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0236670",
+          "internalId": "2832592"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608719480043340",
+      "form": "BAAFresh",
+      "customerId": "SRO0518488",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0518488",
+          "internalId": "1384990"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608719480473348",
+      "form": "PostQualification",
+      "customerId": "619030",
+      "paymentAmount": "165",
+      "steps": {
+        "customer": {
+          "entityId": "619030",
+          "internalId": "2657194"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608719520153380",
+      "form": "BAAFresh",
+      "customerId": "SRO0604823",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0604823",
+          "internalId": "1413425"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608719540043408",
+      "form": "Form 108",
+      "customerId": "ERO0261051",
+      "paymentAmount": "1000",
+      "steps": {
+        "customer": {
+          "entityId": "ERO0261051",
+          "internalId": "1557016"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608720120273603",
+      "form": "BAAFresh",
+      "customerId": "SRO0561334",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0561334",
+          "internalId": "1397838"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608720210353715",
+      "form": "Form 104",
+      "customerId": "SRO0743256",
+      "paymentAmount": "1000.0",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0743256",
+          "internalId": "1600037"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608720310103797",
+      "form": "BAAFresh",
+      "customerId": "WRO0573806",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0573806",
+          "internalId": "1157920"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608720430113892",
+      "form": "BAAFresh",
+      "customerId": "SRO0560065",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0560065",
+          "internalId": "1397409"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608720430143893",
+      "form": "BAAFresh",
+      "customerId": "ERO0241822",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "ERO0241822",
+          "internalId": "1230370"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608720440253909",
+      "form": "BAAFresh",
+      "customerId": "SRO0596598",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0596598",
+          "internalId": "1410980"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608720450583929",
+      "form": "BAAFresh",
+      "customerId": "SRO0541608",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0541608",
+          "internalId": "1392221"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608720520323998",
+      "form": "Form 108",
+      "customerId": "WRO0666708",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0666708",
+          "internalId": "1699294"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608721120304204",
+      "form": "PostQualification",
+      "customerId": "NRO0577889",
+      "paymentAmount": "340",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0577889",
+          "internalId": "3383356"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608721420204450",
+      "form": "BAAFresh",
+      "customerId": "CRO0575394",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0575394",
+          "internalId": "1761929"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608721590584591",
+      "form": "BAAFresh",
+      "customerId": "WRO0563058",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "WRO0563058",
+          "internalId": "1154692"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260328210500000244773970265166814",
+      "form": "Intimation Delay -  Remove Paid Assistants( MRN : 577327) FRN : 117366W/W100018",
+      "customerId": "117366W/W100018",
+      "paymentAmount": "1180",
+      "steps": {},
+      "success": false,
+      "error": "Customer 117366W/W100018 not found in NetSuite"
+    },
+    {
+      "reference": "2032608722210144736",
+      "form": "BAAFresh",
+      "customerId": "SRO0057700",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0057700",
+          "internalId": "1985088"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608722310394806",
+      "form": "BAAFresh",
+      "customerId": "SRO0731731",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0731731",
+          "internalId": "1559831"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608722340404824",
+      "form": "BAAFresh",
+      "customerId": "NRO0263328",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0263328",
+          "internalId": "1275981"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2032608722440074886",
+      "form": "BAAFresh",
+      "customerId": "NRO0363554",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0363554",
+          "internalId": "1287498"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608722460574901",
+      "form": "BAAFresh",
+      "customerId": "SRO0495844",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0495844",
+          "internalId": "1379265"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608722540194949",
+      "form": "BAAFresh",
+      "customerId": "NRO0419724",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0419724",
+          "internalId": "1298638"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608723130445067",
+      "form": "BAAFresh",
+      "customerId": "NRO0410908",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0410908",
+          "internalId": "1296275"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608723160095085",
+      "form": "BAAFresh",
+      "customerId": "SRO0389460",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0389460",
+          "internalId": "1355757"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2022608723170135090",
+      "form": "BAAFresh",
+      "customerId": "SRO0378999",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0378999",
+          "internalId": "1354150"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608723180165098",
+      "form": "BAAFresh",
+      "customerId": "SRO0630401",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0630401",
+          "internalId": "1425384"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608723310305159",
+      "form": "PostQualification",
+      "customerId": "NRO0518773",
+      "paymentAmount": "240",
+      "steps": {
+        "customer": {
+          "entityId": "NRO0518773",
+          "internalId": "2099557"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608723450125230",
+      "form": "BAAFresh",
+      "customerId": "CRO0587407",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "CRO0587407",
+          "internalId": "1869297"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "2012608723510345262",
+      "form": "BAAFresh",
+      "customerId": "SRO0525032",
+      "paymentAmount": "500",
+      "steps": {
+        "customer": {
+          "entityId": "SRO0525032",
+          "internalId": "1386811"
+        }
+      },
+      "success": false,
+      "error": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    }
+  ]
+}
