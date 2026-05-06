@@ -90,7 +90,7 @@
       "S118": { "internal_id": "636", "description": "Revalidation Fee - Intermediate" }
     },
     "contribution_codes": [],
-    "allowed_forms": ["Student Registration Form"]
+    "allowed_forms": ["Student Registration Form", "Student Revalidation Form"]
   },
   "other_forms": {
     "subsidiary_id": "168",
@@ -118,10 +118,11 @@
       "M99": { "internal_id": "631", "description": "E-Journal Discount" },
       "M100": { "internal_id": "622", "description": "Airmail Charges" },
       "CONDON": { "internal_id": "615", "description": "Condonation Fees", "event_seminar": "Student - Intermediate" },
+      "S158": { "internal_id": "1113", "description": "Direct Entry Fees" },
       "R0015": { "internal_id": "663", "description": "Fee for Certified Copy", "event_seminar": "Exam Misc Income – Common" },
       "R0016": { "internal_id": "5405", "description": "Fee for Inspection", "event_seminar": "Exam Misc Income – Common" }
     },
     "contribution_codes": [],
-    "allowed_forms": ["Form 9", "Form 103", "MarksVerify"]
+    "allowed_forms": ["Form 9", "Form 103", "Form 103 Registration Fee", "Form 104", "Form 105", "Form 107", "Form 108", "MarksVerify"]
   }
 }
