@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const serveIndex = require("serve-index");
+const fs = require("fs");
 const { runFormBasedSync } = require("./syncFormBasedTransactions");
 
 const app = express();
@@ -21,7 +21,39 @@ function basicAuth(req, res, next) {
   return res.status(401).send("Unauthorized");
 }
 
-app.use("/webhook/files", basicAuth, express.static(DATA_DIR), serveIndex(DATA_DIR, { icons: true }));
+function fileBrowser(baseDir) {
+  return (req, res, next) => {
+    const fullPath = path.join(baseDir, req.path);
+    let stat;
+    try { stat = fs.statSync(fullPath); } catch { return next(); }
+
+    if (stat.isFile()) return res.sendFile(fullPath);
+
+    if (stat.isDirectory()) {
+      let entries;
+      try { entries = fs.readdirSync(fullPath, { withFileTypes: true }); } catch { return next(); }
+
+      const isRoot = req.path === "/" || req.path === "";
+      const rows = entries
+        .sort((a, b) => (a.isDirectory() === b.isDirectory() ? a.name.localeCompare(b.name) : a.isDirectory() ? -1 : 1))
+        .map(e => {
+          const href = e.isDirectory() ? `${e.name}/` : e.name;
+          const icon = e.isDirectory() ? "&#128193;" : "&#128196;";
+          return `<tr><td>${icon}</td><td><a href="${href}">${e.name}</a></td><td style="color:#888;padding-left:20px">${e.isDirectory() ? "folder" : ""}</td></tr>`;
+        });
+
+      if (!isRoot) rows.unshift(`<tr><td>&#128281;</td><td><a href="../">.. (up)</a></td><td></td></tr>`);
+
+      res.setHeader("Content-Type", "text/html");
+      return res.send(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Data Browser</title>
+<style>body{font-family:monospace;padding:24px;background:#f9f9f9}h2{margin-bottom:16px}table{border-collapse:collapse;background:#fff;border-radius:6px;box-shadow:0 1px 4px #0001}td{padding:6px 16px}tr:hover{background:#f0f4ff}a{text-decoration:none;color:#1a73e8}a:hover{text-decoration:underline}</style>
+</head><body><h2>&#128202; Data Browser &mdash; ${req.path}</h2>
+<table>${rows.join("")}</table></body></html>`);
+    }
+  };
+}
+
+app.use("/webhook/files", basicAuth, fileBrowser(DATA_DIR));
 
 const cors = require('cors');
 
