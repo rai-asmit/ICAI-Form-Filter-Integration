@@ -21,7 +21,7 @@ function basicAuth(req, res, next) {
   return res.status(401).send("Unauthorized");
 }
 
-app.use("/files", basicAuth, express.static(DATA_DIR), serveIndex(DATA_DIR, { icons: true }));
+app.use("/webhook/files", basicAuth, express.static(DATA_DIR), serveIndex(DATA_DIR, { icons: true }));
 
 const cors = require('cors');
 
