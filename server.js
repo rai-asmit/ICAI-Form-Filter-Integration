@@ -37,7 +37,7 @@ function fileBrowser(baseDir) {
     let stat;
     try { stat = fs.statSync(fullPath); } catch { return next(); }
 
-    if (stat.isFile()) return res.sendFile(fullPath);
+    if (stat.isFile()) return res.download(fullPath);
 
     if (stat.isDirectory()) {
       let entries;
