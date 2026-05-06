@@ -38,17 +38,13 @@ function fileBrowser(baseDir) {
         .sort((a, b) => (a.isDirectory() === b.isDirectory() ? a.name.localeCompare(b.name) : a.isDirectory() ? -1 : 1))
         .map(e => {
           const href = e.isDirectory() ? `${e.name}/` : e.name;
-          const icon = e.isDirectory() ? "&#128193;" : "&#128196;";
-          return `<tr><td>${icon}</td><td><a href="${href}">${e.name}</a></td><td style="color:#888;padding-left:20px">${e.isDirectory() ? "folder" : ""}</td></tr>`;
+          return `<li><a href="${href}">${e.name}</a></li>`;
         });
 
-      if (!isRoot) rows.unshift(`<tr><td>&#128281;</td><td><a href="../">.. (up)</a></td><td></td></tr>`);
+      if (!isRoot) rows.unshift(`<li><a href="../">.. (up)</a></li>`);
 
       res.setHeader("Content-Type", "text/html");
-      return res.send(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Data Browser</title>
-<style>body{font-family:monospace;padding:24px;background:#f9f9f9}h2{margin-bottom:16px}table{border-collapse:collapse;background:#fff;border-radius:6px;box-shadow:0 1px 4px #0001}td{padding:6px 16px}tr:hover{background:#f0f4ff}a{text-decoration:none;color:#1a73e8}a:hover{text-decoration:underline}</style>
-</head><body><h2>&#128202; Data Browser &mdash; ${req.path}</h2>
-<table>${rows.join("")}</table></body></html>`);
+      return res.send(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Data Browser</title></head><body><h2>Data Browser - ${req.path}</h2><ul>${rows.join("")}</ul></body></html>`);
     }
   };
 }
