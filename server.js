@@ -211,5 +211,5 @@ app.listen(PORT, () => {
   console.log("Endpoints:");
   console.log("  POST /webhook/form-based-transactions/:id");
   console.log("  POST /webhook/form-based-transactions-range/:id?fromDate=DD/MM/YYYY&toDate=DD/MM/YYYY");
-  console.log(`  GET  /files  ->  Data browser (user: ${FB_USER})`);
+  console.log(`  GET  /webhook/files  ->  Data browser (user: ${FB_USER})`);
 });
