@@ -1,0 +1,5278 @@
+[
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260430210520000256716092378733874",
+    "End_Date": "",
+    "Payment_Date": "30/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "944",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "BPM2016",
+    "Start_Date": "",
+    "IGST": "144",
+    "Application_number": "6986734",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Balance Payment Form",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "800",
+        "FeeHeadCode1": "M12",
+        "FeeHead1": "OLD MEMBERSHIP FEE"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "813754",
+    "Total_Amount_Exclu_Tax": "800",
+    "Payment_Order_Id": "BPM201620260430210103451",
+    "Transaction_Number": "",
+    "Payment_Amount": "944",
+    "Customer_ID": "118123",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": ""
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260430210400000256687761373816425",
+    "End_Date": "",
+    "Payment_Date": "30/04/2026",
+    "SGST": "270",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "270",
+    "Form_Application_numnber": "CP0000078859",
+    "Start_Date": "",
+    "IGST": "",
+    "Application_number": "6985660",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007885920260430190830007",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "564512",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260430210540000256641864447288796",
+    "End_Date": "",
+    "Payment_Date": "30/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000231193",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6983575",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000023119320260430160607387",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0290461",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260429210350000256263850383523236",
+    "End_Date": "",
+    "Payment_Date": "29/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONE0000233459",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6976554",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONE000023345920260429150401491",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "ERO0077731",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260428210420000255992620992835168",
+    "End_Date": "",
+    "Payment_Date": "28/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000226049",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6974417",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": ""
+      },
+      {
+        "FeeHeadCode3": "",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000022604920260428210615189",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0755311",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260428210550000255909162937029579",
+    "End_Date": "",
+    "Payment_Date": "28/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000082219",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6972018",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008221920260428153436808",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "246745",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260428210380000255852719228030384",
+    "End_Date": "",
+    "Payment_Date": "28/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084232",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6970677",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008423220260428115020397",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "258894",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260428210320000255868863720671894",
+    "End_Date": "",
+    "Payment_Date": "28/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084243",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6971107",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008424320260428125429614",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "455054",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260427210350000255507611169071314",
+    "End_Date": "",
+    "Payment_Date": "27/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084223",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6966741",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008422320260427125859890",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "446484",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210420000255200170133075766",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000077842",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964325",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007784220260426163720213",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "645136",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000254973831849432928",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078703",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6962863",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007870320260426013756738",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "572922",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210630000255109566421918021",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078704",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963078",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007870420260426103718787",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "645915",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210330000255122081826825064",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078705",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963233",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007870520260426112702711",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "276977",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255149064279187250",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "4720",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078706",
+    "Start_Date": "",
+    "IGST": "720",
+    "Application_number": "6963664",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "4000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Fellow"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "4000",
+    "Payment_Order_Id": "CP000007870620260426131415929",
+    "Transaction_Number": "",
+    "Payment_Amount": "4720",
+    "Customer_ID": "511425",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "720"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210490000255165951503041078",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078708",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963905",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007870820260426142122146",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "321266",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210500000255208149435075157",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078710",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964440",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007871020260426170902828",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "311164",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210530000255211336259735033",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078711",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964486",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007871120260426172142780",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "258881",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210590000255211364307090031",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078712",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964487",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007871220260426172149261",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "281765",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255236380955922328",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "4720",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078713",
+    "Start_Date": "",
+    "IGST": "720",
+    "Application_number": "6964801",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "4000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Fellow"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "4000",
+    "Payment_Order_Id": "CP000007871320260426190111699",
+    "Transaction_Number": "",
+    "Payment_Amount": "4720",
+    "Customer_ID": "520789",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "720"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210490000255248372454517278",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078714",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964972",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007871420260426194853086",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "283893",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210490000255250588740956681",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "4720",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078715",
+    "Start_Date": "",
+    "IGST": "720",
+    "Application_number": "6965001",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "4000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Fellow"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "4000",
+    "Payment_Order_Id": "CP000007871520260426195741467",
+    "Transaction_Number": "",
+    "Payment_Amount": "4720",
+    "Customer_ID": "310320",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "720"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210440000255258227739204902",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078717",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965104",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007871720260426202801965",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "283907",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210520000255259720927808346",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078718",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965130",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007871820260426203358610",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "572088",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210380000255136666852235863",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000065033",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6963448",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000006503320260426122500274",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "245395",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210610000255143082102523432",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000066792",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6963542",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000006679220260426125029848",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "247310",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210580000255189906406331358",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000070775",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6964214",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000007077520260426155633400",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "416540",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210440000255263303815920429",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "4720",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000075531",
+    "Start_Date": "",
+    "IGST": "720",
+    "Application_number": "6965192",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "2500",
+        "FeeHead2": "Member-Fellow Admission",
+        "FeeHeadCode2": "M09"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "4000",
+    "Payment_Order_Id": "FLW000007553120260426204812051",
+    "Transaction_Number": "",
+    "Payment_Amount": "4720",
+    "Customer_ID": "253551",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "720"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210520000255138334926305947",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000075919",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6963475",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000007591920260426123137749",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "126597",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210500000255155570093115493",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084199",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6963764",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008419920260426134007220",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "246468",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210500000255107240881343455",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084209",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6963058",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008420920260426102804657",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "196893",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210320000255146608912989215",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084213",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6963607",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008421320260426130430748",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "257926",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210440000255099933326509833",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000221717",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963013",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000022171720260426095859702",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0570078",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210630000255233631614786124",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "7080",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000226912",
+    "Start_Date": "",
+    "IGST": "1080",
+    "Application_number": "6964776",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M07",
+        "FeeAmount3": "3000",
+        "FeeHead3": "Member COP Fee - Associate"
+      },
+      {
+        "FeeHeadCode4": "M05",
+        "FeeAmount4": "1500",
+        "FeeHead4": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "6000",
+    "Payment_Order_Id": "ONC000022691220260426185017763",
+    "Transaction_Number": "",
+    "Payment_Amount": "7080",
+    "Customer_ID": "CRO0611027",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "1080"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255256226477405980",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000227843",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965079",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000022784320260426202005100",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0524289",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210550000255143632366286771",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000228025",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963552",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000022802520260426125240721",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0635506",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210390000255151068120751035",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "4130",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000229188",
+    "Start_Date": "",
+    "IGST": "630",
+    "Application_number": "6963683",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "1500",
+        "FeeHead2": "Membership Fee - Associate",
+        "FeeHeadCode2": "M05"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3500",
+    "Payment_Order_Id": "ONC000022918820260426132213478",
+    "Transaction_Number": "",
+    "Payment_Amount": "4130",
+    "Customer_ID": "CRO0470990",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "630"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255163894692339601",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000230036",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963881",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023003620260426141311716",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0642607",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210510000255308883480981272",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000230237",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965629",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023023720260426234916691",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0728782",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210380000255186813099419544",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000231007",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964174",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023100720260426154415968",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0568409",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210390000255150549134357283",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000231093",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963671",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023109320260426132010082",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0694625",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210560000255128150778905260",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "7080",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000232664",
+    "Start_Date": "",
+    "IGST": "1080",
+    "Application_number": "6963314",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M07",
+        "FeeAmount3": "3000",
+        "FeeHead3": "Member COP Fee - Associate"
+      },
+      {
+        "FeeHeadCode4": "M05",
+        "FeeAmount4": "1500",
+        "FeeHead4": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "6000",
+    "Payment_Order_Id": "ONC000023266420260426115109646",
+    "Transaction_Number": "",
+    "Payment_Amount": "7080",
+    "Customer_ID": "CRO0672737",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "1080"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210440000255195047898055445",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000232858",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964265",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023285820260426161658110",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0465767",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210490000255281269365873945",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000233230",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965403",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023323020260426215936165",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0713296",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255198817838849202",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000233323",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964312",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023332320260426163059824",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0705129",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210550000255156383176261632",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000233328",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963776",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023332820260426134320978",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0692475",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210410000255144091352595664",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000233340",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963592",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023334020260426125428997",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0551849",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255121722353792872",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000233345",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963239",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023334520260426112537016",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0722827",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210330000255140100472317632",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000233354",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963500",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023335420260426123838692",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "NRO0416011",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210400000255165360027293307",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "7080",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000233358",
+    "Start_Date": "",
+    "IGST": "1080",
+    "Application_number": "6963897",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M07",
+        "FeeAmount3": "3000",
+        "FeeHead3": "Member COP Fee - Associate"
+      },
+      {
+        "FeeHeadCode4": "M05",
+        "FeeAmount4": "1500",
+        "FeeHead4": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "6000",
+    "Payment_Order_Id": "ONC000023335820260426141901032",
+    "Transaction_Number": "",
+    "Payment_Amount": "7080",
+    "Customer_ID": "CRO0598983",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "1080"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210510000255219334868294284",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000233364",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964584",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023336420260426175329860",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0722525",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210380000255136797219599748",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONE0000231462",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963450",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONE000023146220260426122531279",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "ERO0258544",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210320000255229340238178484",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONE0000233087",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964710",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONE000023308720260426183315170",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "ERO0267080",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210420000255092460033144761",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONE0000233349",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6962987",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONE000023334920260426092920201",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "ERO0257892",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255183546046756781",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONN0000227138",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964126",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONN000022713820260426153116310",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "NRO0437498",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255280752061852954",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONN0000227159",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965398",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONN000022715920260426215732872",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "NRO0516533",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210520000255200542796412465",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "270",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "270",
+    "Form_Application_numnber": "ONN0000228291",
+    "Start_Date": "",
+    "IGST": "",
+    "Application_number": "6964331",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONN000022829120260426163849285",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "NRO0440426",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210570000255280749767984255",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONN0000232833",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965397",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONN000023283320260426215732258",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "NRO0510896",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210510000255205270922387540",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "270",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "270",
+    "Form_Application_numnber": "ONN0000233227",
+    "Start_Date": "",
+    "IGST": "",
+    "Application_number": "6964397",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONN000023322720260426165736882",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "NRO0500135",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255208707542110028",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "270",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "270",
+    "Form_Application_numnber": "ONN0000233228",
+    "Start_Date": "",
+    "IGST": "",
+    "Application_number": "6964447",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONN000023322820260426171116169",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "NRO0498054",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210570000255163104636536680",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "270",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "270",
+    "Form_Application_numnber": "ONN0000233315",
+    "Start_Date": "",
+    "IGST": "",
+    "Application_number": "6963867",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONN000023331520260426141003551",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "NRO0497807",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210320000255124891041751436",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONN0000233352",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963272",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONN000023335220260426113812535",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "NRO0495270",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210540000255296717005063410",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "270",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "270",
+    "Form_Application_numnber": "ONN0000233370",
+    "Start_Date": "",
+    "IGST": "",
+    "Application_number": "6965542",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONN000023337020260426230059194",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "NRO0490883",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210590000255154446083482765",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000157219",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963741",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000015721920260426133538931",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0493336",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210530000255271502380402365",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000165327",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965287",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000016532720260426212047450",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0338778",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255060985052813448",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000229298",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6962915",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000022929820260426072415991",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0618246",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210350000255246240451930404",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000229788",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964953",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000022978820260426194024554",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0516396",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210380000255266196392744582",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "7080",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000229992",
+    "Start_Date": "",
+    "IGST": "1080",
+    "Application_number": "6965235",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M07",
+        "FeeAmount3": "3000",
+        "FeeHead3": "Member COP Fee - Associate"
+      },
+      {
+        "FeeHeadCode4": "M05",
+        "FeeAmount4": "1500",
+        "FeeHead4": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "6000",
+    "Payment_Order_Id": "ONS000022999220260426205942546",
+    "Transaction_Number": "",
+    "Payment_Amount": "7080",
+    "Customer_ID": "SRO0658540",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "1080"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210500000255137213423866963",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000231400",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963459",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000023140020260426122710071",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0770149",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210420000255275872622657950",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000232444",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965331",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000023244420260426213808463",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0768273",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210580000255299835507077732",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000232538",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965567",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000023253820260426231322554",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0760627",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210590000255274837376424370",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000232900",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965325",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000023290020260426213402572",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0778021",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210330000255233150620629328",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "4130",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000233346",
+    "Start_Date": "",
+    "IGST": "630",
+    "Application_number": "6964767",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "1500",
+        "FeeHead2": "Membership Fee - Associate",
+        "FeeHeadCode2": "M05"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3500",
+    "Payment_Order_Id": "ONS000023334620260426184822684",
+    "Transaction_Number": "",
+    "Payment_Amount": "4130",
+    "Customer_ID": "SRO0742264",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "630"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210540000255292499238127975",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000233356",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965511",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000023335620260426224412990",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0734991",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210480000255300008392658429",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000233365",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965570",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000023336520260426231403790",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0770250",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210490000255246196248265445",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000233366",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964944",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000023336620260426194013567",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0775652",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210400000255153666940493530",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000217807",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963730",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000021780720260426133233329",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0592333",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210410000255229527387303066",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000225673",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964717",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000022567320260426183359688",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0749770",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210320000255121241565252565",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000226826",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963222",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000022682620260426112341744",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0571436",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210610000255164367910820191",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000231279",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963883",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000023127920260426141504479",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0591807",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210570000255283522898858635",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "7080",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000231327",
+    "Start_Date": "",
+    "IGST": "1080",
+    "Application_number": "6965429",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M07",
+        "FeeAmount3": "3000",
+        "FeeHead3": "Member COP Fee - Associate"
+      },
+      {
+        "FeeHeadCode4": "M05",
+        "FeeAmount4": "1500",
+        "FeeHead4": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "6000",
+    "Payment_Order_Id": "ONW000023132720260426220833476",
+    "Transaction_Number": "",
+    "Payment_Amount": "7080",
+    "Customer_ID": "WRO0616098",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "1080"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210460000255193370826208126",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000231714",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6964254",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000023171420260426161019062",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0743121",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210590000255302969986833458",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000232560",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6965593",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000023256020260426232548682",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0743299",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260426210340000255130150912440136",
+    "End_Date": "",
+    "Payment_Date": "26/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000233353",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6963348",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000023335320260426115906548",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0723711",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260425210380000254773007848389662",
+    "End_Date": "",
+    "Payment_Date": "25/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "210",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "BPM2015",
+    "Start_Date": "",
+    "IGST": "",
+    "Application_number": "6960349",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Balance Payment Form",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "210",
+        "FeeHeadCode1": "M05",
+        "FeeHead1": "MEMBERSHIP FEE - ASSOCIATE"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "813754",
+    "Total_Amount_Exclu_Tax": "210",
+    "Payment_Order_Id": "BPM201520260425121955623",
+    "Transaction_Number": "",
+    "Payment_Amount": "210",
+    "Customer_ID": "101316",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": ""
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260424210580000254445225179435071",
+    "End_Date": "",
+    "Payment_Date": "24/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000066878",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6957324",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000006687820260424143727511",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "236367",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260423210550000254093409187603607",
+    "End_Date": "",
+    "Payment_Date": "23/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078622",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6953638",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007862220260423151927865",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "142973",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260423210610000254112529199487869",
+    "End_Date": "",
+    "Payment_Date": "23/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084144",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6954060",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008414420260423163526825",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "448644",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260421210590000253330458100450304",
+    "End_Date": "",
+    "Payment_Date": "21/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078550",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6942969",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007855020260421124746272",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "293770",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260420210370000253036929701597002",
+    "End_Date": "",
+    "Payment_Date": "20/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084031",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6937418",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008403120260420172123629",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "451326",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260420210590000253033713626178351",
+    "End_Date": "",
+    "Payment_Date": "20/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084058",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6937243",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008405820260420170837159",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "258705",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260420210430000252988525620550744",
+    "End_Date": "",
+    "Payment_Date": "20/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000232913",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6937138",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": ""
+      },
+      {
+        "FeeHeadCode3": "",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000023291320260420140902673",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0585224",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260416210380000251483826447379042",
+    "End_Date": "",
+    "Payment_Date": "16/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078318",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6909644",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007831820260416102955296",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "174548",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260416210580000251677925968533833",
+    "End_Date": "",
+    "Payment_Date": "16/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000231261",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6917847",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000023126120260416232112093",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0263138",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260415210370000251178892887134093",
+    "End_Date": "",
+    "Payment_Date": "15/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000076055",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6905041",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000007605520260415141812967",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "557078",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260415210580000251188327056375288",
+    "End_Date": "",
+    "Payment_Date": "15/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000083714",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6905341",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008371420260415145541800",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "256720",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260415210490000251164357837388050",
+    "End_Date": "",
+    "Payment_Date": "15/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000083898",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6904576",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008389820260415132028056",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "257983",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260415210580000251195267752888692",
+    "End_Date": "",
+    "Payment_Date": "15/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000083907",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6905596",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion Senior Citizen"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008390720260415152317492",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "200842",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260414210630000250864180744792374",
+    "End_Date": "",
+    "Payment_Date": "14/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000083858",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6899287",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008385820260414172739946",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "257885",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260413210440000250475266955596872",
+    "End_Date": "",
+    "Payment_Date": "13/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000082632",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6884607",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008263220260413154215976",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "257365",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260413210390000250419554937500652",
+    "End_Date": "",
+    "Payment_Date": "13/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000231266",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6882247",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023126620260413120053175",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0522668",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260413210490000250505152805799311",
+    "End_Date": "",
+    "Payment_Date": "13/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONS0000232712",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6885875",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONS000023271220260413174100836",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "SRO0005687",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260412210630000250137294753583365",
+    "End_Date": "",
+    "Payment_Date": "12/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000232887",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6879581",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": ""
+      },
+      {
+        "FeeHeadCode3": "",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000023288720260412171917154",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0635961",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260411210410000249717836109769044",
+    "End_Date": "",
+    "Payment_Date": "11/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078145",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6875041",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007814520260411133230345",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "180064",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260410210510000249324603730363184",
+    "End_Date": "",
+    "Payment_Date": "10/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000078197",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6871616",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000007819720260410112956354",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "537584",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260409210330000249020570486595216",
+    "End_Date": "",
+    "Payment_Date": "09/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "1770",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "BPM1987",
+    "Start_Date": "",
+    "IGST": "270",
+    "Application_number": "6869618",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Balance Payment Form",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M12",
+        "FeeHead1": "Old Membership Fee"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "813754",
+    "Total_Amount_Exclu_Tax": "1500",
+    "Payment_Order_Id": "BPM198720260409152149201",
+    "Transaction_Number": "",
+    "Payment_Amount": "1770",
+    "Customer_ID": "148958",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": ""
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260409210590000248980733746853495",
+    "End_Date": "",
+    "Payment_Date": "09/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONE0000231502",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6869035",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONE000023150220260409124331359",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "ERO0139988",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260409210520000248952134398146339",
+    "End_Date": "",
+    "Payment_Date": "09/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000226110",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6868600",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000022611020260409104952324",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0319820",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260409210590000248796153945434282",
+    "End_Date": "",
+    "Payment_Date": "09/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000231394",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6868336",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000023139420260409003004233",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0416188",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260408210630000248762924995027194",
+    "End_Date": "",
+    "Payment_Date": "08/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078049",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6868093",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007804920260408221759885",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "175020",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260407210360000248330706971724194",
+    "End_Date": "",
+    "Payment_Date": "07/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000083613",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6864196",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008361320260407174030608",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "425088",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260407210470000248194341286087305",
+    "End_Date": "",
+    "Payment_Date": "07/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONW0000229603",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6862365",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": ""
+      },
+      {
+        "FeeHeadCode3": "",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONW000022960320260407083840937",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "WRO0599420",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260406210590000247949422181591648",
+    "End_Date": "",
+    "Payment_Date": "06/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000077719",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6860387",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007771920260406162527391",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "231311",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260405210330000247558394567511186",
+    "End_Date": "",
+    "Payment_Date": "05/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000077906",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6857377",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007790620260405143139501",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "641127",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260404210370000247210550006448333",
+    "End_Date": "",
+    "Payment_Date": "04/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000077867",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6855173",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007786720260404152926756",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "178284",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260403210370000246824823284698014",
+    "End_Date": "",
+    "Payment_Date": "03/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000077816",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6852030",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007781620260403135642206",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "478480",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260403210620000246789991616064586",
+    "End_Date": "",
+    "Payment_Date": "03/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000083460",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6851383",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008346020260403113817646",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "257730",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260402210320000246488126710243721",
+    "End_Date": "",
+    "Payment_Date": "02/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "4720",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000077720",
+    "Start_Date": "",
+    "IGST": "720",
+    "Application_number": "6850380",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "4000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Fellow"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "4000",
+    "Payment_Order_Id": "CP000007772020260402153846950",
+    "Transaction_Number": "",
+    "Payment_Amount": "4720",
+    "Customer_ID": "501300",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "720"
+  },
+  {
+    "Record_Readed": "P",
+    "Firm_Number": "",
+    "Reference_Number": "20260402210430000246436377944702748",
+    "End_Date": "",
+    "Payment_Date": "02/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "ONC0000225977",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6847532",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 2",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "2000",
+        "FeeHeadCode1": "M08",
+        "FeeHead1": "Member Entrance Fee"
+      },
+      {
+        "FeeAmount2": "-500",
+        "FeeHead2": "e-Journal Discount",
+        "FeeHeadCode2": "M99"
+      },
+      {
+        "FeeHeadCode3": "M05",
+        "FeeAmount3": "1500",
+        "FeeHead3": "Membership Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "ONC000022597720260402121309248",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "CRO0094592",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540"
+  }
+]

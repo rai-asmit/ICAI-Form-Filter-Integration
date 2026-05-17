@@ -1,0 +1,550 @@
+{
+  "startedAt": "2026-05-17T15:22:58.854Z",
+  "finishedAt": "2026-05-17T15:25:15.188Z",
+  "durationMs": 136334,
+  "sourceFile": "/home/ubuntu/deployed-integration/ICAI-Form-Filter-Integration/data_to_be_rerun.json",
+  "outputDir": "/home/ubuntu/deployed-integration/ICAI-Form-Filter-Integration/rerun/csv-runs/2026-05-17T15-22-58-854Z",
+  "counts": {
+    "records": 118,
+    "membership": 115,
+    "exam": 3,
+    "passed": 98,
+    "failed": 20
+  },
+  "passed": [
+    {
+      "reference": "20260426210550000255156383176261632",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210440000255195047898055445",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210530000255211336259735033",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210390000255151068120751035",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210630000255109566421918021",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260428210550000255909162937029579",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210520000255259720927808346",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210520000255138334926305947",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210330000255122081826825064",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210440000255263303815920429",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260427210350000255507611169071314",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210390000255150549134357283",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260430210400000256687761373816425",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210350000255149064279187250",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210350000255236380955922328",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260428210320000255868863720671894",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210590000255211364307090031",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210490000255165951503041078",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210490000255248372454517278",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210350000254973831849432928",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210320000255146608912989215",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210380000255136666852235863",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210500000255208149435075157",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210610000255143082102523432",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210580000255189906406331358",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210490000255281269365873945",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210490000255250588740956681",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210440000255099933326509833",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210420000255200170133075766",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210380000255186813099419544",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210350000255198817838849202",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210350000255256226477405980",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210550000255143632366286771",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210500000255155570093115493",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210500000255107240881343455",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210630000255233631614786124",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210510000255308883480981272",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210440000255258227739204902",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260426210560000255128150778905260",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210350000255163894692339601",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210320000255124891041751436",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210520000255200542796412465",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210380000255136797219599748",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210320000255229340238178484",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210570000255280749767984255",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210510000255205270922387540",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210350000255060985052813448",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210350000255280752061852954",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210410000255144091352595664",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210530000255271502380402365",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210350000255121722353792872",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210350000255183546046756781",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210500000255137213423866963",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260423210550000254093409187603607",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260424210580000254445225179435071",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260426210420000255092460033144761",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210330000255140100472317632",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210400000255165360027293307",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210570000255163104636536680",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210510000255219334868294284",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210580000255299835507077732",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210350000255208707542110028",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210610000255164367910820191",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210590000255154446083482765",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210460000255193370826208126",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210540000255296717005063410",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210590000255274837376424370",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210540000255292499238127975",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210490000255246196248265445",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210350000255246240451930404",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210420000255275872622657950",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210480000255300008392658429",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210330000255233150620629328",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210320000255121241565252565",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210400000255153666940493530",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210590000255302969986833458",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210410000255229527387303066",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210570000255283522898858635",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210340000255130150912440136",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260426210380000255266196392744582",
+      "form": "Form 2"
+    },
+    {
+      "reference": "20260423210610000254112529199487869",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260421210590000253330458100450304",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260420210590000253033713626178351",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260416210380000251483826447379042",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260415210580000251188327056375288",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260415210370000251178892887134093",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260413210440000250475266955596872",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260407210360000248330706971724194",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260410210510000249324603730363184",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260403210620000246789991616064586",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260415210490000251164357837388050",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260415210580000251195267752888692",
+      "form": "Form 3/Fellowship"
+    },
+    {
+      "reference": "20260403210370000246824823284698014",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260406210590000247949422181591648",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260411210410000249717836109769044",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260402210320000246488126710243721",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260404210370000247210550006448333",
+      "form": "Form 6"
+    },
+    {
+      "reference": "20260408210630000248762924995027194",
+      "form": "Form 6"
+    }
+  ],
+  "failed": [
+    {
+      "reference": "20260428210420000255992620992835168",
+      "form": "Form 2",
+      "reason": "No fee heads found in transaction"
+    },
+    {
+      "reference": "20260430210540000256641864447288796",
+      "form": "Form 2",
+      "reason": "Form 2 requires a duplicate member customer — duplication failed for WRO0290461: Student customer not found in NetSuite: WRO0290461"
+    },
+    {
+      "reference": "20260429210350000256263850383523236",
+      "form": "Form 2",
+      "reason": "Form 2 requires a duplicate member customer — duplication failed for ERO0077731: Student customer not found in NetSuite: ERO0077731"
+    },
+    {
+      "reference": "20260428210380000255852719228030384",
+      "form": "Form 3/Fellowship",
+      "reason": {
+        "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+        "title": "Bad Request",
+        "status": 400,
+        "o:errorDetails": [
+          {
+            "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+            "o:errorCode": "USER_ERROR"
+          }
+        ]
+      }
+    },
+    {
+      "reference": "20260420210430000252988525620550744",
+      "form": "Form 2",
+      "reason": "No fee heads found in transaction"
+    },
+    {
+      "reference": "20260416210580000251677925968533833",
+      "form": "Form 2",
+      "reason": "Form 2 requires a duplicate member customer — duplication failed for SRO0263138: Student customer not found in NetSuite: SRO0263138"
+    },
+    {
+      "reference": "20260413210390000250419554937500652",
+      "form": "Form 2",
+      "reason": "Form 2 requires a duplicate member customer — duplication failed for CRO0522668: Student customer not found in NetSuite: CRO0522668"
+    },
+    {
+      "reference": "20260413210490000250505152805799311",
+      "form": "Form 2",
+      "reason": "Form 2 requires a duplicate member customer — duplication failed for SRO0005687: Student customer not found in NetSuite: SRO0005687"
+    },
+    {
+      "reference": "20260412210630000250137294753583365",
+      "form": "Form 2",
+      "reason": "No fee heads found in transaction"
+    },
+    {
+      "reference": "20260420210370000253036929701597002",
+      "form": "Form 3/Fellowship",
+      "reason": {
+        "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+        "title": "Bad Request",
+        "status": 400,
+        "o:errorDetails": [
+          {
+            "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+            "o:errorCode": "USER_ERROR"
+          }
+        ]
+      }
+    },
+    {
+      "reference": "20260409210590000248980733746853495",
+      "form": "Form 2",
+      "reason": "Form 2 requires a duplicate member customer — duplication failed for ERO0139988: Student customer not found in NetSuite: ERO0139988"
+    },
+    {
+      "reference": "20260407210470000248194341286087305",
+      "form": "Form 2",
+      "reason": "No fee heads found in transaction"
+    },
+    {
+      "reference": "20260409210520000248952134398146339",
+      "form": "Form 2",
+      "reason": "Form 2 requires a duplicate member customer — duplication failed for WRO0319820: Student customer not found in NetSuite: WRO0319820"
+    },
+    {
+      "reference": "20260409210590000248796153945434282",
+      "form": "Form 2",
+      "reason": "Form 2 requires a duplicate member customer — duplication failed for WRO0416188: Student customer not found in NetSuite: WRO0416188"
+    },
+    {
+      "reference": "20260402210430000246436377944702748",
+      "form": "Form 2",
+      "reason": "Form 2 requires a duplicate member customer — duplication failed for CRO0094592: Student customer not found in NetSuite: CRO0094592"
+    },
+    {
+      "reference": "20260414210630000250864180744792374",
+      "form": "Form 3/Fellowship",
+      "reason": {
+        "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+        "title": "Bad Request",
+        "status": 400,
+        "o:errorDetails": [
+          {
+            "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+            "o:errorCode": "USER_ERROR"
+          }
+        ]
+      }
+    },
+    {
+      "reference": "20260430210520000256716092378733874",
+      "form": "Balance Payment Form",
+      "reason": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260425210380000254773007848389662",
+      "form": "Balance Payment Form",
+      "reason": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260409210330000249020570486595216",
+      "form": "Balance Payment Form",
+      "reason": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+    },
+    {
+      "reference": "20260405210330000247558394567511186",
+      "form": "Form 6",
+      "reason": {
+        "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+        "title": "Bad Request",
+        "status": 400,
+        "o:errorDetails": [
+          {
+            "detail": "Error while accessing a resource. You have entered an Invalid Field Value 285 for the following field: location.",
+            "o:errorCode": "USER_ERROR"
+          }
+        ]
+      }
+    }
+  ]
+}

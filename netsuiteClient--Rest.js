@@ -88,7 +88,7 @@ async function queryCustomerByEntityIdBulk(entityIds, limit = 100, offset = 0) {
   // or the application sequence number stored in custentity_ino_icai_appseq_no
   // (e.g. APP4342821). Match either column so student records resolve correctly.
   const entityIdList = entityIds.map((e) => `'${e}'`).join(",");
-  const query = `SELECT id, entityid, custentity_ino_icai_appseq_no, email FROM customer WHERE entityId IN (${entityIdList}) OR custentity_ino_icai_appseq_no IN (${entityIdList}) ORDER BY id`;
+  const query = `SELECT id, entityid, custentity_ino_icai_appseq_no, category, email FROM customer WHERE entityId IN (${entityIdList}) OR custentity_ino_icai_appseq_no IN (${entityIdList}) ORDER BY id`;
 
   const endpoint =
     `/services/rest/query/v1/suiteql?limit=${limit}&offset=${offset}`;
@@ -117,29 +117,47 @@ async function fetchAllCustomers(entityIds, limit = 100) {
     offset += limit;
   }
 
-  // Normalize so callers can do customerMap[c.entityid] = c.id without
-  // caring whether the request matched on entityid or on appseq_no. For each
-  // row, emit one entry per requested ID it matched, with `entityid` set to
-  // that requested ID. This keeps the existing mapping logic unchanged.
+  // Normalize so callers can do customerMap[c.entityid] = c.id without caring
+  // whether the request matched on entityid or on appseq_no.
+  //
+  // entityid is unique in NetSuite, but custentity_ino_icai_appseq_no is NOT —
+  // a Form 2 member duplicate can carry the same appseq as its source student.
+  // So a requested APP id may match multiple rows. Resolve deterministically:
+  //   1. An exact entityid match always wins (entityid is unique).
+  //   2. Otherwise match on appseq_no; when several rows share an appseq,
+  //      prefer the student record (category = 2) over the member duplicate.
+  const STUDENT_CATEGORY = "2";
   const requested = new Set(entityIds);
-  const normalized = [];
+  const chosen = {}; // requested id -> winning row
+
+  // Pass 1: exact entityid matches (unique — highest priority)
   for (const r of all) {
-    let matched = false;
     if (r.entityid && requested.has(r.entityid)) {
-      normalized.push({ ...r, entityid: r.entityid });
-      matched = true;
+      chosen[r.entityid] = r;
     }
-    if (
-      r.custentity_ino_icai_appseq_no &&
-      requested.has(r.custentity_ino_icai_appseq_no) &&
-      r.custentity_ino_icai_appseq_no !== r.entityid
-    ) {
-      normalized.push({ ...r, entityid: r.custentity_ino_icai_appseq_no });
-      matched = true;
-    }
-    if (!matched) normalized.push(r);
   }
-  return normalized;
+
+  // Pass 2: appseq_no matches — only if the id wasn't already resolved by
+  // entityid; when multiple rows share an appseq, keep the student record.
+  for (const r of all) {
+    const app = r.custentity_ino_icai_appseq_no;
+    if (!app || !requested.has(app) || chosen[app]) continue;
+    const prev = chosen[`appseq:${app}`];
+    if (
+      !prev ||
+      (String(prev.category) !== STUDENT_CATEGORY &&
+        String(r.category) === STUDENT_CATEGORY)
+    ) {
+      chosen[`appseq:${app}`] = r;
+    }
+  }
+  for (const [key, r] of Object.entries(chosen)) {
+    if (key.startsWith("appseq:")) chosen[key.slice(7)] = r;
+  }
+
+  return Object.entries(chosen)
+    .filter(([key]) => !key.startsWith("appseq:"))
+    .map(([id, r]) => ({ ...r, entityid: id }));
 }
 
 

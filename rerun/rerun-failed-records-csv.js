@@ -1,18 +1,19 @@
 "use strict";
 
 /**
- * rerun-failed-records-csv.js — Rerun failed records sourced from a CSV/XLSX upload.
+ * rerun-failed-records-csv.js — Rerun failed records from a JSON record dump.
  *
  * Flow:
- *   1. Pick up a single CSV/XLSX file from rerun/upload/. Only the
- *      Payment_Order_Id column is consumed — every other column is ignored.
- *   2. Walk data/2026/<MM>/<DD>/incoming.json across ALL months and collect
- *      every record whose Payment_Order_Id is in the upload. No date filter.
- *   3. Snapshot the matched records to rerun/csv-runs/<timestamp>/incoming.json
- *      (the same shape the SSP fetch writes), then hand them to the exact same
- *      processors the main pipeline uses (membership/student vs. exam).
- *   4. Per-step logs + summary land in rerun/csv-runs/<timestamp>/. The original
- *      upload is archived so it isn't picked up again.
+ *   1. Read the full records straight from rerun/find-data/result.json. That
+ *      file is the output of the find-data scan: a JSON object with a `records`
+ *      array holding complete records (same shape as the SSP fetch writes to
+ *      data/2026/<MM>/<DD>/incoming.json) — no CSV parsing and no data-tree
+ *      scan are needed.
+ *   2. Snapshot the records to rerun/csv-runs/<timestamp>/incoming.json, then
+ *      hand them to the exact same processors the main pipeline uses
+ *      (membership/student vs. exam).
+ *   3. Per-step logs + summary land in rerun/csv-runs/<timestamp>/. The source
+ *      file is archived so it isn't picked up again.
  *
  * Run: node rerun/rerun-failed-records-csv.js
  */
@@ -21,7 +22,6 @@ require("dotenv").config({ path: require("path").join(__dirname, "..", ".env") }
 const fs = require("fs");
 const path = require("path");
 const pLimit = require("p-limit").default;
-const ExcelJS = require("exceljs");
 
 const { fetchAllCustomers } = require("../netsuiteClient--Rest");
 const { processTransaction: processMembership } = require("../syncMembershipStudent");
@@ -31,145 +31,26 @@ const { getAllAllowedForms, getConfigForForm } = require("../membership/helpers"
 const CONCURRENCY_LIMIT = 40;
 const CUSTOMER_BATCH_SIZE = 50;
 
-const PROJECT_ROOT = path.join(__dirname, "..");
-const UPLOAD_DIR = path.join(__dirname, "upload");
 const RUNS_ROOT = path.join(__dirname, "csv-runs");
-const DATA_ROOT = path.join(PROJECT_ROOT, "data", "2026");
+const SOURCE_FILE = path.join(__dirname, "find-data", "result.json");
 
-// ── CSV parser (handles quoted fields & escaped quotes) ─────────────────────
-function parseCsv(text) {
-  const rows = [];
-  let cur = [];
-  let field = "";
-  let inQuotes = false;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (inQuotes) {
-      if (c === '"') {
-        if (text[i + 1] === '"') { field += '"'; i++; }
-        else inQuotes = false;
-      } else {
-        field += c;
-      }
-    } else {
-      if (c === '"') inQuotes = true;
-      else if (c === ",") { cur.push(field); field = ""; }
-      else if (c === "\n") { cur.push(field); rows.push(cur); cur = []; field = ""; }
-      else if (c === "\r") { /* skip */ }
-      else field += c;
-    }
+function loadRecords(filePath) {
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`Source file not found: ${filePath}`);
   }
-  if (field.length > 0 || cur.length > 0) { cur.push(field); rows.push(cur); }
-  return rows.filter(r => r.length > 0 && !(r.length === 1 && r[0] === ""));
-}
-
-function findUploadFile() {
-  if (!fs.existsSync(UPLOAD_DIR)) {
-    fs.mkdirSync(UPLOAD_DIR, { recursive: true });
-    throw new Error(`No upload found. Drop a CSV/XLSX into ${UPLOAD_DIR}/`);
+  let parsed;
+  try {
+    parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch (err) {
+    throw new Error(`Failed to parse ${filePath}: ${err.message}`);
   }
-  const files = fs.readdirSync(UPLOAD_DIR)
-    .filter(name => /\.(csv|xlsx)$/i.test(name))
-    .filter(name => !name.includes(".done-"));
-  if (files.length === 0) {
-    throw new Error(`No .csv or .xlsx file in ${UPLOAD_DIR}/`);
+  // result.json is the find-data scan output: { ..., records: [...] }.
+  // Accept either that wrapper object or a bare array of records.
+  const records = Array.isArray(parsed) ? parsed : parsed && parsed.records;
+  if (!Array.isArray(records)) {
+    throw new Error(`Source file must contain a records array (or be a JSON array): ${filePath}`);
   }
-  if (files.length > 1) {
-    throw new Error(`Multiple uploads found in ${UPLOAD_DIR}/ — keep only one: ${files.join(", ")}`);
-  }
-  return path.join(UPLOAD_DIR, files[0]);
-}
-
-async function loadPaymentOrderIds(filePath) {
-  const ext = path.extname(filePath).toLowerCase();
-
-  let header = [];
-  let dataRows = [];
-
-  if (ext === ".csv") {
-    let text = fs.readFileSync(filePath, "utf8");
-    if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1); // strip UTF-8 BOM
-    const rows = parseCsv(text);
-    if (rows.length < 2) return [];
-    header = rows[0].map(h => String(h).trim());
-    dataRows = rows.slice(1);
-  } else if (ext === ".xlsx") {
-    const wb = new ExcelJS.Workbook();
-    await wb.xlsx.readFile(filePath);
-    const ws = wb.worksheets[0];
-    if (!ws) return [];
-    const rows = [];
-    ws.eachRow({ includeEmpty: false }, row => {
-      // row.values is 1-indexed; drop the leading undefined
-      const vals = row.values.slice(1).map(v => {
-        if (v == null) return "";
-        if (typeof v === "object" && "text" in v) return String(v.text);
-        if (typeof v === "object" && "result" in v) return String(v.result);
-        return String(v);
-      });
-      rows.push(vals);
-    });
-    if (rows.length < 2) return [];
-    header = rows[0].map(h => String(h).trim());
-    dataRows = rows.slice(1);
-  } else {
-    throw new Error(`Unsupported upload extension: ${ext}`);
-  }
-
-  const idx = header.findIndex(h => h.toLowerCase() === "payment_order_id");
-  if (idx === -1) {
-    throw new Error(`Upload must contain a Payment_Order_Id column (got: ${header.join(", ")})`);
-  }
-
-  const ids = [];
-  const seen = new Set();
-  for (const row of dataRows) {
-    const v = String(row[idx] || "").trim();
-    if (v && !seen.has(v)) { seen.add(v); ids.push(v); }
-  }
-  return ids;
-}
-
-function listDirs(p) {
-  if (!fs.existsSync(p)) return [];
-  return fs.readdirSync(p, { withFileTypes: true })
-    .filter(d => d.isDirectory())
-    .map(d => d.name)
-    .sort();
-}
-
-function readJsonSafe(filePath) {
-  if (!fs.existsSync(filePath)) return null;
-  try { return JSON.parse(fs.readFileSync(filePath, "utf8")); }
-  catch (err) {
-    console.error(`  ! Failed to parse ${filePath}: ${err.message}`);
-    return null;
-  }
-}
-
-function collectMatchingRecords(wantedIds) {
-  const wanted = new Set(wantedIds);
-  const matched = new Map(); // Payment_Order_Id -> record (first match wins)
-  let scannedFiles = 0;
-  let scannedRecords = 0;
-
-  for (const mm of listDirs(DATA_ROOT)) {
-    const monthPath = path.join(DATA_ROOT, mm);
-    for (const dd of listDirs(monthPath)) {
-      const file = path.join(monthPath, dd, "incoming.json");
-      const arr = readJsonSafe(file);
-      if (!Array.isArray(arr)) continue;
-      scannedFiles++;
-      for (const r of arr) {
-        if (!r || !r.Payment_Order_Id) continue;
-        scannedRecords++;
-        if (!wanted.has(r.Payment_Order_Id)) continue;
-        if (matched.has(r.Payment_Order_Id)) continue;
-        matched.set(r.Payment_Order_Id, r);
-      }
-    }
-  }
-  return { matched, scannedFiles, scannedRecords };
+  return records.filter(r => r && r.Payment_Order_Id);
 }
 
 async function main() {
@@ -178,45 +59,23 @@ async function main() {
   const runDir = path.join(RUNS_ROOT, ts);
   fs.mkdirSync(runDir, { recursive: true });
 
-  const uploadFile = findUploadFile();
-
   console.log(`\n[RerunCSV] ════════════════════════════════════════`);
-  console.log(`[RerunCSV] Upload:     ${uploadFile}`);
-  console.log(`[RerunCSV] Data root:  ${DATA_ROOT}`);
+  console.log(`[RerunCSV] Source:     ${SOURCE_FILE}`);
   console.log(`[RerunCSV] Output dir: ${runDir}`);
   console.log(`[RerunCSV] ════════════════════════════════════════\n`);
 
-  const ids = await loadPaymentOrderIds(uploadFile);
-  console.log(`[RerunCSV] Unique Payment_Order_Ids in upload: ${ids.length}`);
-  if (ids.length === 0) {
+  const records = loadRecords(SOURCE_FILE);
+  console.log(`[RerunCSV] Records to rerun: ${records.length}`);
+  if (records.length === 0) {
     console.log(`[RerunCSV] Nothing to do.`);
     return;
   }
 
-  const { matched, scannedFiles, scannedRecords } = collectMatchingRecords(ids);
-  const records = [...matched.values()];
-  const missing = ids.filter(id => !matched.has(id));
-
-  console.log(`[RerunCSV] Scanned incoming.json files: ${scannedFiles}`);
-  console.log(`[RerunCSV] Scanned records total       : ${scannedRecords}`);
-  console.log(`[RerunCSV] Matched                     : ${records.length}/${ids.length}`);
-  if (missing.length > 0) {
-    console.warn(`[RerunCSV] Unmatched Payment_Order_Ids (${missing.length}):`);
-    for (const m of missing.slice(0, 20)) console.warn(`  - ${m}`);
-    if (missing.length > 20) console.warn(`  ...and ${missing.length - 20} more`);
-  }
-
-  if (records.length === 0) {
-    console.log(`[RerunCSV] No matched records — exiting.`);
-    return;
-  }
-
-  // Snapshot inputs alongside logs so the run is reproducible. The matched
-  // records are written as `incoming.json` so the run dir mirrors the shape
-  // the SSP fetch produces under data/2026/<MM>/<DD>/.
-  fs.copyFileSync(uploadFile, path.join(runDir, "input" + path.extname(uploadFile)));
+  // Snapshot inputs alongside logs so the run is reproducible. The records are
+  // written as `incoming.json` so the run dir mirrors the shape the SSP fetch
+  // produces under data/2026/<MM>/<DD>/.
+  fs.copyFileSync(SOURCE_FILE, path.join(runDir, "input.json"));
   fs.writeFileSync(path.join(runDir, "incoming.json"), JSON.stringify(records, null, 2), "utf-8");
-  fs.writeFileSync(path.join(runDir, "unmatched.json"), JSON.stringify(missing, null, 2), "utf-8");
 
   const allowedForms = getAllAllowedForms();
   const membership = records.filter(t => allowedForms.includes(t.Form_Description));
@@ -263,44 +122,34 @@ async function main() {
     startedAt: new Date(startTime).toISOString(),
     finishedAt: new Date().toISOString(),
     durationMs,
-    uploadFile,
-    dataRoot: DATA_ROOT,
+    sourceFile: SOURCE_FILE,
     outputDir: runDir,
     counts: {
-      uploadOrderIds: ids.length,
-      scannedFiles,
-      scannedRecords,
-      matched: records.length,
-      unmatched: missing.length,
+      records: records.length,
       membership: membership.length,
       exam: exam.length,
       passed: passed.length,
       failed: failed.length,
     },
-    unmatched: missing,
     passed,
     failed,
   };
   fs.writeFileSync(path.join(runDir, "rerun-summary.json"), JSON.stringify(summary, null, 2), "utf-8");
 
-  // Archive the upload so the next run doesn't accidentally repeat it.
-  const ext = path.extname(uploadFile);
-  const base = path.basename(uploadFile, ext);
-  const archived = path.join(UPLOAD_DIR, `${base}${ext}.done-${ts}`);
-  fs.renameSync(uploadFile, archived);
+  // Archive the source so the next run doesn't accidentally repeat it.
+  const archived = path.join(path.dirname(SOURCE_FILE), `result.json.done-${ts}`);
+  fs.renameSync(SOURCE_FILE, archived);
 
   console.log(`\n[RerunCSV] ════════════════════════════════════════`);
   console.log(`[RerunCSV] RERUN COMPLETE`);
-  console.log(`[RerunCSV]   Upload Order IDs   : ${ids.length}`);
-  console.log(`[RerunCSV]   Matched in source  : ${records.length}`);
-  console.log(`[RerunCSV]   Unmatched (skipped): ${missing.length}`);
+  console.log(`[RerunCSV]   Records            : ${records.length}`);
   console.log(`[RerunCSV]   Membership/Student : ${membership.length}`);
   console.log(`[RerunCSV]   Exam/Other         : ${exam.length}`);
   console.log(`[RerunCSV]   Passed             : ${passed.length}`);
   console.log(`[RerunCSV]   Failed             : ${failed.length}`);
   console.log(`[RerunCSV]   Duration           : ${durationMs}ms`);
   console.log(`[RerunCSV]   Output dir         : ${runDir}`);
-  console.log(`[RerunCSV]   Upload archived to : ${archived}`);
+  console.log(`[RerunCSV]   Source archived to : ${archived}`);
   console.log(`[RerunCSV] ════════════════════════════════════════\n`);
 }
 

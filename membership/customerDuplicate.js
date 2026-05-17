@@ -46,6 +46,22 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
     `[MembershipSync] [Form 2] Found student: id=${c.id}, entityid=${c.entityId || c.entityid}`
   );
 
+  // Guard: the record we copy from MUST be a student (category 2). The full
+  // record API returns category as an object ({ id, refName }); fall back to a
+  // plain value just in case. If it is not a student, abort instead of copying
+  // wrong data (e.g. an existing member record) into the new member.
+  const STUDENT_CATEGORY = "2";
+  const sourceCategory = String(
+    (c.category && typeof c.category === "object" ? c.category.id : c.category) ?? ""
+  );
+  if (sourceCategory !== STUDENT_CATEGORY) {
+    throw new Error(
+      `Form 2 source customer ${customerEntityId} (id=${c.id}) is not a student ` +
+      `record — category="${sourceCategory || "unknown"}", expected "${STUDENT_CATEGORY}". ` +
+      `Refusing to duplicate it as a member.`
+    );
+  }
+
   // const appseqNo = c.custentity_ino_icai_appseq_no;
   const appseqNo = c.entityId;
   if (!appseqNo) {

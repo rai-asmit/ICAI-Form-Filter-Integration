@@ -1,0 +1,302 @@
+[
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260428210380000255852719228030384",
+    "End_Date": "",
+    "Payment_Date": "28/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084232",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6970677",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008423220260428115020397",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "258894",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-17T15:23:25.266Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260420210370000253036929701597002",
+    "End_Date": "",
+    "Payment_Date": "20/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084031",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6937418",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008403120260420172123629",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "451326",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-17T15:24:44.854Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260414210630000250864180744792374",
+    "End_Date": "",
+    "Payment_Date": "14/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000083858",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6899287",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008385820260414172739946",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "257885",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-17T15:24:47.016Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260430210520000256716092378733874",
+    "End_Date": "",
+    "Payment_Date": "30/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "944",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "BPM2016",
+    "Start_Date": "",
+    "IGST": "144",
+    "Application_number": "6986734",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Balance Payment Form",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "800",
+        "FeeHeadCode1": "M12",
+        "FeeHead1": "OLD MEMBERSHIP FEE"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "813754",
+    "Total_Amount_Exclu_Tax": "800",
+    "Payment_Order_Id": "BPM201620260430210103451",
+    "Transaction_Number": "",
+    "Payment_Amount": "944",
+    "Customer_ID": "118123",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "",
+    "success": false,
+    "timestamp": "2026-05-17T15:24:47.072Z",
+    "reason": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260425210380000254773007848389662",
+    "End_Date": "",
+    "Payment_Date": "25/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "210",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "BPM2015",
+    "Start_Date": "",
+    "IGST": "",
+    "Application_number": "6960349",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Balance Payment Form",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "210",
+        "FeeHeadCode1": "M05",
+        "FeeHead1": "MEMBERSHIP FEE - ASSOCIATE"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "813754",
+    "Total_Amount_Exclu_Tax": "210",
+    "Payment_Order_Id": "BPM201520260425121955623",
+    "Transaction_Number": "",
+    "Payment_Amount": "210",
+    "Customer_ID": "101316",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "",
+    "success": false,
+    "timestamp": "2026-05-17T15:24:47.256Z",
+    "reason": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260409210330000249020570486595216",
+    "End_Date": "",
+    "Payment_Date": "09/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "1770",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "BPM1987",
+    "Start_Date": "",
+    "IGST": "270",
+    "Application_number": "6869618",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Balance Payment Form",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M12",
+        "FeeHead1": "Old Membership Fee"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "813754",
+    "Total_Amount_Exclu_Tax": "1500",
+    "Payment_Order_Id": "BPM198720260409152149201",
+    "Transaction_Number": "",
+    "Payment_Amount": "1770",
+    "Customer_ID": "148958",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "",
+    "success": false,
+    "timestamp": "2026-05-17T15:24:49.604Z",
+    "reason": "Failed to build Sales Order — no valid line items with mapped fee head codes"
+  }
+]

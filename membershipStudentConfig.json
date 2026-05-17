@@ -90,11 +90,11 @@
       "S118": { "internal_id": "636", "description": "Revalidation Fee - Intermediate" }
     },
     "contribution_codes": [],
-    "allowed_forms": ["Student Registration Form", "Student Revalidation Form"]
+    "allowed_forms": ["Student Registration Form", "Student Revalidation Form" ]
   },
   "other_forms": {
-    "subsidiary_id": "168",
-    "location_id": "285",
+    "subsidiary_id": "170",
+    "location_id": "287",
     "department_id": "267",
     "class_id": "123",
     "cd_account_id": "3341",
@@ -123,6 +123,6 @@
       "R0016": { "internal_id": "5405", "description": "Fee for Inspection", "event_seminar": "Exam Misc Income – Common" }
     },
     "contribution_codes": [],
-    "allowed_forms": ["Form 9", "Form 103", "Form 103 Registration Fee", "Form 104", "Form 105", "Form 107", "Form 108", "MarksVerify"]
+    "allowed_forms": ["Form 103", "Form 103 Registration Fee", "Form 104", "Form 105", "Form 107", "Form 108", "MarksVerify"]
   }
 }
