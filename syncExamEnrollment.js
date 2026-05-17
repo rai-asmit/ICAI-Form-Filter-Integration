@@ -209,11 +209,10 @@ async function processTransaction(transaction, customerMap, dailyDir) {
       `[ExamSync] [${ref}] Transaction FAILED at ${currentStep}: ${JSON.stringify(result.error)}`
     );
 
-    if (["sales-order", "customer-deposit", "invoice"].includes(currentStep)) {
-      logStep(currentStep, false, {
-        error: err.response?.data ?? err.message,
-      });
-    }
+    const failStep = currentStep === "init" ? "pre-sales-order" : currentStep;
+    logStep(failStep, false, {
+      error: err.response?.data ?? err.message,
+    });
   }
 
   return result;
@@ -223,12 +222,12 @@ async function processTransaction(transaction, customerMap, dailyDir) {
 // MAIN ENTRY POINT
 // ═══════════════════════════════════════════════════════════════════════════════
 
-async function runExamEnrollmentSync({ integrationId, transactions } = {}) {
+async function runExamEnrollmentSync({ integrationId, transactions, dailyDir: dailyDirArg } = {}) {
   const startTime = Date.now();
 
   try {
     // ── 1. Initialize daily data directory ────────────────────────────────
-    const dailyDir = stateManager.getDailyDir();
+    const dailyDir = dailyDirArg || stateManager.getDailyDir();
     console.log(`[ExamSync] Daily data directory: ${dailyDir}`);
 
     // ── 2. Get transactions (pre-fetched from orchestrator or fetch directly) ──
@@ -429,4 +428,4 @@ async function runExamEnrollmentSync({ integrationId, transactions } = {}) {
   }
 }
 
-module.exports = { runExamEnrollmentSync };
+module.exports = { runExamEnrollmentSync, processTransaction };

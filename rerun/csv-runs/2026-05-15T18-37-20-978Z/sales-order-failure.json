@@ -1,0 +1,1112 @@
+[
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260421210590000253330458100450304",
+    "End_Date": "",
+    "Payment_Date": "21/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078550",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6942969",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007855020260421124746272",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "293770",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:23.676Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260428210380000255852719228030384",
+    "End_Date": "",
+    "Payment_Date": "28/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084232",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6970677",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008423220260428115020397",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "258894",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:23.692Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260423210610000254112529199487869",
+    "End_Date": "",
+    "Payment_Date": "23/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084144",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6954060",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008414420260423163526825",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "448644",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:23.729Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260424210580000254445225179435071",
+    "End_Date": "",
+    "Payment_Date": "24/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000066878",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6957324",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000006687820260424143727511",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "236367",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:23.733Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260427210350000255507611169071314",
+    "End_Date": "",
+    "Payment_Date": "27/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084223",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6966741",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008422320260427125859890",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "446484",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:23.751Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260428210320000255868863720671894",
+    "End_Date": "",
+    "Payment_Date": "28/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000084243",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6971107",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008424320260428125429614",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "455054",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:24.337Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260428210550000255909162937029579",
+    "End_Date": "",
+    "Payment_Date": "28/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000082219",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6972018",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008221920260428153436808",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "246745",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:24.345Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260430210400000256687761373816425",
+    "End_Date": "",
+    "Payment_Date": "30/04/2026",
+    "SGST": "270",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "270",
+    "Form_Application_numnber": "CP0000078859",
+    "Start_Date": "",
+    "IGST": "",
+    "Application_number": "6985660",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007885920260430190830007",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "564512",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:24.371Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260423210550000254093409187603607",
+    "End_Date": "",
+    "Payment_Date": "23/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078622",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6953638",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007862220260423151927865",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "142973",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:24.374Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260403210620000246789991616064586",
+    "End_Date": "",
+    "Payment_Date": "03/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000083460",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6851383",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008346020260403113817646",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "257730",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:28.092Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260403210370000246824823284698014",
+    "End_Date": "",
+    "Payment_Date": "03/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000077816",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6852030",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007781620260403135642206",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "478480",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:28.116Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260402210320000246488126710243721",
+    "End_Date": "",
+    "Payment_Date": "02/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "4720",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000077720",
+    "Start_Date": "",
+    "IGST": "720",
+    "Application_number": "6850380",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "4000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Fellow"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "4000",
+    "Payment_Order_Id": "CP000007772020260402153846950",
+    "Transaction_Number": "",
+    "Payment_Amount": "4720",
+    "Customer_ID": "501300",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "720",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:28.326Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260406210590000247949422181591648",
+    "End_Date": "",
+    "Payment_Date": "06/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000077719",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6860387",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007771920260406162527391",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "231311",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:33.097Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260407210360000248330706971724194",
+    "End_Date": "",
+    "Payment_Date": "07/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000083613",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6864196",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008361320260407174030608",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "425088",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:33.141Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260404210370000247210550006448333",
+    "End_Date": "",
+    "Payment_Date": "04/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000077867",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6855173",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007786720260404152926756",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "178284",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:33.190Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260410210510000249324603730363184",
+    "End_Date": "",
+    "Payment_Date": "10/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000078197",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6871616",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000007819720260410112956354",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "537584",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:34.267Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260411210410000249717836109769044",
+    "End_Date": "",
+    "Payment_Date": "11/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078145",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6875041",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007814520260411133230345",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "180064",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:34.852Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260408210630000248762924995027194",
+    "End_Date": "",
+    "Payment_Date": "08/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "3540",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "CP0000078049",
+    "Start_Date": "",
+    "IGST": "540",
+    "Application_number": "6868093",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 6",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "3000",
+        "FeeHeadCode1": "M07",
+        "FeeHead1": "Member COP Fee - Associate"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "3000",
+    "Payment_Order_Id": "CP000007804920260408221759885",
+    "Transaction_Number": "",
+    "Payment_Amount": "3540",
+    "Customer_ID": "175020",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "540",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:35.371Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260413210440000250475266955596872",
+    "End_Date": "",
+    "Payment_Date": "13/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000082632",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6884607",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008263220260413154215976",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "257365",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:35.653Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  },
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "20260414210630000250864180744792374",
+    "End_Date": "",
+    "Payment_Date": "14/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "5900",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Delhi",
+    "CGST": "",
+    "Form_Application_numnber": "FLW0000083858",
+    "Start_Date": "",
+    "IGST": "900",
+    "Application_number": "6899287",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Form 3/Fellowship",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "1500",
+        "FeeHeadCode1": "M10",
+        "FeeHead1": "Member-Fellow Conversion"
+      },
+      {
+        "FeeAmount2": "1000",
+        "FeeHead2": "Member COP Fee - Fellow",
+        "FeeHeadCode2": "M07"
+      },
+      {
+        "FeeHeadCode3": "M09",
+        "FeeAmount3": "2500",
+        "FeeHead3": "Member-Fellow Admission"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "TheIns46795906040537",
+    "Total_Amount_Exclu_Tax": "5000",
+    "Payment_Order_Id": "FLW000008385820260414172739946",
+    "Transaction_Number": "",
+    "Payment_Amount": "5900",
+    "Customer_ID": "257885",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "900",
+    "success": false,
+    "timestamp": "2026-05-15T18:38:36.519Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Missing GSTIN for this customer. Edit the customer record and add the GSTIN on the Tax Reg. Number field.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  }
+]

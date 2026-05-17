@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(node -e 'const a=JSON.parse\\(require\\('\\\\''fs'\\\\''\\).readFileSync\\('\\\\''/home/ubuntu/deployed-integration/ICAI-Form-Filter-Integration/rerun/csv-runs/2026-05-15T18-37-20-978Z/__TRACKED_VAR__'\\\\'','\\\\''utf8'\\\\''\\)\\);console.log\\(Array.isArray\\(a\\)?a.length:'\\\\''?'\\\\''\\)')"
+    ]
+  }
+}

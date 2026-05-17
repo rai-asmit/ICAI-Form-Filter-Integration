@@ -92,7 +92,7 @@ async function duplicateCustomerAsMember(customerEntityId, transaction) {
 
     custentity_ino_icai_appseq_no: c.custentity_ino_icai_appseq_no || "",
     custentity_ino_icai_father_name: c.custentity_ino_icai_father_name || "",
-    custentity_ino_icai_dob: c.custentity_ino_icai_dob || "",
+    ...(c.custentity_ino_icai_dob ? { custentity_ino_icai_dob: c.custentity_ino_icai_dob } : {}),
     custentity_permanent_account_number: c.custentity_permanent_account_number || "",
     custentity_ino_icai_regno: c.custentity_ino_icai_regno || "",
     custentity_ino_icai_source_portal: "SSP",

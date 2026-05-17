@@ -9,14 +9,22 @@ const PROCESSED_DB = path.join(DATA_ROOT, "processed-records.json");
 // ── Data directory ──────────────────────────────────────────────────────────
 
 /**
- * Return today's data directory, partitioned as data/yyyy/mm/dd.
+ * Return the data directory for the given date, partitioned as data/yyyy/mm/dd.
+ * Accepts a Date object, a "DD/MM/YYYY" string, or undefined (defaults to today).
  * Creates the folder chain if it doesn't exist. Cross-run global files
  * (e.g. processed-records.json) stay at DATA_ROOT, not in here.
  */
 function getDailyDir(date = new Date()) {
-  const yyyy = String(date.getFullYear());
-  const mm = String(date.getMonth() + 1).padStart(2, "0");
-  const dd = String(date.getDate()).padStart(2, "0");
+  let yyyy, mm, dd;
+  if (typeof date === "string") {
+    const m = date.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+    if (!m) throw new Error(`getDailyDir: expected DD/MM/YYYY string, got "${date}"`);
+    dd = m[1]; mm = m[2]; yyyy = m[3];
+  } else {
+    yyyy = String(date.getFullYear());
+    mm = String(date.getMonth() + 1).padStart(2, "0");
+    dd = String(date.getDate()).padStart(2, "0");
+  }
   const dailyDir = path.join(DATA_ROOT, yyyy, mm, dd);
   if (!fs.existsSync(dailyDir)) {
     fs.mkdirSync(dailyDir, { recursive: true });

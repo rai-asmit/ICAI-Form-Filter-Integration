@@ -10,6 +10,16 @@ const {
   GST_RATE_ID,
 } = require("./helpers");
 
+// MID -> account lookup is case-insensitive. Build an uppercase-keyed copy
+// once at module load so the config can keep its original casing.
+const MID_TO_ACCOUNT_UPPER = Object.fromEntries(
+  Object.entries(msConfig.mid_to_account || {}).map(([k, v]) => [String(k).toUpperCase(), v])
+);
+function lookupMidAccount(mid) {
+  if (!mid) return null;
+  return MID_TO_ACCOUNT_UPPER[String(mid).toUpperCase()] || null;
+}
+
 /**
  * Build Sales Order payload.
  * ONLY Regular + Discount items go on the SO. Contribution items are excluded.
@@ -161,10 +171,9 @@ function buildCustomerDepositData(soId, transaction, formConfig) {
     gstFields.custbody_inoday_icai_sgst_val = sgst;
   }
 
-  const midToAccount = msConfig.mid_to_account || {};
-  const cdAccountId = (mid && midToAccount[mid]) ? midToAccount[mid] : null;
+  const cdAccountId = lookupMidAccount(mid);
 
-  if (mid && !midToAccount[mid]) {
+  if (mid && !cdAccountId) {
     console.warn(
       `[MembershipSync] MID "${mid}" not found in mid_to_account mapping — skipping account field on Customer Deposit`
     );
@@ -216,8 +225,7 @@ function buildCustomerPaymentData(customerInternalId, transaction, formConfig, i
   const mid = firstNonEmpty(transaction.MID);
   const paymentAmount = parseFloat(transaction.Payment_Amount) || 0;
 
-  const midToAccount = msConfig.mid_to_account || {};
-  const cpAccountId = mid ? midToAccount[mid] : null;
+  const cpAccountId = lookupMidAccount(mid);
 
   if (!cpAccountId) {
     console.warn(

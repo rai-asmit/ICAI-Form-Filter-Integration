@@ -173,7 +173,11 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
     };
 
     const { additionalSubsidiaryIds } = checkStudentMember(transaction);
-    await addAdditionalSubsidiary(customerInternalId, additionalSubsidiaryIds);
+    const subsToLink = [...additionalSubsidiaryIds];
+    if (formConfig.type === "student_registration" && formConfig.subsidiary_id) {
+      subsToLink.unshift(String(formConfig.subsidiary_id));
+    }
+    await addAdditionalSubsidiary(customerInternalId, subsToLink);
 
     // ── Step 3: Create Sales Order (Regular + Discount items only) ────────────
     currentStep = "sales-order";
@@ -350,10 +354,11 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
       `[MembershipSync] [${ref}] Transaction FAILED: ${JSON.stringify(result.error)}`
     );
 
-    // Log failure for the step that threw (JV logs its own failure — it's non-blocking)
-    if (["customer-duplicate", "sales-order", "customer-deposit", "invoice", "customer-payment"].includes(currentStep)) {
-      logStep(currentStep, false, { error: err.response?.data ?? err.message });
-    }
+    // Log failure for the step that threw (JV logs its own failure — it's non-blocking).
+    // "init" covers throws before any step (e.g. empty Fee_Head from parseFeeHeads);
+    // route those to pre-sales-order-failure.json so nothing is silently dropped.
+    const failStep = currentStep === "init" ? "pre-sales-order" : currentStep;
+    logStep(failStep, false, { error: err.response?.data ?? err.message });
   }
 
   return result;
@@ -363,12 +368,12 @@ async function processTransaction(transaction, customerMap, formConfig, dailyDir
 // MAIN ENTRY POINT
 // ═══════════════════════════════════════════════════════════════════════════════
 
-async function runMembershipStudentSync({ integrationId, transactions } = {}) {
+async function runMembershipStudentSync({ integrationId, transactions, dailyDir: dailyDirArg } = {}) {
   const startTime = Date.now();
 
   try {
     // ── 1. Initialize daily data directory ──────────────────────────────────
-    const dailyDir = stateManager.getDailyDir();
+    const dailyDir = dailyDirArg || stateManager.getDailyDir();
     console.log(`[MembershipSync] Daily data directory: ${dailyDir}`);
 
     // ── 2. Get transactions (pre-fetched from orchestrator or fetch directly) ──
@@ -443,10 +448,19 @@ async function runMembershipStudentSync({ integrationId, transactions } = {}) {
     for (const t of matchingTransactions) {
       const cfg = getConfigForForm(t.Form_Description);
       if (!cfg || !cfg.subsidiary_id) {
+        const reason = `Subsidiary ID not configured for ${cfg?.type || "unknown"}. Update membershipStudentConfig.json`;
         invalidTransactions.push({
           reference: t.Reference_Number,
           form: t.Form_Description,
-          reason: `Subsidiary ID not configured for ${cfg?.type || "unknown"}. Update membershipStudentConfig.json`,
+          reason,
+        });
+        // Persist the FULL transaction to pre-validation-failure.json so the
+        // skip is auditable even if sync-summary.json is later overwritten.
+        stateManager.logStepResult(dailyDir, "pre-validation", {
+          ...t,
+          success: false,
+          reason,
+          timestamp: new Date().toISOString(),
         });
       } else {
         validTransactions.push(t);
@@ -455,7 +469,7 @@ async function runMembershipStudentSync({ integrationId, transactions } = {}) {
 
     if (invalidTransactions.length > 0) {
       console.warn(
-        `[MembershipSync] ${invalidTransactions.length} transactions skipped (missing subsidiary config):`
+        `[MembershipSync] ${invalidTransactions.length} transactions skipped (missing subsidiary config) — logged to pre-validation-failure.json:`
       );
       for (const inv of invalidTransactions) {
         console.warn(

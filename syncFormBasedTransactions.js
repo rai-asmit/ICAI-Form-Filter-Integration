@@ -38,8 +38,12 @@ async function runFormBasedSync({ integrationId, fromDate, toDate } = {}) {
 
   try {
     // ── 1. Initialize daily data directory ────────────────────────────────
-    const dailyDir = stateManager.getDailyDir();
-    console.log(`[FormSync] Daily data directory: ${dailyDir}`);
+    // When a date range is provided, save under the fromDate's folder
+    // (e.g. data/2026/04/01) instead of today's, so the data lives under
+    // the date it actually belongs to.
+    const folderDate = fromDate || undefined;
+    const dailyDir = stateManager.getDailyDir(folderDate);
+    console.log(`[FormSync] Daily data directory: ${dailyDir}${fromDate ? ` (from fromDate=${fromDate})` : " (today)"}`);
 
     // ── 2. Get token (uses cache or authenticates fresh) ──────────────────
     const tokenid = await getToken();
@@ -93,6 +97,7 @@ async function runFormBasedSync({ integrationId, fromDate, toDate } = {}) {
     const membershipResult = await runMembershipStudentSync({
       integrationId,
       transactions: membershipTransactions,
+      dailyDir,
     });
     console.log(`[FormSync] Membership/Student done — processed: ${membershipResult.processed || 0}, failed: ${membershipResult.failed || 0}`);
 
@@ -101,6 +106,7 @@ async function runFormBasedSync({ integrationId, fromDate, toDate } = {}) {
     const examResult = await runExamEnrollmentSync({
       integrationId,
       transactions: examTransactions,
+      dailyDir,
     });
     console.log(`[FormSync] Exam/Other done — processed: ${examResult.processed || 0}, failed: ${examResult.failed || 0}`);
 

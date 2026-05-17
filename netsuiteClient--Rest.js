@@ -84,8 +84,11 @@ async function netsuiteRequest(method, endpoint, body = null) {
 async function queryCustomerByEntityIdBulk(entityIds, limit = 100, offset = 0) {
   if (!entityIds?.length) throw new Error("Customer Id list cannot be empty.");
 
+  // Upstream Customer_ID can be either the NetSuite entityid (e.g. SRO0959623)
+  // or the application sequence number stored in custentity_ino_icai_appseq_no
+  // (e.g. APP4342821). Match either column so student records resolve correctly.
   const entityIdList = entityIds.map((e) => `'${e}'`).join(",");
-  const query = ` SELECT id, entityid, email FROM customer WHERE entityId IN (${entityIdList}) ORDER BY id`;
+  const query = `SELECT id, entityid, custentity_ino_icai_appseq_no, email FROM customer WHERE entityId IN (${entityIdList}) OR custentity_ino_icai_appseq_no IN (${entityIdList}) ORDER BY id`;
 
   const endpoint =
     `/services/rest/query/v1/suiteql?limit=${limit}&offset=${offset}`;
@@ -114,7 +117,29 @@ async function fetchAllCustomers(entityIds, limit = 100) {
     offset += limit;
   }
 
-  return all;
+  // Normalize so callers can do customerMap[c.entityid] = c.id without
+  // caring whether the request matched on entityid or on appseq_no. For each
+  // row, emit one entry per requested ID it matched, with `entityid` set to
+  // that requested ID. This keeps the existing mapping logic unchanged.
+  const requested = new Set(entityIds);
+  const normalized = [];
+  for (const r of all) {
+    let matched = false;
+    if (r.entityid && requested.has(r.entityid)) {
+      normalized.push({ ...r, entityid: r.entityid });
+      matched = true;
+    }
+    if (
+      r.custentity_ino_icai_appseq_no &&
+      requested.has(r.custentity_ino_icai_appseq_no) &&
+      r.custentity_ino_icai_appseq_no !== r.entityid
+    ) {
+      normalized.push({ ...r, entityid: r.custentity_ino_icai_appseq_no });
+      matched = true;
+    }
+    if (!matched) normalized.push(r);
+  }
+  return normalized;
 }
 
 

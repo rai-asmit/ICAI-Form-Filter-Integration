@@ -1,0 +1,16 @@
+{
+  "finishedAt": "2026-05-15T19:14:01.221Z",
+  "scanRoots": [
+    "data",
+    "data-backup"
+  ],
+  "scannedFiles": 26,
+  "scannedRecords": 87947,
+  "inputIds": 360,
+  "found": 286,
+  "missing": 74,
+  "missingByDate": {
+    "20260426": 74
+  },
+  "outputDir": "rerun/lookups/2026-05-15T19-14-01-219Z"
+}

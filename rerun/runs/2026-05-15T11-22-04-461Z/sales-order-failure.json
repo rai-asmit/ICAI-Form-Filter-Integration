@@ -1,0 +1,52 @@
+[
+  {
+    "Record_Readed": "N",
+    "Firm_Number": "",
+    "Reference_Number": "2032609220050299317",
+    "End_Date": "",
+    "Payment_Date": "02/04/2026",
+    "SGST": "",
+    "Total_Amount_Inc_Tax": "9000.0",
+    "Exam_End_Date": "",
+    "Exchange_Rate": "1",
+    "Currency": "INR",
+    "Subsidiary": "Noida",
+    "CGST": "",
+    "Form_Application_numnber": "SFD0728095",
+    "Start_Date": "",
+    "IGST": "",
+    "Application_number": "6849991",
+    "Financial_Year": "2026-2027",
+    "Form_Description": "Student Registration Form",
+    "Fee_Head": [
+      {
+        "FeeAmount1": "9000.0",
+        "FeeHeadCode1": "S138",
+        "FeeHead1": "Foundation Course Registration Fee"
+      }
+    ],
+    "Quantity": "1",
+    "Temporary_Firm_Number": "",
+    "MID": "M00006173",
+    "Total_Amount_Exclu_Tax": "9000.0",
+    "Payment_Order_Id": "SFD072809520260402200528325",
+    "Transaction_Number": "",
+    "Payment_Amount": "9000.0",
+    "Customer_ID": "APP4344164",
+    "HSN_SAC_Code": "9995",
+    "Total_Tax": "",
+    "success": false,
+    "timestamp": "2026-05-15T12:14:57.183Z",
+    "reason": {
+      "type": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.1",
+      "title": "Bad Request",
+      "status": 400,
+      "o:errorDetails": [
+        {
+          "detail": "Error while accessing a resource. Unable to save the transaction due to an error being reported by the tax calculation engine: Tax Calculation Plugin error due to a server-side SuiteScript exception: Tax Calculation Plugin error due to no applicable tax rule was found for this transaction. Please go to Setup &gt; India Localization &gt; GST Tax Rate Rules to set up a new tax rate record.",
+          "o:errorCode": "USER_ERROR"
+        }
+      ]
+    }
+  }
+]
